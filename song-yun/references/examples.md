@@ -403,3 +403,140 @@ Canon EOS R5 RF85mm f/1.2, Kodak film color style, subtle film grain, quiet and 
 ③ 占比句落地：`figure 35% environment 65%`——"人物只占一半"的量化写法（十三.七③）；
 ④ 生活纪录片档负向整串挂 `--no`（八节 2026-09-18 新条），重点是 perfect pose / artificial smile / fairy costume 三防；
 ⑤ 器物取自五.五"闺房/书斋"清单仅 2-3 件（砚台、书、茶盏），够用就停。
+
+## 二十一、形制三轮：霞帔帔坠礼服专题（2026-09-21 周一，来源：科普中国"嘉礼衣章：宋代婚服" / 人民日报客户端"双龙镂空霞帔金坠" / 潮新闻"衣橱里的江南" 2026-09-21 检索）
+
+### 例22 婚晨·霞帔帔坠示范（A 路线 MJ，霞帔路径句 + 帔坠动态 + 腰上黄点缀，词数约 130）
+
+**输入**：宋韵，写实路线，宋代新娘晨起盛装特写，要有命妇的讲究感不要影楼红。
+
+**MJ 提示词**：
+
+```
+cinematic full-body portrait of a Song dynasty bride on her wedding morning, a crimson daxiu
+wide-sleeved ceremonial robe in matte luo silk, layered over an ivory cross-collar inner blouse
+and a long skirt with faint gilt phoenix scroll; a red xiapei sash — two long embroidered bands
+emerging from a small triangular pocket at the back of the robe, draped over both shoulders,
+falling to merge at the front below the waist, their ends pinned by a heart-shaped gold peizhui
+pendant hollow-carved with paired dragons, its slight sway keeping the sash perfectly flat;
+a goose-yellow waist wrap as the single warm accent on the muted red-and-ivory palette;
+a pearl-sprayed round tuanguan crown on her high bun, a red silk veil draped from the crown
+over her shoulders; she takes small measured steps, one hand lightly steadying the pendant,
+three-white makeup, subtle skin texture; soft window side light from the left with faint
+brazier fill from the right, low contrast, 85mm shallow depth of field,
+Chinese period costume film still, live-action cinematic
+--ar 3:4 --raw --s 100 --no text, watermark, plastic skin, floating ribbon shawl, earring-shaped pendant, Qing dynasty phoenix crown, glossy satin red dress
+```
+
+**要点**：
+① 霞帔路径句完整落地：`emerging from a triangular pocket at the back → draped over both shoulders → merging at the front → pinned by the pendant`——四步写清帔带的来路与去处，配合负向 `floating ribbon shawl` 从根源防"唐代披帛化"（八.八①）；
+② 帔坠两件套：`heart-shaped gold peizhui, hollow-carved with paired dragons`（具名实物双龙镂空金坠）+ `its slight sway keeping the sash perfectly flat`——坠子的物理功能句同时给出"微摇"动态，特写必写（八.八②）；
+③ 腰上黄做唯一反差点：`goose-yellow waist wrap as the single warm accent`——素礼服档的宋代点睛潮（八.八⑤）；
+④ 首服降档防穿帮：珠翠团冠 + 面衣式盖头，负向拦 Qing dynasty phoenix crown——宋婚是团冠盖头，不是明式凤冠（八.八⑧⑨）；
+⑤ 材质哑光锁：`matte luo silk` + 负向 `glossy satin red dress`——礼服红也要"罗绢质感不许亮缎"，影楼感最大来源就是红缎反光；
+⑥ 动作分寸感：`small measured steps, one hand lightly steadying the pendant`——"行莫摇裙"的仪态译成可见动作，与帔坠功能句互相呼应。
+
+## 二十二、染缬专题（2026-09-22 周二纹样专题三轮新增，来源：百度百科"缬帛""染缬" / 光明日报《丝路染缬》 / 中国丝绸博物馆实物图录 2026-09-22 检索）
+
+### 例23 染坊晾缬示范（A 路线 MJ，面料做主角 + 夹缬/绞缬双身份 + 青白配色，词数约 115）
+
+**输入**：宋韵，写实路线，江南染坊晾布的清晨，面料要讲得出工艺出身。
+
+**MJ 提示词**：
+
+```
+cinematic environmental shot inside a small Song dynasty dye workshop at morning, long bolts of
+freshly dyed silk hanging from a bamboo drying rack; an indigo jiaxie stencil-resist silk bolt with
+symmetrical floral medallions in crisp paste-resist white, woodblock-print-sharp edges, hangs beside
+a jiaoxie tie-dyed gauze panel of small white dot patterns in fish-roe bands with softly haloed dye
+edges; blue-and-white two-color scheme against warm grey plaster and weathered wood; a young dyer's
+apprentice in a plain qingse cross-collar top reaches up to peg the last panel, her sleeve rolled
+to the elbow, forearms faintly stained indigo; thin morning mist and rising dye-steam drift between
+the hanging silks, soft diffused window light from the left, low contrast; low-saturation indigo,
+rice-white and warm-grey palette with the blue silks as the only strong hue; 35mm, shallow depth of
+field, subtle film grain, Chinese period drama film still, live-action
+--ar 16:9 --raw --s 100 --no text, watermark, modern tie-dye T-shirt look, rainbow spiral gradient, plastic skin, glossy satin
+```
+
+**要点**：
+① **面料做主角、人做点景**：整幅的主体信息量给了两匹布——夹缬（对称团花+防染白边+版画硬边）与绞缬
+（鱼子缬点花+晕色边缘）各给一条"工艺身份证句"，人物只占一条动作句，呼应"小人物大场景"（八.五.四）；
+② **双缬并置教模型区分**：同一画面里两种防染工艺对照出现，`symmetrical … crisp … sharp`（夹缬）对
+`dot patterns … haloed`（绞缬），模型能学到边界软硬差异——比单写一种更稳；
+③ **史实锚防僭越**：染坊学徒穿素色青衫，画面里穿缬的只有布不是人——天圣年间民间禁缬的规矩落成细节
+（八.五.四宋代史实锚）；
+④ **靛渍做生活细节**：`forearms faintly stained indigo`——职业痕迹一句顶十句形容词，宋韵"有生活气"的微观落点；
+⑤ **青白配色即宋韵**：`blue-and-white two-color scheme` + `the blue silks as the only strong hue`——
+染缬天然的单色性正好充当全画面锚点色，呼应色彩层级"锚点色承载构图"（三.七）；
+⑥ **专属负向三连**：`modern tie-dye T-shirt look, rainbow spiral gradient, glossy satin`——
+分别拦现代扎染、彩虹渐变、亮缎反光三个高频跑偏方向（八.五.二/八.五.四）。
+
+## 二十三、色彩三轮综合（2026-09-23 周三色彩专题三轮新增，来源：月智能"国风关键词四层级"帖 / FlowPix 古风绘画帖 / gemnana 宋韵月夜河景案例 2026-09-23 检索）
+
+### 例24 月夜倚窗示范（A 路线 MJ，框式构图 + 环境浸染 + 静大于动，词数约 130）
+
+**输入**：宋韵月夜，室内一人，要安静有情绪但不表演。
+
+**MJ 提示词**：
+
+```
+cinematic still, a young Song dynasty woman seated by a wooden lattice window at night, the window
+framing a vast moonlit river beyond — intimate interior close view against the wide open water,
+quiet balance between the two; cool blue-grey moonlight cast bathes the whole scene, ambient colour
+wrapping her pale silk beizi and the rice-paper window screen, silver moonlight spilling inward
+onto her cheek and sleeve; she leans slightly toward the window, unaware of being watched, absorbed
+in watching the river flow, downward gaze, subtle composed expression, graceful stillness; classical
+Chinese beauty standards: oval face, phoenix eyes, small rosebud lips, pale luminous skin, not
+modern beauty standards; a single celadon wine cup and a faint incense wisp on the low table beside
+her; eye-level viewpoint, gentle perspective, no wide-angle distortion; muted moon-white, ash-blue
+and pale celadon palette, low saturation, 35mm shallow depth of field, subtle film grain, Chinese
+period drama film still
+--ar 16:9 --raw --s 100 --no text, watermark, influencer face, modern makeup, dynamic action pose, plastic skin, oversaturated colors
+```
+
+**要点**：
+① **框式构图一句话搭好内外对比**：`the window framing a vast moonlit river beyond` +
+   `intimate interior close view against the wide open water`——窗框管"聚焦"，内外景对比管"情绪张力"，
+   这正是 gemnana 月夜河景案例验证过的配方（六.五.三）；
+② **环境浸染句管色调统一**：`cool blue-grey moonlight cast bathes the whole scene, ambient colour
+   wrapping her pale silk beizi`——月光当"光照层"涂到衣料和窗纸上，人与景不用调色自然一致（三.七⑧）；
+③ **沉浸句 + 静大于动双保险**：`unaware of being watched, absorbed in watching the river flow` 让她
+   在"做事"（望江）而不是"摆拍"；`downward gaze, graceful stillness` 收住动作幅度（四.六）；
+④ **古典面孔句直接内嵌**：`not modern beauty standards` 明写，防网红脸不再靠负向单腿走路（四.六）；
+⑤ **器物够用就停**：一只青瓷盏 + 一缕香，闺房景六器物库里只挑两件（五.五）；
+⑥ **视角控制句落地**：`eye-level viewpoint, gentle perspective, no wide-angle distortion`——
+   静谧题材最怕广角透视的戏剧感（六.五.三）；
+⑦ **负向四连**：`influencer face, modern makeup, dynamic action pose` 与正文三处新写法一一对应（八节 2026-09-23 补）。
+
+## 二十四、界画纵深（2026-09-24 周四宋画反推专题新增，来源：FlowPix"古风建筑提示词法"帖 / 承德日报·百度百科李嵩《水殿招凉图》赏析 2026-09-24 检索）
+
+### 例25 荷塘水殿消夏示范（B 路线画意档，界画建筑为骨 + 没骨花卉为肉，词数约 115）
+
+**输入**：宋韵消夏图，画意古画感，要有建筑但别画成仙宫。
+
+**提示词（image-gpt-2 长自然语言）**：
+
+```
+A Southern Song dynasty jiehua ruled-line painting after Li Song's Water Pavilion: an open-sided
+water pavilion with a double-eave cross-ridge roof and restrained flying eaves in a subtle curve,
+standing on stilts above a lotus pond, iron-wire ink lines delineating the layered dougong brackets
+and the hanging-fish charm on the wide gable board; near lotus leaves rendered in boneless color
+washes, blossoms outlined in nail-head rat-tail strokes, a corridor bridge crossing the water below
+with a small sluice gate; two palace ladies lean on vermilion railings watching children launch a
+tiny toy sailboat, figures small and still; distant willows and hills in a single sweep of pale ink
+dissolving into mist; rendered on aged yellowed silk, the palette limited to ivory silk, carbon ink,
+faded vermilion and pale malachite green, large areas of unpainted silk as negative space,
+Southern Song academy style
+```
+
+**要点**：
+① **界画为骨、没骨为肉**：建筑句锁 `jiehua ruled-line` + 铁线描勾斗拱，近景花卉句换 `boneless color
+   washes` + 钉头鼠尾描——单幅画里两种画种各管一段，正是李嵩原作的笔墨结构（style-bible 十六混搭配方）；
+② **四件套齐**：朝代（Southern Song）+ 屋顶形制（double-eave cross-ridge xieshan）+ 材质（aged yellowed
+   silk / vermilion railings）+ 视角（近景平视建筑）——缺项即飘（十六节建筑四件套）；
+③ **飞檐必写 restrained / subtle curve**：不写则翘成燕尾脊，"仙宫感"就是这么来的（十六节飞檐收敛句）；
+④ **垂鱼做考据彩蛋**：`hanging-fish charm on the gable board` 一句自带《营造法式》身份，直接拦"仙侠楼阁"；
+⑤ **人物点景+微事件**：`watching children launch a tiny toy sailboat` 是《水殿招凉图》原画情节——
+   宫装女子"居者=静"（六.五.二），孩童放船是画面里唯一的动（十三.七微事件）；
+⑥ **色调局限句+留白命门句双收尾**：`the palette is limited to…`（三.七）＋ `large areas of unpainted
+   silk as negative space`（九.六），画意档收尾标配。
