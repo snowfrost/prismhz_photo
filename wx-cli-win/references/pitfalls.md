@@ -79,3 +79,46 @@
 
 整个踩坑与验证过程约 **7 小时**（含 PBKDF2 暴力、内存 dump、XOR 破解等无效路径）。
 直接按本文档操作，从零到「拿到群聊天纯文本」约 **15 分钟**。
+
+## 6. V2 图片解密（2026-10-01 攻克）
+
+### 6.1 别把签名当"16 字节头"
+早期误判文件头是 16 字节（`07 08 56 32 | 08 07 00 04 | <u32> | <u32>`），
+于是 AES 段起点算成 offset 16，整体错位一个字块，AES-ECB/CBC 各变体全试无果。
+**真身**：签名只占 6 字节，`aes_size`/`xor_size` 各 4 字节，1 字节标志，
+**密文从 offset 15 开始**。
+
+### 6.2 AES 段长度少算一块
+密文长度 = `(aes_size // 16 + 1) * 16`。`aes_size` 实测恒为 1024（16 的倍数），
+PKCS7 会**多补一整块**。写成 `aes_size` 或 `ceil(aes_size/16)*16` 都会整体错位。
+
+### 6.3 分隔尾不是全局常量
+`15+N` 处的 16 字节分隔尾，老资料写死 `56fbf4...`，实测 4.1.x 已变。
+**按长度跳过，不要硬编码。**
+
+### 6.4 别用 2 字节魔数做密钥判据
+同一账号下所有缩略图的首密文块**完全相同**（ECB + 相同 JPEG 头），
+用 2 字节魔数判据退化成 1/65536。实测扫 5 万个候选时报 `offset=6 → BMP` 假命中，
+验证发现明文 filesize=28 亿、width=636504492。**至少用 3 字节**。
+
+### 6.5 aes_key 是 ASCII 不是 hex 解码
+`md5(f"{code}{wxid}").hexdigest()[:16]` 取**前 16 个 ASCII 字符**当 16 字节密钥，
+不是 `bytes.fromhex()` 后的 8 字节。弄错会浪费半小时。
+
+### 6.6 wxid 必须去后缀
+`code` 要配**清洗过的 wxid**：`snowfrostsky_da31 → snowfrostsky`。
+带后缀派生出来的 key 解不开任何文件。
+
+### 6.7 wxam cfg 参数不能为 NULL
+`wxam_dec_wxam2pic_5` 第 5 个参数必须给有效指针（≥32 字节缓冲区，
+首 4 字节 int 填格式）。传 NULL 直接 `access violation reading 0x0`。
+第一次 25 个样本全崩，就是这个原因。
+
+### 6.8 别用 RadiumWMPF 里的 VoipEngine.dll
+`Roaming\Tencent\WeChat\XPlugin\...\RadiumWMPF\runtime\VoipEngine.dll`
+是小程序运行时的 15MB 版本。要用**主程序安装目录**下的 20MB 版本。
+
+### 6.9 建目录报 WinError 123
+群名片用 `room_map()` 解析，结果可能夹带控制字符（正则边界所限）。
+直接拿来 `os.makedirs` 会报"文件名、目录名或卷标语法不正确"。
+**过滤 `isprintable()` 并剔除 `\/:*?"<>|`。**
