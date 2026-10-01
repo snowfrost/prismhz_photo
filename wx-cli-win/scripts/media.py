@@ -2,29 +2,21 @@
 """media.py — 微信 4.x 本地图片缓存解密与导出
 
 实测结论 (微信 4.1.15.13, 2026-10-01):
-  * 磁盘缓存位置: <xwechat_files>/msg/attach/<md5(username)>/<YYYY-MM>/Img/
-  * 文件名 == md5(图片内容) 的**第三种** hash, 无法从 XML 直接推导
-      正确姿势: 查解密后的 db_storage/hardlink/hardlink.db
-               表 image_hardlink_info_v4(md5, file_name, file_size, dir1, dir2)
-               目录字段过 dir2id(rowid -> 'YYYY-MM') 还原
-               路径 = msg/attach/<dir2id[dir2]>/<dir2id[dir1]>/Img/<file_name>
-               (注意是 dir2 在前、dir1 在后)
-  * 后缀与加密形态:
-       _W.dat / _t_W.dat  → XOR 0xA0, 解出的就是 JPEG (占绝大多数, 实测 7052/9984)
-       _NW.dat            → 明文, 无需处理
-       _h.dat             → V2 容器 (头 07 08 56 32), 未能解出, 见下
-       (none) / 其他      → 明文或未识别
-  * 图片自身的 md5 与文件的 md5_hash 字段一致, 可直接与消息 XML 的 md5="..." 对上
+  * 磁盘缓存位置: <xwechat_files>/<账号>/msg/attach/<md5(会话username)>/<YYYY-MM>/Img/
+  * 文件名就是消息 XML 里的 md5 (CDN md5), 可直接拼; hardlink 库仅作兜底
+      表 image_hardlink_info_v4(md5, file_name, file_size, dir1, dir2)
+      路径 = msg/attach/<dir2id[dir1]>/<dir2id[dir2]>/Img/<file_name>
+      (dir1 是会话 hash 目录、dir2 是月份, 顺序写反 100% 找不到且不报错)
+  * 三者关系:
+      {md5}.dat      显示版      收到即下载
+      {md5}_h.dat    高清原图    只有点开过大图才有
+      {md5}_t.dat    小缩略图    始终有
+  * 加解密 -> 见 v2dec.py (V0/V1/V2 三代, 密钥离线派生)
+  * wxgf 转码 -> 见 wxam.py (调微信自带 VoipEngine.dll)
 
-仍未攻克:
-  _h.dat 的 V2 容器格式 (2852 个)。已知:
-    - 16 字节头 + 密文, 密文区首块紧跟 offset 16
-    - 用 XML 里的 aeskey 做 AES-ECB / CBC(zero|head|self) 在 offset 0..64 全试, 无命中
-    - 也不等于全文件 XOR 0xA0
-    可能还需要第二层包装。_h 是"高清原图", 缩略图(_W)已够内容识别用途。
-
-仅用于处理本人微信数据。
+本模块保留早期的 XOR/hardlink 兜底逻辑; 新代码请优先用 v2dec + wxam。
 """
+
 from __future__ import annotations
 
 import os
@@ -144,9 +136,17 @@ def decrypt_file(path: str, prefer_xor: bool = True) -> tuple[bytes | None, str]
     if sniff_ext(raw):
         return raw, "plain"
     if raw[:4] == V2_MAGIC:
-        pt = xor_decrypt(raw)
-        if sniff_ext(pt):
-            return pt, "xor"
+        # V2 已攻克: 见 v2dec.decrypt()。这里保留兜底, 优先用 v2dec。
+        try:
+            from v2dec import decrypt as _v2, auto_key as _ak
+        except ImportError:
+            return None, "v2-need-v2dec"
+        try:
+            pt = _v2(raw, *_ak(os.environ.get("WX_USER_DIR", "."))[:2])
+        except Exception:
+            return None, "v2-no-key"
+        if pt:
+            return pt, "v2"
         return None, "v2-unsolved"
     if prefer_xor:
         pt = xor_decrypt(raw)
