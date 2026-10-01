@@ -1,7 +1,7 @@
 # wx-cli-win
 
 在 Windows 上读取**本人**微信本地数据库的完整链路：抓密钥、全库解密、
-聊天记录查询、群聊内容提取、图片从缓存还原导出。
+聊天记录查询、群聊内容提取、图片全格式解密导出（V0/V1/V2 + wxgf）。
 
 数据全程留在本机，不上传任何服务器。
 
@@ -12,7 +12,7 @@
 | 适用微信版本 | 4.0.x ～ 4.1.9 | **4.1.10+（实测 4.1.15.13）** |
 | 原理 | 进程内存扫描 raw key | 硬件断点抓 `setCipherKey` passphrase → PBKDF2 派生 |
 | 前置 | 管理员跑 `wx init` | 用户重新扫码登录一次 |
-| 覆盖 | 上游 CLI 命令集 | 全库解密 + 任意 SQL + 图片还原 |
+| 覆盖 | 上游 CLI 命令集 | 全库解密 + 任意 SQL + 图片全解密 |
 
 微信 ≥ 4.1.10 后不再在内存中缓存明文 raw key，路线 A 必然失败，请直接走路线 B。
 
@@ -51,13 +51,20 @@ python chat.py pics  "群名" --days 30 --export --out pics
 本包用硬件断点在 `setCipherKey` 处截获 passphrase，再按 SQLCipher 4 规则派生，
 `28/28` 个库全部解密通过、HMAC 校验全绿。
 
-图片还原也打通了，这是多数同类方案没做到的部分：
+图片**全格式**解密也打通了，四块拼图：
 
-- **磁盘文件名解谜**：既不是 XML 里的 `md5=` 也不是 `aeskey=`，得查
-  `hardlink.db` 的 `image_hardlink_info_v4` 表，再按 `dir1 → dir2` 顺序拼路径
-  （顺序写反会 100% 找不到文件，且不报错）
-- **XOR 密钥**：7052 张缩略图统一用 `0xA0` 单字节异或，解出即标准 JPEG
-- 9984 张索引里 7074 张可还原，剩余 2852 张属未攻克的 `_h.dat` V2 容器
+- **V2 格式**：`07 08 56 32 08 07` 签名 + `aes_size`/`xor_size` 双长度字段，
+  密文从 **offset 15** 起（`(aes_size//16+1)*16` 字节），中间明文，
+  尾部 `xor_size` 字节单字节 XOR。总长公式逐字节验证成立。
+- **AES 密钥离线派生**：`code` 藏在 MMKV 统计文件名里，
+  `aes_key = md5(f"{code}{wxid}").hexdigest()[:16]`，`xor_key = code & 0xFF`。
+  **不碰微信进程、不扫内存**，微秒级验证。
+- **wxgf 转码**：V2 解出的显示版/高清图多为微信自研 `wxgf` 格式，
+  调主程序目录下的 `VoipEngine.dll` 的 `wxam_dec_wxam2pic_5` 转 JPEG。
+- **三种质量档**：`{md5}.dat` 显示版 / `_h` 高清原图 / `_t` 缩略图。
+  「图很糊」多半是微信压根没下载过高清原图，不是解密问题。
+
+实测某群 **4728 张图 100% 解密成功、0 张损坏**。
 
 ## 目录
 
@@ -72,12 +79,14 @@ python chat.py pics  "群名" --days 30 --export --out pics
 │   ├── chat.py                 # 统一查询入口
 │   ├── wxlib.py                # 公共库
 │   ├── media.py                # 图片缓存解密与导出
+│   ├── v2dec.py                # V2/V1/V0 解密 + 密钥离线派生
+│   ├── wxam.py                 # wxgf → JPEG/PNG/GIF 转码
 │   ├── install.ps1             # 路线 A 安装
 │   └── doctor.ps1              # 路线 A 自检
 └── references/
     ├── wechat4-crypto.md       # 加密体系与断点定位法
     ├── message-schema.md       # 消息表结构
-    ├── wechat4-media.md        # 图片缓存与还原
+    ├── wechat4-media.md        # 图片体系全解（V2 格式/密钥派生/wxgf）
     ├── pitfalls.md             # 踩坑录
     └── agent-skill.md          # 上游 wx-cli 参考
 ```
