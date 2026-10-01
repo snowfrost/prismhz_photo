@@ -1,10 +1,10 @@
 ---
 name: wx-cli-win
-description: Windows 上读取本人微信本地数据库的完整链路：抓密钥、全库解密、聊天记录查询、群聊内容提取、图片从缓存解密导出。适用两类版本——路线A 走 jackwener/wx-cli（微信 4.0.x～4.1.9），路线B 走自研链路「硬件断点抓 passphrase + PBKDF2 派生 + SQLCipher 全库解密」（微信 4.1.10+，实测 4.1.15.13，28/28 库解密通过）。支持列出会话、按群/联系人导出可读聊天记录、活跃度统计、链接与文件分享清单、图片索引与图片还原、群成员与备注映射。当用户要求查看微信聊天记录、搜聊天关键词、了解某个群最近聊了什么、统计聊天数据、导出聊天档案、找出群里分享过的提示词/工具/链接/文件、或提取群里的图片时，使用本 skill。注意：路线B 首次取密钥需用户配合重新扫码登录一次；图片导出依赖本机已缓存的缩略图。仅限处理用户本人的微信本地数据，须遵守法律法规与微信用户协议。
+description: Windows 上读取本人微信本地数据库的完整链路：抓密钥、全库解密、聊天记录查询、群聊内容提取、图片从缓存解密导出。适用两类版本——路线A 走 jackwener/wx-cli（微信 4.0.x～4.1.9），路线B 走自研链路「硬件断点抓 passphrase + PBKDF2 派生 + SQLCipher 全库解密」（微信 4.1.10+，实测 4.1.15.13，28/28 库解密通过）。支持列出会话、按群/联系人导出可读聊天记录、活跃度统计、链接与文件分享清单、图片索引与图片还原、群成员与备注映射。当用户要求查看微信聊天记录、搜聊天关键词、了解某个群最近聊了什么、统计聊天数据、导出聊天档案、找出群里分享过的提示词/工具/链接/文件、或提取群里的图片时，使用本 skill。注意：路线B 首次取密钥需用户配合重新扫码登录一次；图片导出支持 V2/V1/V0 三代格式全解密（含 wxgf 转码），依赖本机已缓存的图片文件。仅限处理用户本人的微信本地数据，须遵守法律法规与微信用户协议。
 license: Apache-2.0
 metadata:
   author: snowfrost
-  version: "2.1.0"
+  version: "2.2.0"
   display_name: 微信数据查询 CLI（Windows）
 ---
 
@@ -97,36 +97,87 @@ python chat.py pics  "AI群" --days 30 --export --out pics   # 真正解密导�
 | 「群里推荐了什么好东西」 | `shares` 拿链接+文件清单 → 分类标注 → 补标题/时间/分享人 |
 | 「谁谁发了什么图」 | `pics --export` 还原图片 → 按时间/发送人归档 |
 
-## 图片还原（实测已打通）
+## 图片还原（V2 已完整攻克，可还原率 100%）
 
-这是本 skill 相对通用方案的关键增量。链路：
+链路：
 
 ```
-消息 XML 的 md5="..."  →  hardlink.db 的 image_hardlink_info_v4  →  磁盘 .dat  →  XOR 0xA0  →  JPEG
+消息 XML 的 md5="..."  →  磁盘 .dat（三种质量档）  →  decrypt()  →  sniff()  →  (wxgf? 转码)  →  JPEG
 ```
 
-实测覆盖（本机 8771 张有效索引）——**可还原率 71.7%**：
+### V2 格式与密钥（关键突破）
 
-| 后缀 | 数量 | 形态 | 处理 |
+3.x/4.x 有三代加密，按文件头 6 字节签名区分：
+
+| 版本 | 头签名 | 方案 | 密钥 |
 |---|---|---|---|
-| `_t_W.dat` / `_W.dat` | 6288 | **XOR 0xA0** | 解出即标准 JPEG，PIL 可直接读 |
-| `_NW.dat` | 22 | 明文 | 本身已是 JPEG，直接复制 |
-| 无后缀 `{hash}.dat` / `_h.dat` | 2461 | V2 容器（头 `07 08 56 32`） | **暂未解出**，见下 |
+| V0 | 无 | 整文件单字节 XOR | 首字节 ^ 0xFF |
+| V1 | `07 08 56 31 08 07` | AES-128-ECB 头 + XOR 尾 | 固定 `cfcd208495d565ef` |
+| **V2** | `07 08 56 32 08 07` | AES-128-ECB 头 + XOR 尾 | **账号级，离线派生** |
 
-要点：
+V2 文件结构（**不是"16 字节头"**，这是早期踩过的误判）：
+
+```
+偏移  长度  内容
+0     6     魔数 07 08 56 32 08 07
+6     4     aes_size (u32 LE)   实测恒 0x400 = 1024
+10    4     xor_size (u32 LE)
+14    1     标志字节（恒 0x01）
+15    N     AES-128-ECB 密文，N = (aes_size // 16 + 1) * 16
+15+N  M     中间明文（缩略图为 0，高清图为一大段）
+末尾  xor_size  单字节 XOR 段
+```
+
+总长公式精确成立：`file_size == 15 + (aes_size//16+1)*16 + raw + xor_size`
+
+**密钥完全离线派生，不需要碰微信进程**：
+
+```python
+code    = MMKV 统计文件名里的数字     # %APPDATA%\Tencent\xwechat\net\kvcomm\key_<code>_*.statistic
+wxid    = 数据目录名去掉 _xxxx 后缀   # snowfrostsky_da31 -> snowfrostsky
+aes_key = md5(f"{code}{wxid}").hexdigest()[:16].encode()   # 16 个 ASCII 字符
+xor_key = code & 0xFF                 # 本机实测 0xA0
+```
+
+`v2dec.auto_key(数据根目录)` 会自动扫 MMKV → 遍历 code×wxid → 用真实 V2 文件做 oracle 验证，
+一次 AES 单块运算即可确认，微秒级。
+
+### 三种质量档（同一张图最多三份）
+
+| 文件名 | 质量 | 什么时候存在 |
+|---|---|---|
+| `{md5}.dat` | 显示版（聊天窗里看到的） | 收到消息即下载 |
+| `{md5}_h.dat` | **高清原图**（2MB 级） | **只有你点开过大图才有** |
+| `{md5}_t.dat` | 小缩略图（120×180 级） | 始终有 |
+
+实测某群 4728 张：仅缩略图 4166 / 显示版 329 / 高清原图 237。
+**"图片很糊"多数不是解密问题，而是微信压根没下载过高清原图**——
+`msg/attach`、hardlink 索引、`cache/*/Message/*/Thumb` 三个地方都查过才能下这个结论。
+
+### wxgf 转码（显示版/高清图常是这个格式）
+
+V2 解出来的显示版与高清图，很大比例是微信自研的 **wxgf**（头 `wxgf`），不是 JPEG。
+社区没有纯 Python 解码器，但微信自带：**主程序安装目录**下的 `VoipEngine.dll`，
+导出函数 `wxam_dec_wxam2pic_5`，ctypes 直接调（见 `scripts/wxam.py`）。
+
+⚠ 三个坑：
+1. 第 5 个参数 cfg **必须是有效指针**，传 NULL 直接 access violation；
+   缓冲区至少 32 字节，首 4 字节 int 填格式：`0=jpeg 1/2=png 3=gif`
+2. 必须用**主程序安装目录**那个约 20MB 的 DLL；
+   `Roaming\Tencent\WeChat\XPlugin\...\RadiumWMPF\runtime\VoipEngine.dll` 是小程序运行时版本，别用错
+3. 并发调用要加锁 + DLL 单例，否则 LoadLibrary 互相踩崩（表现为"图片全部 404"）
+
+### 其它要点
 
 - 缓存位置 `<xwechat_files>/<账号>/msg/attach/<md5(会话名)>/<YYYY-MM>/Img/`
-- 磁盘文件名是**第三种 hash**，不能从 XML 的 md5/aeskey 推导，**必须查 hardlink 库**
-- 路径拼接顺序是 `attach/<dir2id[dir1]>/<dir2id[dir2]>/Img/<file>`——
-  `dir1` 是会话 hash 目录，`dir2` 是月份。**写反会 100% 找不到文件且不报错**
-- hardlink 索引含约 0.6% 已失效条目（文件已被清理），`load_index` 默认按磁盘存在性过滤
-- 只能还原**本机已缓存**的缩略图。手机端查看过的图本地没缓存，会显示"未命中"
-- 后缀与形态**严格一一对应**，不用试错：`_W`/`_t_W` 必是 XOR，`_h`/无后缀必是 V2
+- **会话目录名 = md5(会话 username)**，知道群名就能直接算出目录，不必查 hardlink
+- 磁盘文件名就是消息 XML 里的 `md5`（CDN md5），**可以直接拼文件名**；
+  hardlink 库只是兜底（`dir1` 是会话 hash 目录、`dir2` 是月份，**顺序写反 100% 找不到且不报错**）
+- 只能导出**本机已缓存**的图。手机端看过、电脑端没点开过的，本地无缓存
+- 按发送人归档时注意 `Name2Id` 的**同人双身份**（微信号一个 rowid、wxid 另一个），需合并；
+  群名片用 `room_map()`，但解析结果可能夹带控制字符，**入库/建目录前必须过滤不可打印字符**
+  （否则 `os.makedirs` 报 `WinError 123`）
 
-`_h.dat` / 无后缀的 V2 容器仍未攻克（约 2461 张，占 28%），已知信息（避免重复劳动）：
-16 字节头 `07 08 56 32 | 08 07 00 04 | <per-file u32> | <per-file u32>`，
-用 XML 里的 `aeskey` 做 AES-ECB / CBC(zero|head|self) 在 offset 0…64 全试无命中，
-也不等于全文件 XOR 0xA0。可能还需第二层包装。**缩略图已够内容识别用途，优先用 `_W` 那批。**
 细节见 `references/wechat4-media.md`。
 
 ## 路线 A · wx-cli 原路线（微信 ≤ 4.1.9）
@@ -182,12 +233,14 @@ wx sns-feed | wx biz-articles        # 朋友圈 / 公众号缓存
 - `chat.py` — 统一查询入口（list / dump / stats / shares / pics）
 - `wxlib.py` — 公共库：目录定位、内容解码、跨库定位消息表、群成员映射
 - `media.py` — 图片缓存解密与导出（XOR 0xA0 + hardlink 索引还原路径）
+- **`v2dec.py`** — V2/V1/V0 解密器 + 密钥离线派生（`auto_key()` 一条龙）
+- **`wxam.py`** — wxgf(WxAM) → JPEG/PNG/GIF 转码（调微信自带 `VoipEngine.dll`）
 - `install.ps1` / `doctor.ps1` — 路线 A 安装与环境自检
 
 `references/`
 
 - `wechat4-crypto.md` — 加密体系：三层密钥派生、HMAC 校验、断点 RVA 定位法
 - `message-schema.md` — 消息表结构、`local_type` 复合值、`Name2Id` 陷阱、字段解码
-- `wechat4-media.md` — 图片缓存目录布局、三种后缀、V2 容器已知情报
+- `wechat4-media.md` — 图片缓存目录布局、三种质量档、V2 格式与密钥派生全解
 - `pitfalls.md` — 完整踩坑录（**必读**，能省几小时）
 - `agent-skill.md` — 上游 wx-cli 自带 Agent 参考
