@@ -1,135 +1,198 @@
-# 微信 4.x 图片缓存与还原（实测 4.1.15.13）
+# 微信 4.x 图片体系全解（V2 已攻克）
 
-> 2026-10-01 在 Windows + 微信 4.1.15.13 上实测通过。所有结论均来自本机真实
-> 9984 条 `image_hardlink_info_v4` 索引的批量验证，非推测。
+> 实测环境：微信 4.1.15.13 / Windows 11 / 账号 snowfrostsky
+> 验证规模：某群 4728 张图 **100% 解密成功**，0 张损坏
 
-## 一、缓存目录布局
+## 一、图片存在哪
 
-```
-<xwechat_files>/<账号目录>/
-  ├── db_storage/
-  │   ├── hardlink/hardlink.db          ← 关键：图片索引
-  │   └── message/message_0..4.db       ← 消息正文
-  └── msg/
-      ├── attach/<md5(会话名)>/<YYYY-MM>/Img/    ← 图片缓存
-      ├── attach/<md5(会话名)>/<YYYY-MM>/Rec/    ← 语音缓存
-      └── file/<YYYY-MM>/<真实文件名>            ← 文件（完全明文，含原扩展名）
-```
+| 媒体 | 路径 | 命名 |
+|---|---|---|
+| 聊天图片 | `msg/attach/<md5(会话username)>/<YYYY-MM>/Img/*.dat` | 内容 md5，后缀区分质量档 |
+| 聊天气泡缓存 | `cache/<YYYY-MM>/Message/<md5(会话username)>/Bubble/<md5>_b.dat` | md5 |
+| 聊天缩略图 | `cache/<YYYY-MM>/Message/<md5(会话username)>/Thumb/<md5>` | md5 |
+| 朋友圈浏览缓存 | `cache/<YYYY-MM>/Sns/Img/<两位hex>/<md5>` | md5，无扩展名 |
+| 视频 | `msg/video/...` | md5 |
 
-要点：
+**会话目录名 = md5(会话 username)**，这一点很重要：知道群名（`xxx@chatroom`）
+就能直接算出目录，不必查 hardlink 数据库。
 
-- `attach/` 下的一级目录名 = `md5(username)`，与消息表后缀同一个值。
-  群 `56249627446@chatroom` → `fedae05b793451df12f884b121931b99`。
-- `file/` 下的文件**是明文的**，且保留真实文件名（如 `0. 民事起诉状260904.pdf`）。
-  要拿群里分享的文件，直接读这个目录最快，不用解密。
-- 图片缓存只保留**本机加载过的**缩略图。手机端看过、电脑端没点开的图不会落到本地。
+## 二、三代加密：V0 / V1 / V2
 
-## 二、磁盘文件名之谜
+按文件头 6 字节签名区分：
 
-图片消息 XML 里有 `md5=` 和 `aeskey=` 两个 32 位 hex 字段，但**都不是**磁盘文件名。
+| 版本 | 头签名 | 方案 | 密钥 |
+|---|---|---|---|
+| V0 | 无签名 | 整文件单字节 XOR | `首字节 ^ 0xFF`（JPEG 首字节恒 FF） |
+| V1 | `07 08 56 31 08 07` | AES-128-ECB 头 + XOR 尾 | 固定 `cfcd208495d565ef` |
+| **V2** | `07 08 56 32 08 07` | AES-128-ECB 头 + XOR 尾 | **账号级，离线派生** |
 
-实测：4618 个群内图片 md5 ∩ 3444 个缓存文件 stem = **0**；
-4618 个 aeskey ∩ stem = **0**。又试了 `md5(md5)` / `md5(aeskey)` /
-`md5(md5+aeskey)` / `md5(aeskey+md5)` / `md5(房间号+md5)` 等 8 种组合，全部 0 命中。
+实测 4.1.13～4.1.15：朋友圈缓存 184/184 全是 V2；聊天图片抽样 400 个中 367 个是 V2。
+**V2 是绝对主流。**
 
-**正确解法：查 `db_storage/hardlink/hardlink.db`。**
-
-```sql
-CREATE TABLE dir2id(username TEXT PRIMARY KEY);           -- rowid -> 'YYYY-MM' 或会话hash
-CREATE TABLE image_hardlink_info_v4(
-    md5_hash INTEGER, md5 TEXT, type INTEGER, file_name TEXT,
-    file_size INTEGER, modify_time INTEGER, dir1 INTEGER, dir2 INTEGER,
-    _rowid_ INTEGER PRIMARY KEY ASC, extra_buffer BLOB);
-```
-
-还原路径：
+## 三、V2 格式逐字节
 
 ```
-路径 = <attach>/{dir2id[dir1]}/{dir2id[dir2]}/Img/{file_name}
+偏移   长度   内容
+0      6      魔数 \x07\x08V2\x08\x07
+6      4      aes_size (u32 LE)   —— 头部被 AES 加密的明文长度（实测恒 0x400 = 1024）
+10     4      xor_size (u32 LE)   —— 尾部被单字节 XOR 的明文长度
+14     1      标志字节（实测恒 0x01）
+15     N      AES-128-ECB 密文，N = (aes_size // 16 + 1) * 16
+15+N   M      中间明文（缩略图为 0，高清图为一大段）
+末尾   xor_size  单字节 XOR 段
 ```
 
-**顺序是 `dir1` 在前、`dir2` 在后**。实测验证：`dir1,d2` 顺序 400/400 命中，
-`d2,dir1` 顺序 0/400。写反了不会报错，只会全部 `missing`——
-这是最容易卡住的一步。
-
-`dir1` 指向会话 hash 目录，`dir2` 指向 `YYYY-MM` 月份目录（实测 319 条 dir2id）。
-
-## 三、四种后缀与加密形态
-
-有效索引 8771 张（另有 55 条索引指向已被清理的缓存文件，`load_index` 默认过滤）：
-
-| 后缀 | 数量 | 占比 | 形态 | 处理 |
-|---|---|---|---|---|
-| `_t_W.dat` | 4650 | 53.0% | XOR | `bytes(b ^ 0xA0 for b in data)` |
-| `_W.dat` | 1638 | 18.7% | XOR | 同上 |
-| 无后缀 `{hash}.dat` | 1787 | 20.4% | V2 容器 | **未攻克** |
-| `_h.dat` | 674 | 7.7% | V2 容器 | **未攻克** |
-| `_NW.dat` | 22 | 0.3% | 明文 | 文件头已是 `ff d8 ff e0`（JPEG），直接复制 |
-
-**可还原率 71.7%**（6288/8771），分层抽样各 60 张验证：`_W` / `_t_W` → 100% `xor`，
-`_h` / 无后缀 → 100% `v2-unsolved`，`_NW` → 100% `plain`。后缀与形态严格一一对应。
-
-### XOR 密钥是全局常量
-
-对全部 9984 个历史索引文件逐个暴力 1..255 求解，命中结果**全部集中在 0xA0**（7052 次），
-无第二个密钥。所以：
+**总长公式精确成立**（三张不同大小的图逐字节验证）：
 
 ```
-5f 78 5f 40 ...  ^ 0xA0  =  ff d8 ff e0 ...   → 标准 JPEG
+file_size == 15 + (aes_size // 16 + 1) * 16 + raw_len + xor_size
 ```
 
-解出的 JPEG 经 PIL 验证可正常 `load()`，尺寸/格式均正确（如 290×170、163×290、120×120）。
-
-### V2 容器（未解出，含 `_h.dat` 与无后缀约 2852 张）
-
-16 字节头结构：
-
-```
-07 08 56 32 | 08 07 00 04 | <per-file u32> | <per-file u32 or 常量>
-   magic      恒定         随文件变化         _h 恒为 0xDB000010
-```
-
-- `_t` 与 `_h` 的 `[12:16]` 各自恒定，但两者不同 → 可能是 flag/类型
-- `[4:8]` 在全部文件里恒为 0x04000708，跟内容无关，不是长度
-- 无后缀与 `_h` 是**同一容器**（前缀 16 字节一致），不是两种格式
-
-已排除的路径（勿重复）：
-
-- 用 XML 的 `aeskey` 做 AES-ECB，offset 0…64 全试 → 无命中
-- 同上但 CBC(zero IV / 文件头 IV / 自引用 IV) → 无命中
-- 全文件 XOR 0xA0 → 无命中
-- 文件头 12 字节 = AES-ECB(aeskey, counter) → 无命中
-
-踩过的坑：一次性扫 offset 0…64 + 4662 个 aeskey 时曾报过一次
-`offset=6 → 'BM'` 命中，验证发现明文 `filesize` 字段是 28 亿、
-`width=636504492`，明显是假阳性（"BM" 只有 2 字节，随机碰撞概率约 1/65536，
-在 30 万次尝试里必然出现）。**判 JPEG 要认 3 字节 `ff d8 ff`，别信 2 字节魔数。**
-
-结论：V2 容器装的是高清原图，缩略图 `_W` / `_t_W` 已够内容识别。
-想拿高清图需继续逆向第二层容器，收益/成本比低，暂不投入。
-
-## 四、批量导出代码
-
-`scripts/media.py` 已封装：
+解密 = 三段拼接：
 
 ```python
-import media, wxlib
-
-dec = wxlib.find_dec_dir()
-stat = media.export(dec, "out/pics", max_n=500)
-# {'plain': 1, 'xor': 399, 'v2-unsolved': 2, 'missing': 0, 'exported': 400, 'indexed': 8822}
+plain = AES_ECB_dec(data[15 : 15+N])[:aes_size] + raw + bytes(b ^ xor_key for b in tail)
 ```
 
-或走命令行：
+### ⚠ 踩过的坑（别再踩）
 
-```bash
-python chat.py pics "群名" --days 30 --export --out pics
+1. **不是"16 字节头"**。早期误判成 `07 08 56 32 | 08 07 00 04 | <u32> | <u32>` 共 16 字节，
+   于是 AES 段起点算成 offset 16，整体错位一个字块，怎么试都不对。
+   实际签名占 6 字节，**密文从 offset 15 开始**。
+2. **AES 密文长度是 `(aes_size//16 + 1)*16`，不是向上取整**。
+   `aes_size` 恰为 16 的倍数（实测恒 1024）时，PKCS7 会**多补一整块**（16 字节）。
+   少算这一块，后面全部对不上。
+3. **`15+N` 处的 16 字节"分隔尾"不是全局常量**。老资料写 `56fbf4...`，
+   实测 4.1.x 已变。按长度跳过即可，**不要硬编码**。
+4. 用 XML 里的 `aeskey` 做 AES-ECB / CBC 各种变体都是死路——**那把 key 跟 V2 无关**。
+
+## 四、密钥离线派生（核心）
+
+**密钥不落在磁盘上，但可以从 MMKV 文件名离线派生**，完全不需要扫内存 / 挂调试器：
+
+```
+code  = MMKV 统计文件名里的数字
+        路径：%APPDATA%\Tencent\xwechat\net\kvcomm\key_<code>_<...>.statistic
+        旧版：%APPDATA%\Tencent\WeChat\<n>\kvcomm\
+              还有 \Tencent\xwechat\radium\ilink\...\kvcomm\
+        正则：key_(\d+)_
+wxid  = 数据目录名去掉 _xxxx 后缀          # snowfrostsky_da31 -> snowfrostsky
+
+aes_key = md5(f"{code}{wxid}").hexdigest()[:16].encode()   # 16 个 ASCII 字符！
+xor_key = code & 0xFF                                      # 本机实测 0xA0
 ```
 
-产出 `index.tsv`（time / who / md5 / thumbsize / local_file / form）+ 还原出的图片文件。
+### ⚠ 两个魔鬼细节
 
-## 五、把图与发送人对应起来
+1. **`aes_key` 是 hexdigest 的前 16 个 ASCII 字符直接当 16 字节密钥用**，
+   不是 hex 解码后的 8 字节。想当然解码，会浪费半小时。
+2. **wxid 必须去掉 `_xxxx` 后缀**，否则派生出来的 key 解不开任何文件。
 
-`index.tsv` 里的 `who` 来自 `Name2Id` 映射。注意同人双身份问题：
-`real_sender_id` 可能落在同一人的多个 rowid 上，需要按 wxid 合并，
-否则会出现"某人一张图都没有"的假象。
+### 校验方法
+
+拿任一 V2 文件的 `data[15:31]` 做一次 ECB 解密，明文命中图像魔数即为正确：
+
+```
+FF D8 FF     JPEG
+89 50 4E 47  PNG
+47 49 46 38  GIF
+52 49 46 46  RIFF (WebP)
+77 78 67 66  wxgf
+```
+
+一次 AES 单块运算，微秒级。遍历 `code × wxid` 通常几秒内收敛。
+
+### ❗ 判据至少 3 字节
+
+用 2 字节魔数（如 `89 50`）会踩假阳性：**同一账号下所有缩略图的首密文块完全相同**
+（ECB + 相同 JPEG 头），判据退化成 1/65536，扫 5 万个候选几乎必然误报。
+实测踩过：报 `offset=6 → BMP` 命中，验证发现明文 filesize=28 亿、width=636504492。
+
+### 本机实测值（微信 4.1.15.13）
+
+```
+code    = 84645280
+wxid    = snowfrostsky
+aes_key = 2b295d0b959325f7
+xor_key = 0xA0
+```
+
+只作核对用，换机/换号请走 `v2dec.auto_key()` 自动推导。
+
+## 五、三种质量档（同一张图最多三份）
+
+| 文件名 | 质量 | 什么时候存在 | 实测占比 |
+|---|---|---|---|
+| `{md5}.dat` | 显示版（聊天窗里看到的） | 收到消息即下载 | 7% |
+| `{md5}_h.dat` | **高清原图**（2MB 级） | **只有你点开过大图才有** | 5% |
+| `{md5}_t.dat` | 小缩略图（120×180 级，2～6KB） | 始终有 | 88% |
+
+"图片很糊"**多数不是解密问题，而是微信压根没下载过高清原图**。
+要下这个结论，需确认以下三处都没有：
+`msg/attach` 的 `_h`/无后缀、hardlink 索引的备选落点、`cache/*/Message/*/Thumb`。
+
+## 六、wxgf → JPEG 转码
+
+V2 解出来的**显示版与高清图，很大比例是 wxgf**（头 `wxgf`），不是 JPEG。
+它不是改头的 GIF，社区没有纯 Python 解码器——但微信自带：
+
+- DLL：**主程序安装目录** `<微信安装目录>\<版本>\VoipEngine.dll`（约 20MB）
+  ❗ 别用 `Roaming\Tencent\WeChat\XPlugin\...\RadiumWMPF\runtime\VoipEngine.dll`
+  （小程序运行时版本，15MB，签名/行为不一致）
+- 导出函数：`wxam_dec_wxam2pic_5`
+- 签名：`(int64 in_ptr, int in_len, int64 out_ptr, int* out_size, int64 cfg_ptr) -> int64`
+
+```python
+cfg = create_string_buffer(32)
+cast(cfg, POINTER(c_int))[0] = 0        # 0=jpeg 1/2=png 3=gif
+out = create_string_buffer(52 * 1024 * 1024)
+ret = fn(addr(inb), len(data), addr(out), byref(out_sz), addr(cfg))
+```
+
+⚠ 三个坑：
+1. **cfg 不能传 NULL**，传了直接 access violation（第一次就是这么崩的）。
+   缓冲区至少 32 字节，首 4 字节 int 填格式。
+2. 必须用主程序目录那个 DLL，别用 RadiumWMPF 里的。
+3. 并发要加锁 + DLL 单例，否则 LoadLibrary 互相踩崩，表现为"图片全部 404"，
+   而 curl 串行测试一切正常，非常迷惑人。
+
+实测：71KB wxgf → JPEG 152KB / PNG 1.9MB / GIF 1.0MB。
+**默认取 mode=0（jpeg）**，体积与画质最平衡。
+
+## 七、按发送人归档
+
+```
+message_<N>.db 的 Msg_<md5> 的 real_sender_id
+        ↓
+  同库 Name2Id.rowid  →  username
+        ↓
+  contact 表 remark/nick_name（备注优先）
+        ↓
+  群 chat_room.ext_buffer 的群名片（room_map()，优先度最高）
+```
+
+⚠ 注意：
+1. **群的 `Msg_` 表可横跨多个 `message_N.db`**（实测某群横跨 message_0 与 message_4），
+   只扫一个库会漏掉大部分图片消息。用 `wxlib.locate_table()`。
+2. **`Name2Id` 同人双身份**：同一自然人可能占两个 rowid（微信号一个、wxid 一个），
+   统计时要合并。
+3. **群名片解析结果可能夹带控制字符**（`room_map()` 的正则边界所限），
+   直接拿来建目录会报 `WinError 123 文件名、目录名或卷标语法不正确`。
+   入库/建目录前必须过滤 `isprintable()` 且剔除 `\/:*?"<>|`。
+
+## 八、故障速查
+
+| 现象 | 原因 | 处理 |
+|---|---|---|
+| 解密后首块不是图像魔数 | 密钥错 / AES 段起点算错 | 重跑 `auto_key()`；确认起点是 15 不是 16 |
+| 图片开头对、后面花 | AES 段长度少算一块 | 用 `(aes_size//16+1)*16` |
+| 解出来是 `wxgf` 开头的乱码 | 需第二层转码 | 用 `wxam.convert()` |
+| wxam 调用 access violation | cfg 传了 NULL | 给 32 字节缓冲区 |
+| 建目录报 WinError 123 | 发送人名含控制字符 | `isprintable()` 过滤 + 剔非法字符 |
+| 明明有图却"无缓存" | 微信没下载过（仅手机端看过） | 在电脑端点开一次即可落盘 |
+| hardlink 路径全部 missing | `dir1`/`dir2` 顺序写反 | `attach/<dir2id[dir1]>/<dir2id[dir2]>/Img/` |
+
+## 九、合规
+
+全部操作**仅限处理本人微信本机数据**。密钥派生、解密、导出均不出本机。
+未经他人同意获取、解密、传播他人微信数据违反《个人信息保护法》。
