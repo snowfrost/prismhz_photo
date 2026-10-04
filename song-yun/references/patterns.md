@@ -2,17 +2,22 @@
 
 > 只收录经用户确认满意的成功模式。格式：模式名 / pattern（怎么做）/ when（何时适用）/ why（为何有效）/ 示例。每日学习迭代时更新。
 
-## P1｜MJ 提示词密度基准（2026-08-31，来源：王老师纠偏）
+## P1｜MJ 提示词密度基准（2026-08-31，来源：王老师纠偏；**2026-10-04 重大修正**）
+- ⚠️ **本条已被 1024 字符硬上限覆盖**：王老师 2026-10-04 明确 "MJ 提示词不能超过 1024 个字符"，
+  实测英文锚定句单段就 819 字符，原"13 段全铺 + ≥90 词"做法会让提示词飙到 3000 字符，
+  触发上游 `UPSTREAM_ERROR` / timeout 且**零产物、不报错**（极难排查）。
+- **修正后的 MJ 密度规则**：**含参数总量 ≤1024 字符**，**中文优先**（中文信息密度 ≈ 英文 2–3 倍）。
+  "≥90 词"基准**仅适用于 image-gpt-2（写法 A）**，不适用于 MJ。
+- **MJ 版五件套压缩写法**（保五维、砍字数）：
+  ①服装只写"形制名 + 一处结构特征"（`Song beizi, straight parallel lapels, undyed`）
+  ②动作微细节保留（这是最省的"气韵"来源，一句 `fingers pausing, gaze lowered` 即可）
+  ③光影写方向+性质一句（`low golden backlight from rear left, cool shadow side`），砍补光逻辑
+  ④皮肤/材质压成两词（`real pores, matte luo gauze`）
+  ⑤色板写 2–3 色名+HEX（`moon white #D6EEF0, celadon #A8BCA8`），不写六角色
 - **when**: 任何 MJ 图片提示词输出
-- **what**: 每幅 ≥90 词（对齐原帖例1-5），五件套不缺：
-  ①分层服装详写（beizi 直领对襟+gauze texture → ivory cross-collar inner blouse → waist-tied long skirt + naturally falling silk folds）+ 发型锚定（low Song-style bun + one plain silver hairpin + loose strands framing her face）
-  ②动作微细节（mid-step、sleeves just gently touching、drifting strands）
-  ③主光+补光逻辑（主光方向 + "soft reflected glow from below fills the shadows" 类补光句）
-  ④皮肤/材质（natural luminous skin texture, realistic silk/linen/cotton-linen fabric）
-  ⑤色板支撑关系（主色板 + cool indigo shadows support the warmer skin tones 类支撑句）
-- **why**: 短提示词丢掉光线逻辑与材质后，AI 会自行补全 → 出"AI塑料感"；密度是宋韵质感的载体
-- **cross-scene**: 系列图人物描述必须逐字一致（锚定句复用），只变景别/构图/光位
-- confidence: 0.9（用户直接纠偏确认）
+- **why**: 短提示词丢光线逻辑会出塑料感，但超 1024 字符会**直接出不了图**——先保证能出，再谈密度
+- **cross-scene**: 系列图锚定句压到最小可用集（脸/眼/唇/发/体态），跨幅逐字一致
+- confidence: 0.95（2026-10-04 用户直接纠正 + 实跑验证：英文 3000 字符全挂，中文 505 字符一次过）
 
 ## P2｜多景别组输出（2026-08-31）
 - **pattern**：同一句输入默认给 3 个变体——半身近景｜环境远景｜侧脸特写，三变体人物服装描述完全一致，只变景别、构图重心与虚化程度，各配一句中文构图说明。

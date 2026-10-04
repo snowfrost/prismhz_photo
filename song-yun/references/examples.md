@@ -540,3 +540,191 @@ Southern Song academy style
    宫装女子"居者=静"（六.五.二），孩童放船是画面里唯一的动（十三.七微事件）；
 ⑥ **色调局限句+留白命门句双收尾**：`the palette is limited to…`（三.七）＋ `large areas of unpainted
    silk as negative space`（九.六），画意档收尾标配。
+
+## 二十五、形制四轮：抹胸专条专题（2026-09-28 周一，来源：FlowPix"AI绘画抹胸怎么画不出泳衣感"帖 / 今日头条"云裳宋韵：两宋服饰流变（中）"帖 / php.cn 小云雀AI古风实战帖 2026-09-28 检索）
+
+### 例26 晨起理妆·抹胸专条示范（A 路线 MJ，形制三层写法 + 右衽正向句 + 体态锚点，词数约 130）
+
+**输入**：宋韵晨间闺阁，女子理妆，要清雅松弛，千万别出泳衣感。
+
+**提示词（MJ 写法 B）**：
+
+```
+cinematic medium shot, a young Song dynasty woman at her dressing table in soft morning
+light, wearing a one-piece moxiong chest undergarment with a straight wide top edge
+covering up to the underarms, no straps, fine silk ties crossing at the back, layered
+under a grey shu crepe-gauze beizi with narrow sleeves and a fine woven floral border
+at collar and cuffs, cross-collar closed to the right (left lapel over right), a
+long skirt fastened at the natural waist in faded lotus-pink; slender silhouette with
+gently sloped shoulders, hair in a loose tongxin topknot with a single plain silver
+pin, subtle composed expression with downward gaze, unaware of being watched, absorbed
+in arranging a jade hairpin before a bronze mirror; morning haze through a latticed
+window as soft key light, gentle fill from the white wall beyond, muted palette of
+moon-white, smoke-grey and pale blush with luminous silk texture, shallow depth of
+field, live-action Chinese historical cinema, 85mm --ar 16:9 --raw --s 100 --no
+swimwear, bikini top, halter neck strap, visible shoulder straps, modern lingerie,
+left lapel closing, ruffled trim, influencer face
+```
+
+**要点**：
+① **抹胸三层写法齐上**：形制句锁上缘位置（straight wide top edge covering up to the underarms）＋
+   外罩层必写（layered under a beizi——不写外罩约一半概率被加肩带）＋系带走向（ties crossing at
+   the back）——FlowPix 立绘经验的三板斧（style-bible 八.六四轮）；
+② **右衽正向句防逝者装**：`cross-collar closed to the right (left lapel over right)`，负向再挂
+   `left lapel closing` 双保险；
+③ **裙腰锚点句**：`fastened at the natural waist`——不写这句 AI 会把裙腰抬到胸下变抹胸裙（四轮裙腰高度锚点）；
+④ **体态锚点**：slender silhouette with gently sloped shoulders——宋式纤细清瘦身份词，与唐丰满明端庄区分；
+⑤ **具名实物活化**：黄昇墓灰色绉纱镶花边窄袖褙子转写成 shu crepe-gauze + floral border，考据背书；
+⑥ **泳衣负向整串**：swimwear/bikini/halter/shoulder straps/modern lingerie 五连——抹胸题材必挂，
+   另加 ruffled trim 防荷叶边乱入上缘。
+
+## 二十六、纹样四轮：宋锦场合选纹专题（2026-09-29 周二，来源：《中国妇女》专访非遗宋锦国家级传承人钱小萍 2025-06 / 绍兴图书馆"南北风格迥异的宋元织绣" / FlowPix"AI绘画咒语中国风"帖 2026-09-29 检索）
+
+### 例27 雅集聚珍·灵鹫球路纹示范（A 路线 MJ，场合选纹 + 纹样三段写法 + 权重防糊句，词数约 135）
+
+**输入**：文人雅集上的才女，穿高端宋锦，要华而不艳、有考据感。
+
+**提示词（MJ 写法 B）**：
+
+```
+cinematic medium shot, a poised Song dynasty gentlewoman seated at a dark lacquer tea
+table in a scholarly studio, wearing an ivory ling-silk beizi whose front panel is
+woven with lingjiu pearl-roundel brocade — great and small interlocking circles framing
+a pair of back-to-back condors, tail feathers set against tortoise-shell hexagon and
+pearl-string ground patterns, multi-color silk wefts in indigo, pine-green, ivory and
+black — the woven figure emerging only where the side window light rakes across the
+fabric, a single subtle gold thread running along the collar border only; a plain
+moon-white inner layer and a smoky tea-brown skirt keep the rest of the figure quiet,
+the brocade as the one point of emphasis (plain background:1.1, intricate brocade
+weave:0.9); she steadies a celadon tea bowl with both hands, gaze lowered, absorbed
+in the activity, hair in a neat tongxin topknot with one plain jade pin; soft window
+light from the left, faint dust in the air, muted low-saturation tones, shallow depth
+of field, fine film grain, live-action Chinese historical cinema, 85mm --ar 3:4 --raw
+--s 100 --no text watermark logo flat printed pattern sticker-like motif neon dyed
+colors metallic gold outfit
+```
+
+**要点**：
+① **场合选纹**：灵鹫球路纹定位"高端礼服/重大场合"（钱小萍场合映射），雅集档才女穿得起、
+   也压得住——祝寿别用它，选龟背；婚庆选盘绦。纹样语义与场景身份对齐（style-bible 八.五四轮）；
+② **灵鹫球路三件套**：大小圆相切骨架（great and small interlocking circles）+ 背向而立灵鹫
+   （back-to-back condors）+ 龟背联珠底纹（tortoise-shell hexagon and pearl-string ground）——
+   三件写齐才是球路纹，只写 round pattern 会出波斯联珠圈；
+③ **纹样三段写法**：图案（condor roundel brocade）+ 工艺（multi-color silk wefts / woven figure）
+   + 位置（front panel / collar border only）——位置段顺手把金线锁死在领缘，防金线泛滥；
+④ **权重防糊句**：`(plain background:1.1, intricate brocade weave:0.9)`——细节权重压低、
+   环境留白权重抬高，纹样密而不糊；
+⑤ **一主一辅配色**：锦缎蓝绿白黑做视觉焦点，月白内层+烟茶裙做"安静的大多数"，符合宋式
+   织物配色规律（八.五茶色地+白点缀）与色彩层级锚点原则（三.七）；
+⑥ **负向收尾**：flat printed pattern / sticker-like motif 防印花感、neon dyed colors 防
+   多色纬跑艳、metallic gold outfit 防织金化——多色锦最怕"华"字失控。
+
+
+
+## 二十七、宋画反推三轮：花鸟与留白坐标专题（2026-10-01 周四，来源：今日头条"如何欣赏宋代花鸟画" / 渭南秦风网"折枝画"赏析 / 搜狐简单AI"水墨元素与构图技巧"帖 / FlowPix"宋ai绘画入门"帖 2026-10-01 检索）
+
+### 例28 枇杷山鸟·折枝没骨示范（B 路线 MJ，黄徐选脉 + 折枝构图 + 留白坐标 + 以线立骨落地，词数约 100）
+
+> 意境取自赵佶《枇杷山鸟图》：一只绣眼鸟回身盯着枇杷上的蚂蚁——微事件 + 隐形动线一次到位。
+
+```
+Song dynasty bird-and-flower album leaf in Xu Xi's luomo ink-skeleton manner -- forms
+built by soft ink washes with only pale color accents, no courtly richness. A single
+loquat branch enters from the upper left corner bearing two or three golden fruits
+only (zhezhi folded-branch composition, close-up cropping implying the whole orchard),
+a small white-eye bird twisting its neck to stare at ants crawling on the fruit, its
+gaze pulling the viewer's eye along a hidden path. Empty space occupying the lower
+right 40% of the frame as a breathing void, xuan paper texture beneath, ink tone
+bleeding softly into the empty areas. Structure carried entirely by fine even ink
+outlines (yixian ligu), light and shadow deliberately subdued, muted low saturation.
+--ar 1:1 --raw --s 100 --no photorealistic, crowded composition, gilding, vibrant colors, vector lines, text
+```
+
+**要点拆解**：
+① **选脉**：徐熙野逸（luomo ink-skeleton + pale color accents + no courtly richness）——隐逸档清寂味；
+   若画节庆档换"黄家富贵"句（fine gongbi outlines filled with layered mineral pigments），两脉词汇不可混；
+② **折枝构图**：`enters from the upper left corner + two or three fruits only + close-up cropping
+   implying the whole orchard`——"触目横斜千万朵，赏心只有三两枝"的英文落地，以小观大；
+③ **留白坐标**：位置（lower right）+ 占比（40%）+ 质感（paper texture beneath, ink bleeding softly）
+   三件写齐，防死白底板也防 AI 填满；
+④ **隐形动线**：鸟盯蚂蚁的凝视句让画面自己"讲故事"，接十三.七微事件叙事——小品花鸟也有剧情；
+⑤ **以线立骨**：禁写 light source，结构交给 fine even ink outlines，光影退居其次——画意档花鸟光影禁令；
+⑥ **负向**：photorealistic（防风景区宣传照）+ crowded composition（防塞满）为本日新增画意专属负向。
+
+
+## 二十八、自由素材整合日：簪花风俗+三层景深+点睛例外（2026-10-02 周五，来源：全历史"'男子簪花'话宋朝" / 荔枝网"簪花，宋代男子的真香之路" / 浙江省社科联宋韵文 / prompttemplatehub 极简水墨模板 / Tensor.Art 宋韵文人写真帖 2026-10-02 检索）
+
+### 例29 重阳簪菊·书斋雅士示范（B 路线 MJ，簪花三件套 + 三层景深 + 点睛例外句落地，词数约 120）
+
+> 意境取"四相簪花"与重阳簪菊风俗：宋代士人重阳日簪菊坐书斋，花也报时（菊=重阳），
+> 朱红腰绳做全画面唯一满饱和点睛。
+
+```
+Song dynasty literati painting style, three-layer depth: dark bold foreground,
+softer midground, ethereal dissolving background. A gentle middle-aged scholar in
+a moon-white linen beizi sits by a plain log desk, a single chrysanthemum sprig
+tucked into his black gauze futou (a Song dynasty scholarly custom, zanhua, for
+the Double Ninth festival), his gaze lowered to an unrolled calligraphy sheet,
+unaware of being watched. The rough grain of the weathered log desk contrasts
+with the smooth fluid silk of his robe; a goose-yellow waist wrap and a single
+vermilion waist cord as the only accent at full intensity, all saturation
+reduced 30% otherwise. Distant hills recede as pale blue-gray layers, each
+softer and lighter, dissolving into vast white void occupying the upper right
+55% of the frame, silk scroll texture beneath, edges bleeding into the void.
+--ar 3:4 --raw --s 100 --no feminine styling, hair ornament overload, vibrant colors, photorealistic, text
+```
+
+**要点拆解**：
+① **簪花三件**：位置（tucked into his black gauze futou，非发髻）+ 数量（a single chrysanthemum
+   sprig）+ 风俗具名（zanhua + Double Ninth festival）——花材选菊直接报出重阳时令，一句顶两句
+   （style-bible 八.九）；
+② **三层景深句打头**：`three-layer depth: dark bold foreground, softer midground, ethereal
+   dissolving background` 放提示词第一句（画意档构图词最前的词序铁律），远景再挂"逐层淡化溶进
+   留白"句收尾（六.五.七）；
+③ **点睛例外句**：`the only accent at full intensity, all saturation reduced 30% otherwise`——
+   例外只给朱红腰绳一处，男装档配腰上黄同用不算第二个例外（鹅黄属低饱和暖中性，三.七⑩）；
+④ **材质对比**：粗木桌糙 × 丝衣滑一句写齐（九.八），防全画面一味的柔；
+⑤ **沉浸句**：`gaze lowered…unaware of being watched`——静大于动+防表演感，四.六标配；
+⑥ **负向**：`no feminine styling, no hair ornament overload` 是簪花专属负向，防 AI 把男装簪花
+   画成满头珠翠影楼装；`vibrant colors` 防点睛例外被放大成满屏饱和。
+
+## 二十八、图片主线第一课：实拍成片反推（2026-10-04 周日，来源：王老师贴图 9 张宋韵/古风实拍反推 + 王老师自写三联提示词做结构基准）
+
+### 例29 浇花溅水·实拍反推示范（A 路线 MJ，逆光水珠 + 泥渍生活痕 + 手部第二焦点落地，词数约 100）
+
+> 反推自王老师贴图"浇花水花"张：蹲姿浇花、水珠逆光冻结、裙上泥渍、花园竹篱——这批图里"生活感"最强的一张。
+
+```
+cinematic medium shot, a young woman in a loose sage-green rustic hanfu kneels in a
+kitchen garden watering white peonies from a wooden bucket, water droplets frozen in
+midair, each bead backlit into a scattered diamond spark, her hands in sharp focus
+guiding the ladle, a joyful unposed smile looking down at the flowers, mud-splashed
+hem and damp skirt clinging with wet stains, red hair-ribbon and loose strands
+catching the light, bamboo fence and blurred pink roses in the soft foreground,
+warm golden-hour side backlight, gentle rim glow along her arms and shoulders, muted
+low saturation with warm highlights, realistic photography, Canon EOS R5 RF85mm f/1.4,
+shallow depth of field, subtle film grain, Chinese period drama film still
+--ar 2:3 --raw --s 100 --no plastic skin, CGI, perfect pose, artificial smile, studio lighting, oversaturated colors, watermark
+```
+
+**要点拆解**（对照 style-bible 十七节）：
+① ④号水珠冻结句+泥渍生活痕句双挂——动态与真实感的两个命根；
+② ⑦号手部第二焦点句——表情交给"低头看花的一丝笑"，故事交给手；
+③ 前景竹篱花丛虚化补纵深（⑧号变体），背景留暖调；
+④ 服装写"rustic sage-green loose hanfu"不写形制名——与原图气质对齐；
+   若要考据宋制，换 `Song-style beizi over bosom-wrapped mouxiong, hundred-pleat skirt`（八.六）；
+⑤ 负向挂 perfect pose / artificial smile / studio lighting 三件，防摆拍化。
+
+### 例30 竖版三联电影剧照结构（2026-10-04 新增，来源：王老师自写提示词《溪边浣衣三联》，经拆解后存档为组图新结构）
+
+> **组图一致性新形态**：三个横向电影镜头上下拼成一竖版，单图即成"连续剧照"。
+> 王老师原词要点（完整原文见当日归档）：
+> ① 开头一句定总纲：`一张竖版三联电影感画面，由三个横向电影镜头上下拼接，统一色调、统一人物气质、真实摄影质感`；
+> ② 每段一个镜头，段内四件套写齐：**人物+动作（含手部动作与水珠滴落）+环境（白墙黛瓦/荷塘/溪水石阶）+光线**（清晨/傍晚柔和阳光、金色水面反光）；
+> ③ 三段用同一套服装锚定句（米白上衣+青灰绿内搭/青绿长裙）保证"同一个人"；
+> ④ 结尾技术锚点句：`黄金时刻侧逆光、暖光冷影调色为核心锚点，搭配前景框架构图与胶片颗粒质感，古装剧实拍的松弛氛围感`；
+> ⑤ **专属负向**：拼贴错位、多人脸重复、多手多臂——三联拼接特有翻车点，单图负向之外必加；
+> ⑥ 整段负向串覆盖 AI感/CG感/网红写真/影楼风/电商感——与 style-bible 八节纪录片档负向串同源，可互抄。
+>
+> **候选模式（P4）**：三联拼接结构 + "表情可以静，手必须在做一件事"的手部叙事——待王老师出图确认后固化进 patterns.md。
+

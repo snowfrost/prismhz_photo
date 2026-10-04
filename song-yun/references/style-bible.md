@@ -127,6 +127,13 @@ AI 不知道"宋的颜色"是什么，泛写朝代配色必跑成高饱和红金
 写法：`a Ru-ware celadon glazed lotus bowl with fine crackle, warm as jade` 比裸写 HEX 更触发质感。
 与三联写法配合：HEX 管"色值兜底"，锚定物管"质感兜底"，两条腿走路。
 
+**⑤ 矿物颜料叠加句法**（2026-09-28 周一形制专题顺带新增，来源：php.cn 小云雀AI古风实战帖）：
+禁用"红色/金色"等**直白色名**——AI 收到直白色名就按年画平涂；改写成**颜料工艺叠加逻辑**（底层色+罩染层），
+模型从"矿物颜料怎么上色"出发生成层次，画面自带厚度：
+- 直白写法 ❌ `red and gold colors` → 工艺写法 ✅ `cinnabar base veiled with a thin gamboge wash`（朱砂底上罩藤黄薄晕）
+- ✅ `a mud-gold paper ground set against azurite cool tones`（泥金笺底衬石青冷调）
+与色彩锚定法（④）同族：④锚"器物质感"，⑤锚"上色工艺"，都是给抽象色找物理依托。
+
 **宋代时代配色总原则**（观猹帖 + 光明日报青瓷帖）：天青、月白、藕色、苍绿、粉青主导，低饱和冷调，
 同类色和谐，暖色被"淘洗"沉静——"鲜艳的红总是伴随沉静的紫出现"。点缀红用不肯红/绛红微量。
 
@@ -172,6 +179,13 @@ B 路线配色再收一档——**矿物三色卡**：石青、石绿、赭石�
 `60% empty silk background, 40% subtle mineral colors`（留白占比句，宋画小品平均留白超 55% 是美学判据）。
 与十三.五"色不过三"、三.七⑥窄三色板互为三写法：⑥管写实清雅档、⑨管画意古画档、"色不过三"管中文短句档。
 
+**⑩ 点睛例外句（单点满饱和例外，2026-10-02 周五整合日新增，来源：prompttemplatehub"极简水墨美学生成器"模板 / Tensor.Art"新中式宋韵文人风写真"帖 2026-10-02 检索）**：
+全画面降饱和时必须给**唯一例外**写明——`all saturation reduced 30% except the single accent color at full intensity`。
+宋韵画面不是没有饱和色，是**只许一处**：Tensor.Art 帖用"月白衣袍+暖金阳光+朱红腰绳为点睛亮色"，
+prompttemplatehub 模板用"满饱和 crimson banner / vermillion accent"做情绪爆点。
+与②"安静≠低对比"互补：②管整体层级，本句把"强调色保住饱和度"落成一句可直接抄的英文；
+注意例外只给一个元素，写两个例外就回退成俗彩。男装档可用腰上黄/朱红腰绳做这个例外（八.八⑤）。
+
 ## 四、妆造规范（人物）
 
 - **发型**：低盘发 / 半束黑发 / 松弛半束，几缕碎发被风吹起；一支素色小发簪或小木梳点缀即可
@@ -210,6 +224,10 @@ B 路线配色再收一档——**矿物三色卡**：石青、石绿、赭石�
 - **古典面孔句（防网红脸）**：AI 默认按现代审美画脸（高鼻梁锥子脸大眼），宋画审美是鹅蛋脸丹凤眼樱桃小口——
   `classical Chinese beauty standards: oval face, phoenix eyes, small rosebud lips, pale luminous skin, not modern beauty standards`。
   不写这句，服饰再考据脸也是网红脸配汉服的违和感。
+- **抗 3D 渲染脸三技术句**（2026-09-28 周一形制专题顺带新增，来源：php.cn 小云雀AI古风实战帖）：
+  古典面孔句管"长什么样"，这三句管"渲染方式"——直接压制 AI 默认 3D 逻辑，还原古画"目深而静"的观感：
+  `face without glossy highlights, softened cheekbone shadows, catchlight in the eyes reduced to a small natural reflection`
+  （面部无高光／颧骨阴影弱化／瞳孔反光缩小）。写实路线配皮肤材质段，画意路线配工笔档案。
 - 负向（画意档）：`dynamic action pose`；负向（人物档通用）：`influencer face, modern makeup`（已同步进八节）。
 
 ## 五、场景库
@@ -334,6 +352,81 @@ B 路线配色再收一档——**矿物三色卡**：石青、石绿、赭石�
   `eye-level or slightly elevated viewpoint, gentle perspective, no wide-angle distortion, calm and stable framing`。
   西式广角透视是画意路线明令禁止项，写实路线也要收着用，"画面平稳舒缓"本身就是宋韵。
 
+### 六.五.四、空间动线三段句（2026-09-28 周一形制专题顺带新增，来源：php.cn 小云雀AI古风实战帖）
+
+> **空间动线替代元素堆砌**：并列堆三个元素词（"远山、船、藤蔓"）AI 平权处理、构图散；
+> 把元素组织成**远→中→近的空间动线**，等于把画面权重分配直接写给模型——激活景深逻辑。
+
+三段句式（直接套）：
+`distant mountains fading like thin smoke → a single skiff moored aslant in the middle ground → bare wisteria trailing across the near shore, filling half the frame`
+
+要点：
+- 每段一个元素 + 一个姿态动词（淡如烟/斜横/垂落），姿态动词是动线的关节；
+- 近景段可写**占幅比**（"垂落半幅画面" = 前景遮挡逻辑，接五维自检的构图维）；
+- 与三远法（六.五）配合：先选"式"定机位，再用三段句填层次——式是骨架，动线是肌肉。
+
+### 六.五.五、留白坐标法与主次开场句（2026-10-01 周四宋画反推三轮新增，来源：搜狐简单AI"水墨元素与构图技巧"帖（北冥有鱼） / FlowPix"宋ai绘画入门"帖 2026-10-01 检索）
+
+> **核心：留白不是"空"，是气的通道——必须给坐标，AI 才知道把空留在哪。** 只写"大量留白/vast negative space"，
+> AI 会把空白平均摊开或干脆填满云。
+
+- **留白坐标句**（位置+占比+功能三件写齐）：`empty space occupying the upper right 40% of the frame as a breathing void` ｜
+  `the lower water ripples left unpainted, forming an S-shaped channel of qi (negative space) winding to the horizon`——
+  FlowPix 实测：负空间写到 2/3 画面才真正"松"下来；台南艺术大学古书画公开课统计宋画小品平均留白超 55%，是宋味的量化指标。
+- **主次开场句**（防 AI 平权分配视觉重量）：提示词开头就写"主角是……其余为配景"——
+  `the washing girl by the stream is the protagonist occupying 60% of the visual weight, the bare trees and distant hills are defocused supporting elements`。
+  不指定时 AI 默认平均分配，树比人还抢眼。
+- **留白防"死白"句**：留白区域不写材质指令会变成冰冷的纯白底板——挂
+  `xuan paper texture beneath, ink tone bleeding softly into the empty areas, no harsh pure-white board`（搜狐简单AI帖）。
+- **构图词打头顺序**（FlowPix 半月实战）：画意档词序=**构图词最前 → 内容词居中 → 材质词垫底 → 笔触词最后微调**；
+  构图词放后面模型经常顾不上。一次只改一类词，别一口气全塞。
+- **参数档**：本地 SD 类模型 CFG 压在 6-6.5——再高颜色"用力过猛"，宋味直接变插画风；出图仍艳时后期把饱和度拉到 70 比反复改词省事。
+- **⚠️"极简"别乱写**：minimalist 会被字面执行——有帖写过 minimal，模型删得只剩一座山头。留白写坐标写占比，禁写 minimalist。
+
+### 六.五.六、花鸟画反推词库：黄徐二脉与折枝构图（2026-10-01 周四宋画反推三轮新增，来源：今日头条"如何欣赏宋代花鸟画" / 央视网"历代花鸟画的意趣" / 渭南秦风网"折枝画"赏析 / 泰兴四中"宋代工笔花鸟的艺术特色" 2026-10-01 检索）
+
+> **此前构图库只覆盖山水，花鸟是宋画另一半江山**——《宣和画谱》著录 6396 幅中花鸟过半。
+> 用法：画花画鸟先选脉（黄/徐/崔），再选构图（全景/折枝），最后按"以线立骨"收光影。
+
+**① 黄徐二脉选脉表**（画花鸟先问走哪一脉，两脉词汇严禁混写）：
+
+| 脉 | 气质 | 画面特征 | 提示词写法 | 题材适配 |
+|----|------|----------|-----------|---------|
+| 黄家富贵（黄筌/黄居寀） | 宫廷院画、华贵端庄 | 勾勒填彩、重彩浓染、矿物颜料层层叠染、线条藏在色彩下 | `in the Huang Quan court manner: fine gongbi outlines filled with layered mineral pigments, rich yet dignified colors, precious garden birds` | 御苑珍禽、牡丹孔雀、节庆档 |
+| 徐熙野逸（徐熙） | 江湖山野、清淡疏朗 | 落墨法：墨笔为骨、淡彩为辅 | `in Xu Xi's luomo (ink-skeleton) manner: forms built by ink washes with only pale color accents, wild reeds and waterfowl, unadorned and spare` | 汀花野竹、水鸟渊鱼、隐逸档 |
+| 崔白融合 | 兼工带写 | 工细鸟兽 + 粗放写意的坡石杂草 | `after Cui Bai: the bird rendered with meticulous detail while rocks and weeds are brushed in loose expressive strokes` | 郊野生动档（《双喜图》典范） |
+
+**② 全景 vs 折枝二选一**：
+- **全景立轴**：花鸟放进完整自然环境，花木坡地鸟兽彼此呼应、开合流转——`a full-scene composition where birds, flowering trees and earthen slopes respond to one another, with clear opening and closing rhythm`。
+- **折枝构图（小品/团扇首选）**："触目横斜千万朵，赏心只有三两枝"——从花丛删繁就简折取一两枝入画，特写式、以小观大、以虚衬实——
+  `a single plucked branch entering from one corner, two or three blossoms only, the rest empty silk, close-up cropping that implies the whole garden`。
+  具名锚点：《出水芙蓉图》只取一朵荷花；赵佶《枇杷山鸟图》折枝+没骨纯水墨；林椿《枇杷山鸟图》绣眼鸟回身盯蚂蚁（"摘尽枇杷一树金"）。
+- 小品出"小中见大"靠留白坐镇：接六.五.五留白坐标法。
+
+**③ 动静虚实主次三关系 + 隐形动线句**：飞鸟鸣虫为动、花木山石为静；主体花鸟突出、衬景草木烘托；
+**动物的眼神姿态就是画面的隐形动线**，牵引观者视线——`the small bird twists its neck to stare at the ants on the loquat, its gaze pulling the viewer's eye along a hidden path`。
+
+**④ 以线立骨（画意档花鸟光影禁令）**：宋人工笔花鸟"以线立骨"——线条负责表现结构关系，
+**光源、明暗、体面一律退居其次**。画意档花鸟提示词禁写 light source / dramatic lighting，改写线：
+`structure carried entirely by fine even ink outlines (yixian ligu), light and shadow deliberately subdued, color kept within the outline`。
+
+**⑤ 花鸟寓意速查**（按意境选主角）：梅=坚韧（`plum blossoms against the cold`）｜荷=纯洁（lotus）｜松=长寿（pine）｜
+寒雀栖枯枝=寒冬里的生命韧性（`a winter sparrow perched on a bare branch`）——败荷≠衰败，写"秋的清寂"（autumn stillness）不写 withered sadness。
+
+### 六.五.七、三层景深句（2026-10-02 周五整合日新增，来源：prompttemplatehub"极简中式水墨美学生成器"模板，神奇小喷菇AIGC 2026-10-02 检索）
+
+> 水墨极简档的景深不用一个个写"前景/中景/远景"，一句话把三层明度递减关系交代完——
+> 模型照着"由深到浅逐层溶解"的顺序排布空间，比裸写 depth of field 出国画风得多。
+
+**核心句**：`three-layer depth: dark bold foreground, softer midground, ethereal dissolving background`（前层浓黑果断、中层转柔、远景淡入虚空）。
+
+**配套三件**：
+- **远景逐层淡化句**：`endless mountain ranges receding as pale blue-gray layers, each softer and lighter, dissolving into vast white void`——"一层比一层轻，最后溶进留白"，正是米氏云山/平远法的英文转写。
+- **留白比例参数化**：把留白占比做成可选槽位（55% / 60% / 65%），与六.五.五留白坐标法（位置+占比+功能）衔接——本条管"多少"，坐标法管"在哪、干嘛用"。
+- **元素漂浮句**：`elements floating in void, edges bleeding into white background`——主体边缘向留白渗透，防 AI 把主体边缘切得生硬像贴纸。
+- **笔触可选槽位**：`bold jagged strokes / soft undulating curves / minimal single stroke` 按题材换（怪石取硬笔、远山取柔弧、枯枝取一笔）。
+- 与三.七⑨留白占比句的区别：⑨管色彩分配（60% 空绢 40% 矿色），本条管空间明度分层，两条可同挂。
+
 ## 七、相机与质感锚点
 
 - 人物特写/中景：85mm f/1.4，浅景深奶油虚化
@@ -347,7 +440,7 @@ B 路线配色再收一档——**矿物三色卡**：石青、石绿、赭石�
 **通用**：畸形手指、多余肢体、错位五官、重复茶具、变形茶壶、现代玻璃杯、服饰穿帮、塑料质感、过度磨皮、强饱和、杂乱背景、现代物件、现代水管的塑料盆、电动磨浆机、金属机器、收割机、现代农具、工业大棚、尼龙绳、化纤服装、宫廷华服、华丽首饰、浓妆、运动员拍摄姿势、统一制服、游客摆拍、宫娥、时尚走秀姿态、字与水印、印花贴图感（flat printed pattern——纹样要"织出来"不要"印上去"，2026-09-01 补）、红金宫廷配色（saturated red-gold palace palette——不具名配色时 AI 的默认跑法，2026-09-02 补）、影楼装感（costume-studio photo style）、旗袍 qipao/cheongsam、和服 kimono、韩服 hanbok（后三词防文化元素混淆，形制不写明时 AI 会串，2026-09-09 补）、亮面道具服反光（glossy costume-fabric sheen——服饰不写材质词时 AI 的默认跑法，2026-09-09 补）、明代形制混入（Ming dynasty Hanfu——宋制造型防串明制立领，2026-09-11 补）、褶皱凌乱乱麻（messy pleats——百迭裙细褶要"细密均匀"，2026-09-11 补）、网红脸现代妆（influencer face / modern makeup——不写古典面孔句时 AI 默认现代脸，2026-09-23 补）。
 - **生活纪录片档负向英文串（2026-09-18 补，来源：tool.lu 宋词国风 skill 帖 MJ V8.2 模板）**：写实路线批量出图可直接整串挂 `--no` 后：`plastic skin, CGI, 3D render, oversaturated colors, golden filter, modern elements, fashion photography, perfect pose, artificial smile, studio lighting, luxury hanfu, palace clothing, fairy costume, anime`——重点是后五个：**perfect pose / artificial smile** 防摆拍假笑、**fashion photography / studio lighting** 防时尚大片感、**luxury hanfu / fairy costume** 防仙侠化，都是宋韵"松弛生活感"的天敌。golden filter（金色滤镜）为新增独立词条。
 
-**画意路线专属**（配合通用）：油画质感、水彩效果、照片写实、西方透视、3D 卡通、过度曝光、现代建筑、浓艳色彩、失真五官、光滑塑料 CG 感、杂乱构图、文字水印、金色勾线鎏金泛滥（gilding / gold outlines——防跑成金碧山水与建筑装饰画，2026-09-16 补）。
+**画意路线专属**（配合通用）：油画质感、水彩效果、照片写实（photorealistic——FlowPix"宋ai绘画入门"帖：忘挂这个词远山就变风景区宣传照，2026-10-01 补）、西方透视、3D 卡通、过度曝光、现代建筑、浓艳色彩、失真五官、光滑塑料 CG 感、杂乱构图、构图饱满塞满画面（crowded composition / packed composition——宋味底子是留白，AI 默认把画面塞满，2026-10-01 补）、文字水印、金色勾线鎏金泛滥（gilding / gold outlines——防跑成金碧山水与建筑装饰画，2026-09-16 补）。
 
 **写实路线专属**（配合通用）：绢本质感、水墨笔触、扁平插画风。（防止跑成古画）
 
@@ -397,6 +490,29 @@ B 路线配色再收一档——**矿物三色卡**：石青、石绿、赭石�
 配**白、鹅黄**等寡淡色调——"清冷孤傲"；多色织物弃汉唐五色与明烈对比，改**邻近色配色法**（降饱和、降对比）。
 写法：`smoky tea-brown ground with pale ivory and goose-yellow accents, analogous low-contrast palette`。
 （与三.五传统色名词库联用：地色从烟/茶/藕荷里挑，点缀从白/鹅黄里挑。）
+
+**宋锦纹四轮补充表（2026-09-29 周二纹样专题四轮，来源：《中国妇女》专访非遗宋锦国家级传承人钱小萍大师 2025-06 / 绍兴图书馆"南北风格迥异的宋元织绣" / 超星慕课"宋代丝织染缬工艺" 2026-09-29 检索）**：
+
+| 纹样 | 特征（画面感） | 提示词写法（英） | 适用场合（按场合选纹） |
+|------|----------------|------------------|------------------------|
+| 灵鹫球路纹 | 大小圆圈相切构成球路骨架，主纹一对**背向而立**的灵鹫，尾羽与龟背纹、联珠纹底纹成动静对比；蓝绿白黑多色纬交织，层次丰富而典雅（宋锦纹样集大成者） | lingjiu pearl-roundel brocade, great-and-small interlocking circles framing a pair of back-to-back condors, tail feathers contrasted against tortoise-shell hexagon and pearl-string ground, multi-color silk wefts in indigo, pine-green, ivory and black | 高端礼服核心装饰、重大庆典 |
+| 盘绦花卉纹 | 绦带如丝带交织缠绕成连续几何框架，其间点缀牡丹等花卉——几何秩序感+自然灵动感，"环环相扣" | pantao ribbon brocade, interlacing ribbon bands forming continuous geometric frames with peony blossoms set between, interlocked auspicious repeat | 婚礼、寿宴、喜庆场合 |
+| 菱格四合如意纹 | 菱形框内四个如意云纹组合，刚柔并济、对称大方 | four-ruyi clouds set within lozenge lattice frames (siihe ruyi), symmetrical geometric-elegant repeat | 节庆、文化休闲场合 |
+| 冰莹菊纹 | 细腻如冰雕的菊花纹，淡雅色调、层次清晰，"秋霜清冽" | ice-carved chrysanthemum brocade, delicate crystalline petal lines in pale elegant tones | 文化雅集、书画茶会 |
+| 龟背纹（文人档） | 规整六边形几何骨架，宋代素雅配色显文人风骨（明清绚丽配色不取） | tortoise-shell hexagon brocade in restrained Song-era scholar tones, precise orderly ground | 文人/士人服饰地纹（已有地纹词条，此处补场合与气质定位） |
+
+**几何纹吉祥语义速查（按意境选纹，2026-09-29 补，来源：绍兴图书馆 / 超星慕课）**：
+八达晕=四通八达｜锁子纹=永结同心｜龟背纹=长寿｜方胜纹=同心｜万字纹=万德绵延｜连线纹=富有｜盘绦纹=相依相接。
+→ 出提示词前先问画面意境（祝寿选龟背、婚庆选盘绦/鸳鸯、文人雅集选冰莹菊/素雅龟背），纹样语义与画面情绪对齐，避免"纹样漂亮但答非所问"。
+宋代几何纹流行的底层逻辑：重理的审美+规则组织适合穿着+契合书画装裱需求——几何纹是宋韵的"理"，花鸟纹是宋韵的"情"，两者搭配即"骨与肉"。
+
+**纹样三段写法（2026-09-29 补，来源：FlowPix"AI绘画咒语中国风"帖）**：纹样不能只写图案本身，要写满
+**图案（什么纹）+ 工艺（怎么做的）+ 位置（在哪）** 三段：
+`embroidered cloud patterns (图案) with fine silk thread and a subtle gold edge (工艺) at the cuffs (位置)`。
+只写图案段，模型容易把纹样铺满全身或位置错乱。
+
+**权重防糊句（2026-09-29 补，同上帖）**：纹样密集时给背景和纹样分别挂权重，防纹样糊成马赛克：
+`plain background:1.1, intricate embroidery:0.9`——留白权重压过细节权重，纹样才有呼吸感。
 
 ## 八.五.二、纹样专属负向词（2026-09-01 新增）
 
@@ -490,6 +606,22 @@ thread, matte raw-silk warp with glossy dyed-weft figure`
 | 褶襕裙 60 折（黄昇墓烟色罗洒金双凤穿牡丹褶襕裙） | 两侧两幅不打折（光面）、中间四幅各打 15 折共 60 折——正面两侧光面、中段细密褶裥，行走时"随动作伸缩不拖地"；具名实物可直接当裙装锚定句 | a smoke-grey luo gauze pleated zhelan skirt with smooth side panels and sixty fine center pleats, gilt double-phoenix-and-peony motifs, the pleats flexing with each step without trailing | 贵妇/婚服/考据党通吃档 |
 | 旋袄（冬装档） | 对襟开气的夹棉冬衣，民间女子冬季首选（袍服有等级限制，袄可替代）——冬季题材别再让宋人穿唐式披风 | a padded duijin xuan'ao winter jacket, front-opening with side vents, quilted for warmth, muted brown-grey silk | 冬季/岁末场景 |
 
+**形制四轮补充（2026-09-28 周一，来源：FlowPix"AI绘画抹胸怎么画不出泳衣感"帖（古风立绘约稿经验）/ FlowPix"AI绘画汉服关键词"帖 / 今日头条"云裳宋韵：两宋服饰三百年流变（中）"帖 / php.cn 小云雀AI古风实战帖 2026-09-28 检索）**：
+
+| 词条 | 结构特征（画面感） | 提示词写法（英） | 适用 |
+|------|-------------------|------------------|------|
+| 抹胸防泳衣专条（本日最实用） | 抹胸跑泳衣感九成是形制没写对：宋制一片式=**上缘平直、宽幅覆盖至腋下、无肩带**；三条腿写法——①形制句锁上缘位置 ②**外罩层必写**（单穿抹胸不加外罩，约一半概率 AI 自作主张加肩带）③系带写走向（细带交叉系结于背后/腰侧打结） | a one-piece moxiong chest undergarment with a straight wide top edge covering up to the underarms, no straps, fine ties crossing at the back, layered under an open-front gauze jacket | 内搭档必抄；负向配套见下 |
+| 右衽强制正向句 | 汉服右衽=左襟压右襟；不写明 AI 随机出左衽——左衽是逝者装忌讳，考据党一眼毙 | cross-collar closed to the right (left lapel over right) | 交领类服装通用；负向配套 `left lapel closing, y-shaped reversed collar` |
+| 裙腰高度锚点句 | 腰线高度是朝代视觉锚：唐齐胸在胸以上、明制在腰际；**写了 Song dynasty 但不写裙腰位置，AI 会把裙腰画到胸下变"抹胸裙"**——宋制裙系于腰、高腰但不及胸 | a long skirt fastened at the natural waist, high-waisted but below the bust | 裙装通用时代校验句 |
+| 百迭裙幅数档次 | 六幅/八幅/十二幅罗纱缝制、打满细褶（"百叠""千褶"）；贵族档可**印金、刺绣、缀珍珠**，平民档素色粗布——幅数+工艺分档即身份档 | a twelve-panel baidie skirt of fine luo gauze, densely pleated, with subtle gilt-printed floral motifs for noblewomen / plain undyed hemp for commoners | 按人物身份选档 |
+| 体态锚点（宋式身形） | 宋制审美=**纤细清瘦、削肩纤腰、修长清雅**，与唐丰满、明端庄三分天下——体态词是朝代身份的一部分，漏写就默认现代身材 | a slender silhouette with gently sloped shoulders and a willowy waist, elegant and understated | 女子全身像定调，配褙子"长窄直"句使用 |
+| 后妃礼服三档（祎衣/鞠衣/褕翟） | 皇后祎衣=**深青罗衣+红色翟鸟纹（九雏）+九龙四凤冠**；鞠衣=黄罗衣无纹饰+九花四凤冠（亲蚕礼服）；褕翟=青罗衣绣翟纹五雏+九翚四凤冠（妃嫔低一档）——翟纹雏数与凤冠名即等级 | a deep-indigo luom silk ceremonial yiyi robe embroidered with red spiral-pheasant motifs, paired with a grand phoenix crown of nine dragon and four phoenix ornaments | 宫廷/后妃题材档（日常题材勿用） |
+| 具名实物：黄昇墓窄袖褙子 | 灰色绉纱镶花边窄袖褙子（福州南宋黄昇墓出土）——窄袖版褙子具名实物，与花边（领抹）细节互证 | a grey shu crepe-gauze beizi with narrow sleeves, trimmed with fine woven floral border at collar and cuffs | 常服考据向锚定句 |
+
+**抹胸/衽向专属负向（2026-09-28 新增）**：
+`no swimwear, no bikini top, no halter neck strap, no visible shoulder straps, no modern lingerie`（泳衣串）＋
+`left lapel closing`（左衽忌讳）＋`no ruffled trim`（荷叶边乱入上缘）。抹胸题材负向必挂，写实路线尤其如此。
+
 ### 八.六.一、男装公服与士人服词库（2026-09-14 周一形制专题二轮填充，来源：中国青年网《讲究衣品：历史上的宋朝时尚》/ 衡阳日报《清平乐》服饰考据文 / 搜狗百科"宋朝服饰" / 数字图书馆"历代服饰"）
 
 > **男装分两档开写**：公服档（圆领襕袍体系，官场/正式）与燕居档（深衣/襕衫/帽衫，文人/市井）。
@@ -535,6 +667,16 @@ thread, matte raw-silk warp with glossy dyed-weft figure`
 
 **纹样题材池**（出土归纳，选词直接从这里抽，不泛写 floral）：莲花、菊花、山茶练鹊、双蝶穿花、云鹤、珊瑚杂宝、卍字纹。
 
+**"罗"纵深（2026-09-29 周二纹样专题四轮补，来源：绍兴图书馆"南北风格迥异的宋元织绣"）**：
+宋代是罗织物生产的**历史最高峰**——宋人喜穿轻薄透气纱罗，写实花卉纹+清淡色调多织在罗上。罗分两档：
+- **素罗**：单经/三经/四经绞织，表面不起花，纯靠绞经小孔出轻透呼吸感——日常素色衣主料；
+  `plain luo gauze with three- or four-end leno weave, no figured pattern, airy open texture`
+- **花罗**：平纹或斜纹起花，纹样织在绞经底上、若隐若现——比提花暗纹更轻透一档，南宋黄昇墓大量出土；
+  `figured luo gauze, sprig floral pattern woven into a leno ground, pattern half-emerging in transmitted light`
+→ 写"透肤不透形"的夏日衣料时，花罗是介于"素罗"与"暗纹提花"之间的中间档：透光处纹样半显，
+  配合侧逆光句 `pattern visible where backlight passes through the gauze` 出纱罗独有的朦胧感。
+另：南北风格锚——南宋境内轻薄纱罗盛行、色调清淡；辽金元地区织金锦浓艳（后续朝代画风，宋韵画面**禁用**织金全面铺陈）。
+
 ## 八.八、配饰词库：霞帔帔坠与腰间头面（2026-09-21 周一形制专题三轮新增，来源：科普中国"嘉礼衣章：宋代婚服" / 人民日报客户端"双龙镂空霞帔金坠" / 人民网科普"凤冠霞帔中的霞帔" / 央总台"文博日历：帔坠" / 潮新闻"衣橱里的江南" 2026-09-21 检索）
 
 > **配饰也是身份句**：霞帔"非恩赐不得服"（命妇专属，平民婚嫁可"摄盛"破格穿）；帔坠是宋代新创品类——
@@ -556,6 +698,29 @@ thread, matte raw-silk warp with glossy dyed-weft figure`
 `no floating ribbon shawl`（霞帔防画成唐代帔帛式飘带——帔坠+背后固定端就是防飘证据）、
 `no earring-shaped pendant`（帔坠防画成耳环）、`no Qing dynasty phoenix crown`（防清代点翠凤冠乱入）、
 `no glossy satin red dress`（礼服红防影楼亮缎——宋式红要哑光罗绢质感）。
+
+## 八.九、宋人簪花风俗：男装簪戴与时令码（2026-10-02 周五整合日新增，来源：全历史"'男子簪花'话宋朝" / 荔枝网"文艺课：簪花，宋代男子的真香之路" / 浙江省社科联"宋韵：雅俗间的审美意趣" 2026-10-02 检索，三源互证）
+
+> **宋代最容易被 AI 画漏的风俗**：男子簪花上至宫廷大典下至市井负担者，《宋史·舆服志》"幞头簪花，谓之簪戴"。
+> 画宋代男性只给幞头不给花，等于把现代想象强加给宋人——簪花本身就是最强的时代身份锚。
+
+**① 通用簪花句（男装档）**：`a single seasonal flower tucked into his black gauze futou, a Song dynasty scholarly custom (zanhua)`——
+一句带三层信息：位置（幞头非发髻）、花只一朵（宋式克制）、风俗具名（防 AI 当装饰误读成女性化）。
+
+**② 花材等级与场合映射（写对花=写对身份）**：
+
+| 档位 | 花材 | 提示词写法 | 场景适配 |
+|------|------|-----------|---------|
+| 宫廷礼制 | 罗花（红黄银红三色罗）赐百官 / 栾枝（杂色罗）卿监以上 / 绢花将校以下 | `multi-petaled silk luohua rosettes on the futou, court banquet regalia` | 郊祀回銮、圣节、御宴、闻喜宴 |
+| 雅集名花 | 金带围芍药（"四相簪花"典，一枝四岔红瓣金蕊） | `a rare golden-waist peony (jindaiwei) with red petals and golden stamens pinned at the hat` | 文人雅集、高士题材 |
+| 节令时序 | 重阳簪菊 / 端午戴茉莉 / 新婚罗帛象生花 | `a chrysanthemum sprig on the futou for the Double Ninth festival` | 时令画面直接选花报时 |
+| 民间日常 | 时令鲜花或罗帛假花，负担者亦簪 | `a small fresh flower worn by even the humblest townsfolk` | 市井、货郎、节庆场景 |
+
+**③ 时令码补充**：簪花与六.五.二鸟兽时令码同构——**花也报时**（菊=重阳/茉莉=端午/杏花=进士及第"探花"），
+一句簪花可同时交代季节与事件，比场景名词更密。
+
+**④ 负向拦两路**：`no feminine styling, no hair ornament overload`（防 AI 把男子簪花画成满头珠翠的影楼装）；
+花的位置写进 futou/hat 不写 hair bun，避免与发髻词打架。
 
 ## 九、画意路线补充：宋画质感要素（2026-08-31 第三轮素材，来源：LiblibAI 宋代花鸟画 LoRA 帖 / 今日头条 VibeCoding 国风帖）
 
@@ -607,6 +772,17 @@ B 路线的另一种骨架（与四层构建法并用，四段式更适合"把�
   之后按"线条笔触→人物神态→环境留白"排序，**权重从前往后递减——AI 对开头词敏感度最高**。
   与 image-gpt-2 十三段的"时间环境开头定调"一致：风格锁定词必须进第一句，不能沉到结尾。
 
+**人物衣纹描法具名（2026-09-28 周一形制专题顺带新增，来源：php.cn 小云雀AI古风实战帖 / 头条"云裳宋韵"帖 2026-09-28 检索）**：
+九.六管山石皴法，人物衣褶另有"十八描"体系——写描法名可抑制 CG 硬边，比泛写 flowing robes 有效一档：
+
+| 描法 | 特征（画面感） | 提示词写法（英） | 适用 |
+|------|---------------|------------------|------|
+| 游丝描 | 李公麟代表，线条细如蚕丝、圆润流畅、无粗细突变——宋画人物衣纹主流 | drapery folds drawn in gossamer-fine even lines (yousimiao), thin and flowing without pressure breaks | 士人/仕女衣纹首选 |
+| 莼菜条描 | 吴道子一脉，线条如莼菜条、中间圆润两头细、带轻微波折——衣袂飘举的动势感 | drapery lines like water-shoot strokes (chuncaitiao), rounded with subtle swelling at the middle | 风动衣袂/飘带动态档 |
+| 铁线描 | 粗细均匀硬朗如铁丝——与界画建筑勾线同源（见十六节李嵩锚点） | firm even iron-wire linework for drapery folds | 礼服大袖/庄重档 |
+
+配套规则不变：描法词后仍要补笔触描述（见本节头部规律），负向 `no smooth clean vector lines` 照挂。
+
 ### 九.七、绢本长卷质感句（2026-09-16 周三色彩专题二轮追加，来源：黑哥AI"宋代山水长卷" GPT Image-2 案例库帖）
 
 画意路线长卷/立轴档的材质与色彩锚定句（image-gpt-2 长自然语言直接用）：
@@ -614,6 +790,19 @@ B 路线的另一种骨架（与四层构建法并用，四段式更适合"把�
 - 老化：`fine age crazing across the silk surface`（细密老化裂纹烘托古物质感；残破美学升级版加边缘虫蛀，见九·材质层）
 - **色调局限句**（本日新句式）：`the palette is limited to ivory silk, carbon ink, ochre and touches of mineral green`——用"局限"句式把色板钉死在三四色内，比罗列"低饱和"更有效
 - 排除句：`no gilding, clouds drawn without outlines`（无金色、云朵无勾线——防 AI 默认加金勾线跑成建筑装饰画）
+- **帘纹留白句**（2026-09-28 周一形制专题顺带新增，来源：php.cn 小云雀AI古风实战帖）：单纯写"留白"模型仍可能偷偷填淡色；
+  给空白处加一个**真实古纸物理特征**——帘纹（抄纸竹帘留下的平行细纹），AI 会把它识别为纸张质感证据，从而主动尊重留白区不乱画：
+  `the right side of the silk left empty (about 40% of the frame), the blank area showing faint parallel paper screen lines (lianwen)`
+  留白占比句（三.七⑨）管"留多少"，帘纹句管"留白区长什么样"，两句配合使用。
+
+### 九.八、材质对比句（2026-10-02 周五整合日新增，来源：Tensor.Art"新中式宋韵文人风写真"帖 2026-10-02 检索）
+
+**粗糙与柔滑同框**：全画面都柔会腻，全画面都糙会旧——宋韵质感的高级感来自**材质对话**：
+`the rough grain of weathered wood and woven bamboo contrasting with the smooth fluid silk of the robe`（粗木竹编的糙 × 丝衣的滑）。
+落点三条：
+- 场景里挑**一件粗糙器物**（木船身/竹编茶盘/老木桌/陶罐）与人物丝麻衣料对置，一柔一刚互相当对方的"质感锚"；
+- 写实路线把对比句挂材质段，画意路线改写为工笔版 `plain uncarved wood surfaces versus delicately patterned silks`（平涂层级对比）；
+- 与十二双质感铁律不冲突：铁律管"写实/画意词汇分家"，本条管"同一路线内的材质层次"。
 
 ## 十、夜景与月夜范式（2026-08-31 新增，来源：今日头条宋代AI写真帖 / gemnana 宋韵月夜河景）
 
@@ -630,6 +819,23 @@ B 路线的另一种骨架（与四层构建法并用，四段式更适合"把�
 - **眉**：温婉的远山黛
 - **首饰**：珍珠发簪数枚 + 小巧花丝镶嵌梳篦，无繁复步摇；耳畔小巧珍珠耳坠；颈间简约珍珠项链
   （注意：珍珠首饰属于"雅致有度"档，与铁律"一支素簪"不冲突——素簪是田园日常，珍珠是才女夜宴，按场景选档）
+
+- **宋代妆容体系补充表（2026-10-02 周五整合日新增，来源：浙江省社科联"宋韵：品味雅俗间的审美意趣" / 腾讯新闻"近千年前的杭州流行什么" 2026-10-02 检索）**：
+  "宋代=裸妆发源地"，妆法按场景选档，比泛写"淡雅妆容"准得多——
+
+| 妆名 | 特征（画面感） | 提示词写法（英） | 场景适配 |
+|------|----------------|------------------|---------|
+| 薄妆/素妆 | 薄施朱色、面透微红 | `barely-there blush, skin showing a faint natural flush through the powder` | 日常档默认 |
+| 三白妆 | 额头、鼻梁、下巴三处提白，古法高光 | `three-white makeup: pale highlights on forehead, nose bridge and chin` | 少女/仕女档（已有词条，此处归档） |
+| 桃花妆 | 浅淡一层胭脂 | `a wash of pale peach rouge across the cheeks` | 春日/闺趣档 |
+| 檀晕妆 | 浅粉嫩调晕染 | `soft tan-hazy blush diffused around the eyes and cheeks` | 娇柔档 |
+| 飞霞妆 | 胭脂上再盖一层白粉，透而不艳 | `rouge veiled under a layer of fine white powder, glowing but muted` | 夜宴档 |
+| 珍珠妆 | 面靥处贴珍珠（宋仁宗皇后像同款），配珍珠花钿 | `tiny pearls pasted as huadian at the temples and cheeks, royal Song style` | 后妃/贵妇档 |
+| 咬唇妆 | 唇中一抹、上下晕开 | `lip color dabbed at the center only, edges diffusing outward` | 含蓄情绪特写 |
+| 浅文殊眉/月眉/倒晕眉 | 细长淡墨眉为主流，忌浓黑粗眉 | `long slender brows drawn in diluted ink (qianwenshu style)` | 通用，替换泛写 brows |
+| 一年景花冠 | 四季花卉聚于一冠（仁宗皇后像侍女同款） | `a flower crown combining blossoms of all four seasons (yinianjing style)` | 宫廷侍女/节庆档 |
+
+  档位速配：日常→薄妆 / 闺趣→桃花妆 / 夜宴→飞霞妆 / 后妃→珍珠妆 / 特写情绪→咬唇妆；眉一律细长淡墨，负向防 `thick dark modern eyebrows`。
 
 ## 十二、双质感铁律（2026-08-31 新增，来源：howgo 国风提示词整理帖）
 
@@ -803,3 +1009,52 @@ desk 上只放"前图出现过的物件"（thread-bound books + white porcelain 
 - **营造法式比例句**（CSDN 丹青幻境帖）：`architecture follows Song dynasty Yingzao Fashi proportions, elegant gently-curved roof profile (juzhe), complex layered dougong bracket sets, wide central bay flanked by narrower side bays, columns slightly inclining inwards`——举折曲线/斗拱层叠/明间开阔次间稍窄/柱侧脚，四件宋构特征一次写齐
 - **精度分工原则**：远景斗拱糊一点没事，**近景建筑必须形制精准**；要精确结构时用竖构图（建筑高度更舒展）
 - **界画专属负向**：`exaggerated eaves, Japanese torii, Thai temple roof, western architecture, modern architecture`——反向词直接干掉最常混入的"歪楼"基因，实测命中率最高
+
+## 十七、实拍图反推词库：光线与生活感（2026-10-04 周日图片主线第一课，来源：王老师贴图 9 张宋韵/古风实拍成片看图反推——月夜荷灯 / 红衣秋千 / 烛下穿针 / 青绿剥花瓣 / 树下午睡 / 绿裙转扇 / 浇花溅水 / 桃花栏边 / 窗前焚香 / 珠帘镜前）
+
+> **图片素材驱动主线首批成果。** 这批成片的气质不在服装形制（多为大袖古风，非严格宋制），
+> 而在**光线写法、前景遮挡、生活动作与真实感细节**——四类词条与形制无关，写实路线直接可用。
+
+**① 逆光发丝光句**（红衣秋千/焚香/近景倒水同款，出"氛围感"的头号功臣）：
+`golden-hour backlight tracing the fine baby hairs along her cheek and temple into a glowing rim`——
+发丝边缘光是"真拍出来"的标志，CG 感图从来没有这根光。
+
+**② 织物逆光显纹句**（红衣秋千专供）：大袖纱衣对着光源举起来，织物经纬在透光中显形——
+`she lifts one vast sleeve against the sun, the loose-weave gauze glowing translucent and revealing its woven texture`；
+深红不艳的秘诀：`aged crimson gauze, color sun-faded at the folds`（旧色感压饱和）。
+
+**③ 树影花纱句**（树下午睡专供，一句话顶三级滤镜）：
+`dappled tree shadows fall across her figure and the white robes like a layer of floral-printed gauze, shifting with the breeze`——
+树影当"免费的花纱"盖在人身上，宋韵画面里最便宜的"纹样具名"平替。
+
+**④ 水珠冻结句**（浇花溅水专供，动态图的命根）：
+`water droplets frozen in midair, each bead backlit into a scattered diamond spark`——
+快门感写进词里（1/200s 冻结），配 `mud-splashed hem and damp skirt hem clinging with wet stains`（泥渍溅裙）
+——**生活痕迹是防摆拍的最强负向解药**，裙上泥点比一百个"natural"都真。
+
+**⑤ 烛光单光源句**（烛下穿针专供，室内夜戏配方）：
+`lit by a single candle, warm light pooling on her downcast face and hands while the room falls into deep amber shadow, a blurred candle flame blooming in the near foreground as a peek-a-boo framing element`——
+前景虚化烛火做"窥视感"遮挡+单光源窄受光面，是古装剧夜戏实拍的标志性质感。
+
+**⑥ 月夜双光源句**（月夜荷灯专供）：
+`cold blue moonlight flooding the scene, one warm orange lotus lantern in her hands as the sole warm accent, broken moonlight glittering on the dark water`——
+冷蓝底+暖橙点=月夜氛围公式；前景芦苇剪影遮挡（`silhouetted reeds in the near foreground`）补层次。
+
+**⑦ 手部第二焦点句**（这批图共同的叙事引擎）：
+手是画面第二焦点、动作的落点——`her hands in sharp focus as she…`，动作词库：
+捧水草水珠滴落（scooping water plants, dripping between fingers）｜陶壶倒水（pouring water from a dark-glazed pottery ewer）｜
+穿针引线（threading a needle by candlelight）｜指尖剥花瓣（plucking petal tips one by one）｜执扇半遮脸（half-hiding behind a folding fan）。
+接十三.七微事件：**表情可以静，手必须在做一件事**。
+
+**⑧ 珠帘/花枝前景遮挡句**（镜前侧脸专供）：
+`shot through a beaded curtain, strings of glass beads melting into large soft bokeh in the foreground, her profile framed between them`——
+前景遮挡物虚化成色块（珠帘/花枝/烛火/荷叶），比空场景多两层纵深；与六.五.三框式构图配合用。
+
+**⑨ 色板印证**（9 张图的共性，反推自实拍）：
+米白/月白为主底 + 青绿系（豆绿/竹青/湖蓝绿）做服色主角 + 暖金光做点缀 + 偶尔一点红（红绳/香囊/荷灯）——
+与三.五词库吻合；例外档"正红秋千"靠旧色感（sun-faded）压住不艳。
+
+**⑩ 考据提醒（如实标注）**：这批成片服装多为大袖广袖古风（魏晋风/仙侠感），**不是严格宋制**——
+氛围、光线、遮挡、动作词条全部可迁移；但若王老师要"考据向宋制出片"，宽袖大衫需换成褙子/百迭裙+抹胸体系（八.六），
+两套词不要混在一条提示词里。
+
