@@ -1,38 +1,64 @@
 {
   "skill": "ling-skill",
-  "version": "1.0.0",
-  "generated": "2026-10-06",
+  "version": "2.0.0",
+  "generated": "2026-10-07",
   "format": "darwin-skill compatible",
+  "source": "246 条唯一视频（174 combat）+ 棂 674 条发言",
   "prompts": [
     {
       "id": "T1",
-      "prompt": "帮我写一段 15 秒的 2D 动漫打斗提示词，主角是持纸伞的白发少女，对手是个牌头怪物，要求打击感强",
+      "prompt": "帮我写一段 15 秒的打斗提示词，主角是持纸伞的白发少女，对手是个牌头怪物，要求打击感强",
       "expect": "should_trigger",
-      "note": "核心场景：打斗提示词 + 2D 工作流 + 棂式题材"
+      "note": "核心场景：打斗提示词，未指定画风 → 应走默认路线①写实渲染，并给一次二选一确认"
     },
     {
       "id": "T2",
       "prompt": "这段打斗视频看起来很平，动作像站桩，人物还老穿帮，怎么改提示词？",
       "expect": "should_trigger",
-      "note": "诊断场景：打击感/节奏/逻辑性三维修复"
+      "note": "诊断场景：打击感/节奏/逻辑性三维修复，走 13 §二 诊断处方"
     },
     {
       "id": "T3",
       "prompt": "给我这场戏的两个角色设计招式和战斗偏好，主角用伞，反派用符纸",
       "expect": "should_trigger",
-      "note": "棂原话直接触发的招式设计模块"
+      "note": "招式设计模块（棂原话直接触发）"
     },
     {
       "id": "T4",
       "prompt": "按棂那种风格生一张 9:16 的角色参考图，白发兽耳、机械义肢、米白色调",
       "expect": "should_trigger",
-      "note": "生图风格配方模块"
+      "note": "生图风格配方模块（references/05）"
     },
     {
       "id": "T5",
       "prompt": "帮我写一个 30 秒的群像打斗分镜，8 个人混战，要有杂兵和主将",
       "expect": "should_trigger",
-      "note": "群战丰富性 + 群敌分层"
+      "note": "群战丰富性 + 群敌分层（references/08）"
+    },
+
+    {
+      "id": "T6",
+      "prompt": "帮我写一段 2D 动漫风格的打斗，黑白画面，两个人的刀光要一红一蓝",
+      "expect": "should_trigger",
+      "note": "新增：明示 2D → 路线③，应加载 references/10（单双色刃光/黑白高对比）"
+    },
+    {
+      "id": "T7",
+      "prompt": "我要拍一段真人实拍的街头格斗，两个人在楼梯间打，不要特效",
+      "expect": "should_trigger",
+      "note": "新增：明示真人实拍 → 路线②，应加载 references/11（环境道具/低机位腿部开场）"
+    },
+    {
+      "id": "T8",
+      "prompt": "这段 15 秒的短视频打斗结尾总感觉很尬，最后定格之后观众没反应",
+      "expect": "should_trigger",
+      "note": "新增：治「结尾尬」→ 体裁分流 + 收尾三型（references/08 §三）"
+    },
+    {
+      "id": "T9",
+      "prompt": "帮我对这段打斗提示词做一次质检，看有没有踩红线",
+      "expect": "should_trigger",
+      "note": "新增：本 skill 的质检红线（references/13 §一）——注意与 D4 区分：D4 是平台违规红线，本条是打斗技法红线"
     },
 
     {
@@ -51,13 +77,13 @@
       "id": "D3",
       "prompt": "帮我把这个 60 秒的生成视频延长到 90 秒，用接力延长的写法",
       "expect": "should_not_trigger",
-      "note": "诱饵：视频延长属 seedance25-prompt 04"
+      "note": "诱饵：视频延长属 seedance25-prompt"
     },
     {
       "id": "D4",
       "prompt": "帮我检查这段提示词会不会踩平台红线，有没有违规内容",
       "expect": "should_not_trigger",
-      "note": "诱饵：红线审核属 seedance25-prompt"
+      "note": "诱饵：**平台合规**红线属 seedance25-prompt（区别于 T9 的打斗技法红线）"
     },
     {
       "id": "D5",
@@ -65,24 +91,42 @@
       "expect": "should_not_trigger",
       "note": "诱饵：普通人像生图不属本 skill（除非要棂式风格，见 T4）"
     },
+    {
+      "id": "D6",
+      "prompt": "帮我写一段真人短剧的日常对白戏，两个人在咖啡馆聊天",
+      "expect": "should_not_trigger",
+      "note": "新增诱饵：真人但不打斗 → 不属本 skill（路线②只处理真人打斗）"
+    },
+    {
+      "id": "D7",
+      "prompt": "帮我给这个动漫角色的三视图做转面，要 2D 赛璐璐风格",
+      "expect": "should_not_trigger",
+      "note": "新增诱饵：2D 角色资产出图 → 属 seedance25-prompt 资产层 / image-prompt-director，非打斗"
+    },
 
     {
       "id": "A1",
-      "prompt": "我要拍一段真人武侠的短交手，竹林里两个人过招，别太血腥",
+      "prompt": "打斗戏里我想加个大招，怎么安排慢动作和节奏？",
       "expect": "should_trigger",
-      "note": "边界模糊：真人+打斗 → 触发本 skill 但走工作流 B"
+      "note": "边界模糊：只问节奏技巧，仍属五维模型（慢动作只给三处）"
     },
     {
       "id": "A2",
-      "prompt": "打斗戏里我想加个大招，怎么安排慢动作和节奏？",
-      "expect": "should_trigger",
-      "note": "边界模糊：只问节奏技巧，仍属五维模型"
-    },
-    {
-      "id": "A3",
       "prompt": "帮我把这场打斗接到前面的文戏后面，做整体分镜",
       "expect": "ambiguous",
       "note": "混合戏：本 skill 负责打斗段，文戏段与结构由 seedance25-prompt / story-director 负责，需协同"
+    },
+    {
+      "id": "A3",
+      "prompt": "我想要那种又像动漫又有点写实质感的打斗，能混着来吗？",
+      "expect": "should_trigger",
+      "note": "跨路线混淆测试：必须**拒绝混写**，让用户二选一（13 R0）"
+    },
+    {
+      "id": "A4",
+      "prompt": "帮我写段打斗，主角穿黑甲用长枪，场景是雪原",
+      "expect": "should_trigger",
+      "note": "边界模糊：未指定画风 → 默认路线①，并选子路线（奇幻高武 / 机甲军事 / 巨物对撞）"
     }
   ]
 }
