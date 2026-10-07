@@ -1,0 +1,88 @@
+{
+  "skill": "ling-skill",
+  "version": "1.0.0",
+  "generated": "2026-10-06",
+  "format": "darwin-skill compatible",
+  "prompts": [
+    {
+      "id": "T1",
+      "prompt": "帮我写一段 15 秒的 2D 动漫打斗提示词，主角是持纸伞的白发少女，对手是个牌头怪物，要求打击感强",
+      "expect": "should_trigger",
+      "note": "核心场景：打斗提示词 + 2D 工作流 + 棂式题材"
+    },
+    {
+      "id": "T2",
+      "prompt": "这段打斗视频看起来很平，动作像站桩，人物还老穿帮，怎么改提示词？",
+      "expect": "should_trigger",
+      "note": "诊断场景：打击感/节奏/逻辑性三维修复"
+    },
+    {
+      "id": "T3",
+      "prompt": "给我这场戏的两个角色设计招式和战斗偏好，主角用伞，反派用符纸",
+      "expect": "should_trigger",
+      "note": "棂原话直接触发的招式设计模块"
+    },
+    {
+      "id": "T4",
+      "prompt": "按棂那种风格生一张 9:16 的角色参考图，白发兽耳、机械义肢、米白色调",
+      "expect": "should_trigger",
+      "note": "生图风格配方模块"
+    },
+    {
+      "id": "T5",
+      "prompt": "帮我写一个 30 秒的群像打斗分镜，8 个人混战，要有杂兵和主将",
+      "expect": "should_trigger",
+      "note": "群战丰富性 + 群敌分层"
+    },
+
+    {
+      "id": "D1",
+      "prompt": "这段男女主在雨里对望的文戏，帮我写情绪提示词，要有微表情",
+      "expect": "should_not_trigger",
+      "note": "诱饵：纯文戏情绪戏应交给 seedance25-prompt"
+    },
+    {
+      "id": "D2",
+      "prompt": "Seedance 2.5 的 seed 和 motion 参数填多少合适？",
+      "expect": "should_not_trigger",
+      "note": "诱饵：参数速查属 seedance25-prompt"
+    },
+    {
+      "id": "D3",
+      "prompt": "帮我把这个 60 秒的生成视频延长到 90 秒，用接力延长的写法",
+      "expect": "should_not_trigger",
+      "note": "诱饵：视频延长属 seedance25-prompt 04"
+    },
+    {
+      "id": "D4",
+      "prompt": "帮我检查这段提示词会不会踩平台红线，有没有违规内容",
+      "expect": "should_not_trigger",
+      "note": "诱饵：红线审核属 seedance25-prompt"
+    },
+    {
+      "id": "D5",
+      "prompt": "帮我生成一张写实的人像照片，用来做头像",
+      "expect": "should_not_trigger",
+      "note": "诱饵：普通人像生图不属本 skill（除非要棂式风格，见 T4）"
+    },
+
+    {
+      "id": "A1",
+      "prompt": "我要拍一段真人武侠的短交手，竹林里两个人过招，别太血腥",
+      "expect": "should_trigger",
+      "note": "边界模糊：真人+打斗 → 触发本 skill 但走工作流 B"
+    },
+    {
+      "id": "A2",
+      "prompt": "打斗戏里我想加个大招，怎么安排慢动作和节奏？",
+      "expect": "should_trigger",
+      "note": "边界模糊：只问节奏技巧，仍属五维模型"
+    },
+    {
+      "id": "A3",
+      "prompt": "帮我把这场打斗接到前面的文戏后面，做整体分镜",
+      "expect": "ambiguous",
+      "note": "混合戏：本 skill 负责打斗段，文戏段与结构由 seedance25-prompt / story-director 负责，需协同"
+    }
+  ]
+}
