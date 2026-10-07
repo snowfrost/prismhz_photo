@@ -1,0 +1,4 @@
+interface:
+  display_name: "东方巨物奇境导演"
+  short_description: "生成东方巨物图片提示词，并将最终成图转为稳定图生视频提示词"
+  default_prompt: "使用 $eastern-colossal-wonder-director 默认输出五组东方巨物图片提示词。"
