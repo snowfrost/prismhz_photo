@@ -1,0 +1,4 @@
+interface:
+  display_name: "复古DV日常导演"
+  short_description: "设计精致上镜的人物与清新穿搭，编写自然互动的复古DV日常短片"
+  default_prompt: "使用 $retro-dv-daily-director，根据我的生活灵感设计人物、穿搭、资产与复古DV视频分镜。"
