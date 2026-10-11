@@ -1,9 +1,10 @@
 {
   "skill": "ling-skill",
-  "version": "2.0.0",
+  "version": "2.2.0",
   "generated": "2026-10-07",
+  "updated": "2026-10-11",
   "format": "darwin-skill compatible",
-  "source": "246 条唯一视频（174 combat）+ 棂 674 条发言",
+  "source": "246 条唯一视频（174 combat）+ 棂 674 条发言；2026-10-11 吸收叩叩哥系参考包（v2.1→v2.2）",
   "prompts": [
     {
       "id": "T1",
@@ -59,6 +60,30 @@
       "prompt": "帮我对这段打斗提示词做一次质检，看有没有踩红线",
       "expect": "should_trigger",
       "note": "新增：本 skill 的质检红线（references/13 §一）——注意与 D4 区分：D4 是平台违规红线，本条是打斗技法红线"
+    },
+    {
+      "id": "T10",
+      "prompt": "有个 40 秒的打斗，要从巷子打到天台再掉进车里，帮我拆成分镜表一条条生成",
+      "expect": "should_trigger",
+      "note": "新增（v2.1）：交付形态 B 多镜剪辑 → references/16（Shot ≤4s + 切点规则 + 连续性三件套）"
+    },
+    {
+      "id": "T11",
+      "prompt": "给反派设计一个冰系大招，要国漫那种压迫感，15 秒内打完",
+      "expect": "should_trigger",
+      "note": "新增（v2.1）：大招设计 → references/15（15s 四段骨架 + 六层设计语言 + 反同质化公式）"
+    },
+    {
+      "id": "T12",
+      "prompt": "我要做一场两分钟的大群战，主角一个人打几百个魔兵，要有电影感",
+      "expect": "should_trigger",
+      "note": "新增（v2.2）：S 级群战 → references/08 §十（五层结构 / 五阶段 90–120s / 高光静音法）"
+    },
+    {
+      "id": "T13",
+      "prompt": "这段打斗我要一镜到底，不切镜，30 秒",
+      "expect": "should_trigger",
+      "note": "新增（v2.2）：形态 A 特例 → 单镜内小节式写法（references/16 §五），禁与 Shot 表混用"
     },
 
     {
@@ -127,6 +152,12 @@
       "prompt": "帮我写段打斗，主角穿黑甲用长枪，场景是雪原",
       "expect": "should_trigger",
       "note": "边界模糊：未指定画风 → 默认路线①，并选子路线（奇幻高武 / 机甲军事 / 巨物对撞）"
+    },
+    {
+      "id": "A5",
+      "prompt": "帮我把这场打斗写成番剧那种作画，要有黑白闪和集中线",
+      "expect": "should_trigger",
+      "note": "新增（v2.2）：2D 路线深度语法 → references/10 §六 番剧作画 6 件套（黑白闪/单色染屏/集中线/疯切）"
     }
   ]
 }
