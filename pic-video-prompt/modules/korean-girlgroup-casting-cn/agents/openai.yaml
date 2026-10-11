@@ -1,0 +1,4 @@
+interface:
+  display_name: "韩系女团选角"
+  short_description: "生成韩系女团面部、三视图与舞蹈视频提示词，支持参考图和自由编排"
+  default_prompt: "使用 $korean-girlgroup-casting-cn，介绍用途并给我三个开始选项。"

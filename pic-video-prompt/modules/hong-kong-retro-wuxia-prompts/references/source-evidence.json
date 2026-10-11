@@ -1,0 +1,492 @@
+{
+  "style": "港风复古武侠 / 江湖风云",
+  "source_count": 18,
+  "provenance": {
+    "actual_mj_prompt": "Preserved from verified project manifest; decoded PNG description matched previously authored English positive body.",
+    "native_imagegen_zh": "Previously authored native Chinese prompt. Not claimed to be the actual MJ input or exact back-translation.",
+    "recorded_negative": "Actual recorded --no only. Item 09 has none.",
+    "suggested_negative": "Later visual-risk inference, not original generation flags.",
+    "images": "Existing contact sheet copied unchanged; image 03 copied byte-for-byte. Other original PNGs identified by SHA-256, not bundled."
+  },
+  "common_profile": "z4yrncu",
+  "limitation": "All 18 images share a personal profile. Text-only transfer has not been isolated or image-generated for validation.",
+  "parameter_distribution": {
+    "--no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2": 15,
+    "--no people, animals, painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2": 2,
+    "--chaos 3 --ar 16:9 --raw --profile z4yrncu --stylize 400 --hd --v 8.2": 1
+  },
+  "bundled_images": {
+    "03-mounted-anchor.png": "7601ae46e910dceb3778359e109bf80a857ffb9d25b217588e14dd7367a8d4db",
+    "source-contact-sheet.jpg": "c3db61e39f926aa7ad9f65f56cba11f3f7903b3671a3e53ed0249a7a32e8f240"
+  },
+  "items": [
+    {
+      "id": "01",
+      "original_prompt_id": "02",
+      "title": "红伞下回眸",
+      "contact_sheet_cell": {
+        "row": 1,
+        "column": 1
+      },
+      "source_sha256": "72010cdf71d157c1b5aefc715f29c36c524ffef9425cef3d3e62da86bc0400f2",
+      "dimensions": [
+        2944,
+        1648
+      ],
+      "job_id": "de098562-5814-49ee-9126-50a48940ca5e",
+      "positive_en": "A chest-up three-quarter portrait fills the frame with a teal-robed swordswoman turning her head back over her shoulder. Her dark eyes look just past the camera, lips softly closed, loose strands crossing one cheek beneath half-tied black hair. One hand holds a wooden umbrella shaft beside her face. A weathered vermilion oil-paper canopy stretches across the top, showing bamboo ribs and a few worn edges. Her white crossed collar separates warm skin from the deep teal robe. Behind her, snowy ground becomes a narrow soft blue-white field. Live-action Chinese wuxia cinematic still, warm reflected light beneath the umbrella, natural facial planes, tangible paper and cotton, restrained film grain and soft highlights.",
+      "actual_mj_prompt": "A chest-up three-quarter portrait fills the frame with a teal-robed swordswoman turning her head back over her shoulder. Her dark eyes look just past the camera, lips softly closed, loose strands crossing one cheek beneath half-tied black hair. One hand holds a wooden umbrella shaft beside her face. A weathered vermilion oil-paper canopy stretches across the top, showing bamboo ribs and a few worn edges. Her white crossed collar separates warm skin from the deep teal robe. Behind her, snowy ground becomes a narrow soft blue-white field. Live-action Chinese wuxia cinematic still, warm reflected light beneath the umbrella, natural facial planes, tangible paper and cotton, restrained film grain and soft highlights. --no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_parameters": "--no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_negative_en": "painting, illustration, plastic, text, watermark",
+      "recorded_negative_zh": "绘画效果、插画效果、塑料质感、文字、水印。",
+      "native_imagegen_zh": "横向16:9，胸像近景，青衣女侠转过肩头回望，脸是视觉中心，眼睛看向镜头旁，嘴唇轻闭，几缕黑发贴近面颊。她一手在脸旁握木伞杆，旧朱红油纸伞铺开在头顶，露出竹骨和轻微磨损。深青布袍与白色交领清楚可见，背景只留柔化的冷白雪地。伞下暖反光照亮眼睛和自然面部起伏，肤色与红伞呼应，衣服暗部偏冷。呈真人老武侠剧照质感，皮肤、竹骨、纸面和布料真实，颗粒轻、高光柔；不要华丽冠饰、油画效果、塑料皮肤或文字水印。",
+      "original_composition": "胸像近景，回眸的脸为中心，红伞形成上方的大色块。",
+      "observed": "红伞、白交领和冷白背景形成明确冷暖对照；人物位于中央偏右，伞杆和手在左下，发丝横过面颊。",
+      "deviation": "回眸变为更接近正面的直视，景别收紧，衣色偏深蓝灰；原稿中的转肩关系并未完全落地。",
+      "suggested_negative_zh": "伞杆与手指畸变、伞骨穿脸、额外人物、油画笔触、塑料肤质。",
+      "suggested_negative_en": "distorted umbrella shaft or fingers, umbrella ribs crossing the face, extra people, painterly strokes, plastic skin"
+    },
+    {
+      "id": "02",
+      "original_prompt_id": "08",
+      "title": "竹影里的警觉侧脸",
+      "contact_sheet_cell": {
+        "row": 1,
+        "column": 2
+      },
+      "source_sha256": "21e5581a416000fe9cd8be44c31ce87bed9a9d86fcd42f52d502f77d8262c844",
+      "dimensions": [
+        2944,
+        1648
+      ],
+      "job_id": "8efbcdc7-ec40-41f0-8647-e950663d2b64",
+      "positive_en": "A shoulder-up three-quarter close-up catches a young swordsman turning his head toward screen-left as if listening. His eyes remain sharply focused off frame, brows slightly drawn, lips closed, neck and shoulders held still. Dark hair is gathered high with a few wind-lifted strands beside a narrow cheek. A muted gray-green robe and pale crossed collar frame his face. One slender bamboo shadow crosses the shoulder and the outer cheek, leaving both eyes readable. The bamboo grove behind dissolves into deep green layers. Live-action Chinese wuxia cinematic still, a narrow band of warm late-afternoon side light against cool foliage shadows, natural facial planes, matte cloth and very subtle film grain.",
+      "actual_mj_prompt": "A shoulder-up three-quarter close-up catches a young swordsman turning his head toward screen-left as if listening. His eyes remain sharply focused off frame, brows slightly drawn, lips closed, neck and shoulders held still. Dark hair is gathered high with a few wind-lifted strands beside a narrow cheek. A muted gray-green robe and pale crossed collar frame his face. One slender bamboo shadow crosses the shoulder and the outer cheek, leaving both eyes readable. The bamboo grove behind dissolves into deep green layers. Live-action Chinese wuxia cinematic still, a narrow band of warm late-afternoon side light against cool foliage shadows, natural facial planes, matte cloth and very subtle film grain. --no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_parameters": "--no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_negative_en": "painting, illustration, plastic, text, watermark",
+      "recorded_negative_zh": "绘画效果、插画效果、塑料质感、文字、水印。",
+      "native_imagegen_zh": "横向16:9，肩部以上三分之二侧面近景。年轻剑客刚把头转向左侧，像在凝神听风，眉头稍收，嘴唇闭合，眼睛锐利地看向画外。黑发高束，鬓边几缕头发被风带起，灰绿布衣与浅色交领围住面部。一道细竹影落在肩头和面颊外侧，两只眼睛保持可读，背后竹林退成层叠深绿虚景。窄幅暖斜阳照亮一侧脸，阴影偏冷，保留自然颧骨和皮肤明暗。真人老武侠剧照质感，哑光衣料、轻微颗粒；不要大面积黑影遮脸、游戏皮肤、油画笔触或文字水印。",
+      "original_composition": "肩部近景，侧耳与眼神传达警觉，竹林退成深绿背景。",
+      "observed": "灰绿衣男侠占画面右半，深绿竹林和暖色脸部明确，发丝向右拖曳，脸颊出现竹影。",
+      "deviation": "人物更接近正面而非向左明显转头；竹影较宽并横过鼻梁，身后新增了兵器状细线。",
+      "suggested_negative_zh": "大块阴影遮眼、发丝与兵器粘连、多余剑柄、塑料肤质、油画笔触。",
+      "suggested_negative_en": "shadows hiding the eyes, hair merging with weapons, extra sword hilts, plastic skin, painterly strokes"
+    },
+    {
+      "id": "03",
+      "original_prompt_id": "04",
+      "title": "策马迎风",
+      "contact_sheet_cell": {
+        "row": 1,
+        "column": 3
+      },
+      "source_sha256": "7601ae46e910dceb3778359e109bf80a857ffb9d25b217588e14dd7367a8d4db",
+      "dimensions": [
+        2944,
+        1648
+      ],
+      "job_id": "dd35dd4b-e945-4cc5-9df1-66ffc83f6fd8",
+      "positive_en": "A tight side-tracking medium shot centers a mounted swordswoman from head to hips, leaning forward toward screen-left. Her focused profile, braced shoulders and hands gripping the reins remain clearly visible. Only the black horse’s mane and upper neck enter the lower-left foreground. A deep red robe opens beneath a black cloak; long dark hair and a narrow red streamer trail strongly toward screen-right. A plain sword scabbard rests close to her hip. Blue-gray river rocks streak softly behind, with a few low white splashes along the bottom edge. Live-action Chinese wuxia chase still, warm light on the face, directional background blur, weighty moving cloth, restrained grain and tangible photographic textures.",
+      "actual_mj_prompt": "A tight side-tracking medium shot centers a mounted swordswoman from head to hips, leaning forward toward screen-left. Her focused profile, braced shoulders and hands gripping the reins remain clearly visible. Only the black horse’s mane and upper neck enter the lower-left foreground. A deep red robe opens beneath a black cloak; long dark hair and a narrow red streamer trail strongly toward screen-right. A plain sword scabbard rests close to her hip. Blue-gray river rocks streak softly behind, with a few low white splashes along the bottom edge. Live-action Chinese wuxia chase still, warm light on the face, directional background blur, weighty moving cloth, restrained grain and tangible photographic textures. --no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_parameters": "--no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_negative_en": "painting, illustration, plastic, text, watermark",
+      "recorded_negative_zh": "绘画效果、插画效果、塑料质感、文字、水印。",
+      "native_imagegen_zh": "横向16:9，侧向跟拍中景，骑马女侠从头到胯部成为主体，身体朝左前倾，专注的侧脸、绷紧的肩背和握缰双手清楚可见。马只在左下露出黑色鬃毛与上段颈部。红袍外罩黑披风，长发与窄红飘带一起向右后方拉长，普通剑鞘贴在腰侧。背景蓝灰河石带水平拖影，下缘只保留少量水花。暖光落在脸上，黑衣有重量，衣带运动方向一致，面部比背景清楚。真人老武侠追逐剧照质感，轻微颗粒；不要盔甲、能量拖尾、油画笔触或文字水印。",
+      "original_composition": "侧向中景，骑客的脸、肩背和握缰的手优先，马只局部入画。",
+      "observed": "红袍黑披风女侠俯身向左，马头与鬃毛切入左下，发丝和红带强烈向右展开，河石背景呈横向运动模糊。",
+      "deviation": "主要动作与光色吻合；画面比文字预设更近，马耳与额头也入画，手和缰绳被鬃毛部分遮挡，腰侧金属结构较复杂。",
+      "suggested_negative_zh": "手指与缰绳粘连、马头畸变、腰侧兵器增生、静止发带、油画笔触。",
+      "suggested_negative_en": "fingers merging with reins, deformed horse head, extra weapons at the waist, motionless streamers, painterly strokes"
+    },
+    {
+      "id": "04",
+      "original_prompt_id": "26",
+      "title": "山道尽头的空客栈",
+      "contact_sheet_cell": {
+        "row": 2,
+        "column": 1
+      },
+      "source_sha256": "fc504f1260f8a08eae3ea7e974c88ffb50426dc718039fbef0b8ababefdf2601",
+      "dimensions": [
+        2944,
+        1648
+      ],
+      "job_id": "d17fc285-6fe3-4de6-b1be-b54a7a3664f6",
+      "positive_en": "A wide empty mountain-road scene places a small weathered timber inn in the left third, with a broad unoccupied dirt path curving from the lower-right toward its partly open doorway. The building has low dark tiled eaves, rough posts and a plain canvas awning whose loose corner lifts in the wind. One warm amber window provides the only bright accent; the doorway and interior contain no figures. A few dry leaves slide across the road, while muted blue-gray ridges spread behind the roof into evening haze. The foreground remains spacious, with worn earth and stones retaining physical texture. Live-action Chinese wuxia cinematic still, cool dusk surrounding a modest pool of warmth, restrained optical softness and fine grain.",
+      "actual_mj_prompt": "A wide empty mountain-road scene places a small weathered timber inn in the left third, with a broad unoccupied dirt path curving from the lower-right toward its partly open doorway. The building has low dark tiled eaves, rough posts and a plain canvas awning whose loose corner lifts in the wind. One warm amber window provides the only bright accent; the doorway and interior contain no figures. A few dry leaves slide across the road, while muted blue-gray ridges spread behind the roof into evening haze. The foreground remains spacious, with worn earth and stones retaining physical texture. Live-action Chinese wuxia cinematic still, cool dusk surrounding a modest pool of warmth, restrained optical softness and fine grain. --no people, animals, painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_parameters": "--no people, animals, painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_negative_en": "people, animals, painting, illustration, plastic, text, watermark",
+      "recorded_negative_zh": "人物、动物、绘画效果、插画效果、塑料质感、文字、水印。",
+      "native_imagegen_zh": "横向16:9，无人物山道大场景。小型旧木客栈落在画面左三分之一，低矮灰瓦檐、粗木柱和旧帆布棚有真实磨损。宽阔空土路从右下弯向半开的门，门口与室内都没有人影。一扇窗透出克制的琥珀暖光，帆布棚的松角被风向一侧掀起，几片干叶沿路面滑动。屋后蓝灰山岭横向展开并退入暮色，近处留足空路与碎石层次。冷暮色围住一小处灯火，呈真人老武侠电影空镜质感，木土布料自然、颗粒轻；不要人物、车辆、现代招牌、油画效果或文字水印。",
+      "original_composition": "旧客栈压在左侧，宽阔空山道由右下引入；暖窗与被风掀起的布棚让静景保留动势。",
+      "observed": "旧客栈在左，空山道向右后方雾林延伸，单扇暖窗与蓝色暮景呼应，布棚和落叶有风向。",
+      "deviation": "建筑占比更大，画面上沿新增粗树枝框景；仍保留无人、旧木构和一处暖灯的核心。",
+      "suggested_negative_zh": "门窗人影、现代招牌、车辆、重复门窗、透视错乱、油画笔触。",
+      "suggested_negative_en": "human silhouettes in doors or windows, modern signs, vehicles, repeated windows, broken perspective, painterly strokes"
+    },
+    {
+      "id": "05",
+      "original_prompt_id": "05",
+      "title": "蓝布之间侧身",
+      "contact_sheet_cell": {
+        "row": 2,
+        "column": 2
+      },
+      "source_sha256": "1f26a5a712ff898833117aabbd2670f873497a10e86811c159169c656fb9a8e5",
+      "dimensions": [
+        2944,
+        1648
+      ],
+      "job_id": "2b7a8ed9-7dd0-44b0-9033-374301d7a979",
+      "positive_en": "A waist-up shot frames a white-robed swordswoman between two hanging indigo cotton sheets. She stands slightly left of center, one hand lifting the cloth at screen-left while her face turns toward screen-right with a restrained, attentive gaze. Half-tied dark hair leaves fine loose strands at her temples. A white crossed collar, broad sleeves and a muted green waist sash remain readable. The nearer blue sheet fills the right foreground with deep heavy folds; only a narrow glimpse of an old stone alley recedes behind her. Live-action Chinese wuxia cinematic still, warm oblique sunlight touching face and fingers, cool blue fabric shadows, natural skin and matte cotton, subtle grain and softly resolved edges.",
+      "actual_mj_prompt": "A waist-up shot frames a white-robed swordswoman between two hanging indigo cotton sheets. She stands slightly left of center, one hand lifting the cloth at screen-left while her face turns toward screen-right with a restrained, attentive gaze. Half-tied dark hair leaves fine loose strands at her temples. A white crossed collar, broad sleeves and a muted green waist sash remain readable. The nearer blue sheet fills the right foreground with deep heavy folds; only a narrow glimpse of an old stone alley recedes behind her. Live-action Chinese wuxia cinematic still, warm oblique sunlight touching face and fingers, cool blue fabric shadows, natural skin and matte cotton, subtle grain and softly resolved edges. --no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_parameters": "--no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_negative_en": "painting, illustration, plastic, text, watermark",
+      "recorded_negative_zh": "绘画效果、插画效果、塑料质感、文字、水印。",
+      "native_imagegen_zh": "横向16:9，腰部以上中景。白衣女侠站在两块靛蓝晾布之间，人物稍偏左，一手抬起画面左侧的布边，脸转向右方，神情专注克制。半束黑发在鬓边留少量碎发，白交领、宽袖与灰绿腰带清楚。右侧蓝布靠近镜头，厚重褶皱形成前景，人物身后只露窄窄的旧石巷。暖斜光照亮脸和手指，深蓝布影保持冷意，白衣与皮肤不发光。真人老武侠剧照外观，哑光棉布、自然面部明暗、轻微颗粒与柔边；不加宫廷装饰、发光丝绸、油画效果或文字水印。",
+      "original_composition": "腰部中景，两侧蓝布紧贴人物，露出脸、抬手与白衣。",
+      "observed": "白衣女子位于中央偏左，单手拨开左侧深蓝布，右侧布幕占较大面积，暖光勾出发缘与手指。",
+      "deviation": "人物视线更接近镜头旁，后方巷道很浅；服装、抬手和两侧织物的关系总体吻合。",
+      "suggested_negative_zh": "手指与布边粘连、衣领结构混乱、布幕穿身、过度磨皮、油画笔触。",
+      "suggested_negative_en": "fingers merging with cloth, malformed crossed collar, fabric intersecting the body, excessive skin smoothing, painterly strokes"
+    },
+    {
+      "id": "06",
+      "original_prompt_id": "24",
+      "title": "月下芦苇一舟",
+      "contact_sheet_cell": {
+        "row": 2,
+        "column": 3
+      },
+      "source_sha256": "721bf204386a335d27acd9bce09eea1cc9783ce2f9d300da8153790dcb71f495",
+      "dimensions": [
+        2944,
+        1648
+      ],
+      "job_id": "81ad3018-baff-403c-b303-294004d98a57",
+      "positive_en": "A wide moonlit river view places one small wooden boat in the lower-left third, its entire hull visible and spanning one-quarter of the frame width. Exactly one white-robed swordswoman stands steadily near the stern, her figure about twelve percent of the image height, turned toward the open water at screen-right. Her sheathed sword hangs at her waist; loose dark hair and one sleeve drift gently left. A single low lantern warms the boat planks and robe hem. Reeds rise along the right bank, balancing broad blue-black water and distant low mountain layers. A modest pale moon hangs high above. Live-action Chinese wuxia cinematic still, natural ripples, tactile wood and cotton, deep cool shadows and restrained grain.",
+      "actual_mj_prompt": "A wide moonlit river view places one small wooden boat in the lower-left third, its entire hull visible and spanning one-quarter of the frame width. Exactly one white-robed swordswoman stands steadily near the stern, her figure about twelve percent of the image height, turned toward the open water at screen-right. Her sheathed sword hangs at her waist; loose dark hair and one sleeve drift gently left. A single low lantern warms the boat planks and robe hem. Reeds rise along the right bank, balancing broad blue-black water and distant low mountain layers. A modest pale moon hangs high above. Live-action Chinese wuxia cinematic still, natural ripples, tactile wood and cotton, deep cool shadows and restrained grain. --no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_parameters": "--no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_negative_en": "painting, illustration, plastic, text, watermark",
+      "recorded_negative_zh": "绘画效果、插画效果、塑料质感、文字、水印。",
+      "native_imagegen_zh": "横向16:9，月夜江面大远景。左下三分之一处有一条完整可见的小木舟，船长约占画面宽度四分之一；舟尾仅站一名白衣女侠，人物约占画面高度12%，稳稳朝向右侧开阔水面。入鞘长剑挂在腰间，散发与一只衣袖轻轻向左飘。船内仅一盏低矮暖灯，照亮木板与衣摆。右岸芦苇形成较大的暗色块，蓝黑水面向远处低山延伸，上方是一轮大小克制的淡月。真人老武侠夜景剧照，水纹自然、木材和棉布真实、颗粒轻；不要放大人物、其他人船、巨型满月、发光水面、油画笔触或文字水印。",
+      "original_composition": "整条小舟位于左下，舟上只有一个白衣人；右侧芦苇与大面积冷蓝水面形成空间平衡。",
+      "observed": "一名白衣女子站在左侧小舟上，右侧芦苇、冷蓝水面和小月亮相互平衡，船内一处暖灯点亮衣摆。",
+      "deviation": "人物约占画面高度一半以上，明显大于原稿12%；小舟左端出画，未完整呈现整条船。",
+      "suggested_negative_zh": "额外人物与船只、船体断裂、人物悬浮、巨型月亮、油画笔触。",
+      "suggested_negative_en": "extra people or boats, broken hull, floating figure, oversized moon, painterly strokes"
+    },
+    {
+      "id": "07",
+      "original_prompt_id": "25",
+      "title": "雨后庭院落伞",
+      "contact_sheet_cell": {
+        "row": 3,
+        "column": 1
+      },
+      "source_sha256": "6bb4d6b2fefd3b9168d6d2e4ac3749c1cffb0bf67fcebd31b291fea66ecd8dd2",
+      "dimensions": [
+        2944,
+        1648
+      ],
+      "job_id": "1e455526-5e3c-45ae-83b5-58e51c031d56",
+      "positive_en": "A wide unoccupied courtyard view places one open vermilion oil-paper umbrella resting on its side in the lower-left foreground, its wooden handle pointing diagonally toward the center. Wet gray paving and a sparse scatter of white flower petals lead toward a weathered red wall and a circular doorway in the middle distance. Through the doorway, a cool blue-green garden recedes softly, entirely empty. Bamboo ribs show beneath the tilted umbrella, and shallow puddles hold broken reflections of branches overhead. A narrow band of warm sunlight after rain touches the paper canopy and stone edges while the surrounding walls remain cool. Live-action Chinese wuxia cinematic still, tangible paper, worn plaster and damp stone, quiet depth and restrained grain.",
+      "actual_mj_prompt": "A wide unoccupied courtyard view places one open vermilion oil-paper umbrella resting on its side in the lower-left foreground, its wooden handle pointing diagonally toward the center. Wet gray paving and a sparse scatter of white flower petals lead toward a weathered red wall and a circular doorway in the middle distance. Through the doorway, a cool blue-green garden recedes softly, entirely empty. Bamboo ribs show beneath the tilted umbrella, and shallow puddles hold broken reflections of branches overhead. A narrow band of warm sunlight after rain touches the paper canopy and stone edges while the surrounding walls remain cool. Live-action Chinese wuxia cinematic still, tangible paper, worn plaster and damp stone, quiet depth and restrained grain. --no people, animals, painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_parameters": "--no people, animals, painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_negative_en": "people, animals, painting, illustration, plastic, text, watermark",
+      "recorded_negative_zh": "人物、动物、绘画效果、插画效果、塑料质感、文字、水印。",
+      "native_imagegen_zh": "横向16:9，无人物庭院全景。左下前景只有一把撑开的朱红油纸伞侧倒在湿石板上，木柄斜指画面中央，伞底竹骨清楚。少量白花瓣散落在石地，不是积雪；浅水洼映出破碎枝影。湿石路通向中景斑驳红墙与圆洞门，门后蓝绿庭园柔和后退，门内也没有人影。雨后一束窄暖阳擦亮伞面和石缘，其余墙面偏冷。让落伞、空路与洞门构成安静而有悬念的空间。真人老武侠电影空镜，纸、墙灰和湿石真实，颗粒克制；不要人物、动物、油画笔触、文字或水印。",
+      "original_composition": "无人物，以左下侧倒的红伞为视觉重心；湿石、白花瓣和远处洞门暗示刚刚发生过的事。",
+      "observed": "红伞侧倒在左下，伞柄斜指中央，红墙洞门居中，白花瓣和湿石反光构成前后层次，没有人物。",
+      "deviation": "原稿中的少量花瓣变得更密集，整体光色更偏冷；伞与洞门的空间关系清楚。",
+      "suggested_negative_zh": "门内人影、伞骨断裂、伞柄分叉、花瓣变积雪、油画笔触。",
+      "suggested_negative_en": "figures in the doorway, broken umbrella ribs, forked handle, petals turning into snow, painterly strokes"
+    },
+    {
+      "id": "08",
+      "original_prompt_id": "22",
+      "title": "孤崖望山",
+      "contact_sheet_cell": {
+        "row": 3,
+        "column": 2
+      },
+      "source_sha256": "4b2936b6a14a1e5b7b0c05ba61fd681ee5af0949bf9a7ae3e30f99a3e222a798",
+      "dimensions": [
+        2944,
+        1648
+      ],
+      "job_id": "3b66aeb2-cb95-426c-b253-3004a2097e21",
+      "positive_en": "An extreme wide landscape places one lone swordswoman on a rocky ledge in the lower-right third, her full figure only twelve percent of the image height. She stands in three-quarter back view looking left across a broad valley, one hand resting on a sheathed sword. An ivory crossed-collar robe and dark cloth sash create a small clear silhouette; her long hair and hem drift gently leftward. The ledge extends into the foreground, a dark pine branch framing one corner. A winding river and successive blue-gray mountain ridges spread horizontally into haze. Low warm sunlight touches the figure and rock lip against cool distant space. Live-action Chinese wuxia cinematic still, tangible stone and cloth, atmospheric depth and restrained grain.",
+      "actual_mj_prompt": "An extreme wide landscape places one lone swordswoman on a rocky ledge in the lower-right third, her full figure only twelve percent of the image height. She stands in three-quarter back view looking left across a broad valley, one hand resting on a sheathed sword. An ivory crossed-collar robe and dark cloth sash create a small clear silhouette; her long hair and hem drift gently leftward. The ledge extends into the foreground, a dark pine branch framing one corner. A winding river and successive blue-gray mountain ridges spread horizontally into haze. Low warm sunlight touches the figure and rock lip against cool distant space. Live-action Chinese wuxia cinematic still, tangible stone and cloth, atmospheric depth and restrained grain. --no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_parameters": "--no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_negative_en": "painting, illustration, plastic, text, watermark",
+      "recorded_negative_zh": "绘画效果、插画效果、塑料质感、文字、水印。",
+      "native_imagegen_zh": "横向16:9，单人山川大远景。右下三分之一处的岩台上只有一名女侠，全身约占画面高度12%，以三分之二背影朝左望向辽阔山谷，一手停在入鞘长剑上。米白交领长袍与深色布腰带形成可辨轮廓，长发和衣摆轻轻向左飘。近处岩台伸入前景，一角压少量暗松枝；河流与蓝灰山脊横向层叠，远处逐渐融入薄雾。低角度暖阳只擦亮人物和岩缘，山谷保留冷色与宽阔留白。真人老武侠电影远景，岩石布料真实、颗粒轻；不要放大成肖像、额外人物、悬浮山、仙宫、油画笔触或文字水印。",
+      "original_composition": "人物放在右下三分之一，仅占画面高度约12%；山谷横向展开，以小人物压住辽阔空间。",
+      "observed": "右侧白衣人物立在岩台，左上松枝框景，河流与蓝灰山脊横向后退，衣料与风向清楚。",
+      "deviation": "人物约占画面高度六成，并非原稿12%的极远景；站姿更偏侧面，岩台成为近景主体。",
+      "suggested_negative_zh": "额外人物、岩台悬浮、河流断裂、人物与岩石粘连、油画笔触。",
+      "suggested_negative_en": "extra people, floating rock ledge, disconnected river, figure merging with rock, painterly strokes"
+    },
+    {
+      "id": "09",
+      "original_prompt_id": "23",
+      "title": "雪关独行",
+      "contact_sheet_cell": {
+        "row": 3,
+        "column": 3
+      },
+      "source_sha256": "57ef7ddb7cc205639b0699c8a1957a44e148be9cb669727266a6d1fc1ce4c8de",
+      "dimensions": [
+        2944,
+        1648
+      ],
+      "job_id": "6e213b41-73fe-496d-a146-47a74ee0975c",
+      "positive_en": "An extreme wide shot places one solitary traveler in the lower-left of a broad snow-covered mountain pass, the full figure about twelve percent of image height. Seen from behind, the traveler walks toward an old stone gateway in the upper-right distance, following a curving line of footprints. A heavy black crossed-collar robe, pale scarf and narrow rust-red sash distinguish the small silhouette; a plain scabbard stays close to the hip. The sash and loose hair pull sideways in a steady wind while the robe remains weighty. Blue-white snow spreads horizontally between dark rock slopes. A faint warm shaft of sunlight brushes the weathered gate. Live-action Chinese wuxia cinematic still, restrained atmosphere, tactile snow and stone, gentle film grain.",
+      "actual_mj_prompt": "An extreme wide shot places one solitary traveler in the lower-left of a broad snow-covered mountain pass, the full figure about twelve percent of image height. Seen from behind, the traveler walks toward an old stone gateway in the upper-right distance, following a curving line of footprints. A heavy black crossed-collar robe, pale scarf and narrow rust-red sash distinguish the small silhouette; a plain scabbard stays close to the hip. The sash and loose hair pull sideways in a steady wind while the robe remains weighty. Blue-white snow spreads horizontally between dark rock slopes. A faint warm shaft of sunlight brushes the weathered gate. Live-action Chinese wuxia cinematic still, restrained atmosphere, tactile snow and stone, gentle film grain. --chaos 3 --ar 16:9 --raw --profile z4yrncu --stylize 400 --hd --v 8.2",
+      "recorded_parameters": "--chaos 3 --ar 16:9 --raw --profile z4yrncu --stylize 400 --hd --v 8.2",
+      "recorded_negative_en": "",
+      "recorded_negative_zh": "PNG元数据未记录显式 --no 参数；不能把此前建议或反推词标成实际负面参数。",
+      "native_imagegen_zh": "横向16:9，单人雪原大远景。一名行旅侠客位于左下，全身约占画面高度12%，背对镜头走向右上远处的旧石关门，一串弯曲足迹连接人物与关口。黑色厚交领长衣、浅围巾和窄暗红腰带让人物在雪中清楚，普通剑鞘紧贴胯旁。风将衣带与散发吹向一侧，厚袍仍然沉重下垂。冷蓝白雪地横向铺开，两边暗色山岩收住空间，一缕淡暖阳落在古关风化石面。真人老武侠电影远景，雪与岩石保留真实层次、细颗粒克制；不要近景人像、额外行人、华丽巨型宫殿、油画效果或文字水印。",
+      "original_composition": "黑衣行旅者位于左下，足迹弯向右上古关；冷白雪原中只留一处暗红衣带。",
+      "observed": "黑衣背影在左下，长围巾向左吹起，足迹穿过雪地通向右上旧关门，冷雪与暖色石面形成层次。",
+      "deviation": "人物和关门距离明显拉近，人物约占画面高度一半；大雪原被压缩成近关口的雪路。",
+      "suggested_negative_zh": "多余行人、围巾穿身、脚印乱向、现代建筑、油画笔触。",
+      "suggested_negative_en": "extra travelers, scarf intersecting the body, inconsistent footprints, modern architecture, painterly strokes"
+    },
+    {
+      "id": "10",
+      "original_prompt_id": "10",
+      "title": "风雪中收紧披衣",
+      "contact_sheet_cell": {
+        "row": 4,
+        "column": 1
+      },
+      "source_sha256": "737798c55ee6d53235f8d682212a437e854ef091d2df1636cdd1aa894c2b7614",
+      "dimensions": [
+        2944,
+        1648
+      ],
+      "job_id": "dddacdba-7d64-418c-a75f-629a8f3a4a6a",
+      "positive_en": "A chest-up close-up fills the frame with a traveling swordswoman drawing a heavy charcoal cloak together at her chest. Her face turns slightly into the wind, clear dark eyes steady beneath softly tightened brows, lips closed, a few loose black strands crossing the lower cheek. Both hands gather the worn cloth below her white inner collar. Sparse snowflakes travel diagonally behind and beside her, leaving the eyes unobstructed. The background becomes a soft cold white and slate-blue field. Live-action Chinese wuxia cinematic still, gentle warm light preserving natural skin tones against the wintry surroundings, deep textured cloak folds, restrained contrast, subtle grain and soft photographic edges.",
+      "actual_mj_prompt": "A chest-up close-up fills the frame with a traveling swordswoman drawing a heavy charcoal cloak together at her chest. Her face turns slightly into the wind, clear dark eyes steady beneath softly tightened brows, lips closed, a few loose black strands crossing the lower cheek. Both hands gather the worn cloth below her white inner collar. Sparse snowflakes travel diagonally behind and beside her, leaving the eyes unobstructed. The background becomes a soft cold white and slate-blue field. Live-action Chinese wuxia cinematic still, gentle warm light preserving natural skin tones against the wintry surroundings, deep textured cloak folds, restrained contrast, subtle grain and soft photographic edges. --no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_parameters": "--no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_negative_en": "painting, illustration, plastic, text, watermark",
+      "recorded_negative_zh": "绘画效果、插画效果、塑料质感、文字、水印。",
+      "native_imagegen_zh": "横向16:9，胸像近景，行旅女侠将厚重炭黑披衣收拢在胸前，两只手与白色内领都清楚。脸微微迎着风，眉眼坚定、嘴唇轻闭，几缕黑发掠过面颊下方，眼睛保持无遮挡。少量雪花从身侧斜向掠过，背景柔化成冷白和石板蓝。脸部保留轻暖的自然肤色，深色披衣有厚度、磨损和真实褶皱，人物与冷雪形成明确分离。呈真人老武侠风雪近景，颗粒轻、边缘略柔；不要冻成冰雕的皮肤、密雪遮脸、油画笔触、塑料质感或文字水印。",
+      "original_composition": "胸像近景，脸与收拢披衣的手成为重点，雪不遮眼睛。",
+      "observed": "面部居中偏右，双手在下沿收拢厚披衣，冷白雪景与暖色发缘衬托眼神，雪花未遮住眼睛。",
+      "deviation": "景别更紧，接近面部特写；动作和材质吻合，手指边缘被厚布部分遮住。",
+      "suggested_negative_zh": "手指增生、披衣与手粘连、密雪遮眼、塑料肤质、油画笔触。",
+      "suggested_negative_en": "extra fingers, hands merging with cloak, snow hiding the eyes, plastic skin, painterly strokes"
+    },
+    {
+      "id": "11",
+      "original_prompt_id": "07",
+      "title": "雨窗前擦剑",
+      "contact_sheet_cell": {
+        "row": 4,
+        "column": 2
+      },
+      "source_sha256": "ce06c9cf170c144215062559ddc0cfba5272897594d071d624b9ac0b1eb745a7",
+      "dimensions": [
+        2944,
+        1648
+      ],
+      "job_id": "16643d3e-4516-49d3-a613-349197fa62bb",
+      "positive_en": "An upper-body medium shot shows a swordswoman seated beside a rain-darkened wooden lattice window. Her face tilts down in quiet concentration, dark hair loosely tied with stray strands beside her cheeks. She wears a worn olive-gray robe over a white crossed collar. One hand holds a plain steel sword horizontally below her chest while the other draws a folded cloth along its flat, keeping the edge separate from her fingers. Her face, both hands and the blade remain readable together. Cool blue rainlight recedes behind the window; warm light from the opposite side models her skin. Live-action Chinese wuxia cinematic still, soft silver reflections, matte fabric, intimate physical depth and restrained film grain.",
+      "actual_mj_prompt": "An upper-body medium shot shows a swordswoman seated beside a rain-darkened wooden lattice window. Her face tilts down in quiet concentration, dark hair loosely tied with stray strands beside her cheeks. She wears a worn olive-gray robe over a white crossed collar. One hand holds a plain steel sword horizontally below her chest while the other draws a folded cloth along its flat, keeping the edge separate from her fingers. Her face, both hands and the blade remain readable together. Cool blue rainlight recedes behind the window; warm light from the opposite side models her skin. Live-action Chinese wuxia cinematic still, soft silver reflections, matte fabric, intimate physical depth and restrained film grain. --no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_parameters": "--no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_negative_en": "painting, illustration, plastic, text, watermark",
+      "recorded_negative_zh": "绘画效果、插画效果、塑料质感、文字、水印。",
+      "native_imagegen_zh": "横向16:9，上半身中景，女侠坐在带雨意的旧木格窗旁，低头专注擦剑，松束黑发贴近两侧面颊。她穿旧橄榄灰布袍与白交领，一手固定胸口以下横放的普通钢剑，另一手握折叠旧布沿剑身平面擦过，手指与刃口分开。脸、双手和剑都清楚，不让剑遮脸。后方窗外为冷蓝雨光，另一侧暖光塑造面颊，银色反光集中在剑身。保持真人老武侠室内剧照、自然皮肤和粗布质地、细颗粒与柔高光；不要发光兵器、法术、油画笔触或文字水印。",
+      "original_composition": "上半身中景，脸、擦剑的手和横向剑身形成三角关系。",
+      "observed": "女子低头擦横剑，旧布覆盖剑身平面，左侧冷光与暖发缘对照，右侧木格窗形成纵向结构。",
+      "deviation": "脸、手和擦剑动作基本吻合；钢剑下缘偏暗，手与护手的接触部分细节不易辨认。",
+      "suggested_negative_zh": "手指贴刃、布与钢剑粘连、重复剑身、发光兵器、油画笔触。",
+      "suggested_negative_en": "fingers touching the cutting edge, cloth merging with steel, duplicate blades, glowing weapons, painterly strokes"
+    },
+    {
+      "id": "12",
+      "original_prompt_id": "19",
+      "title": "庭院双剑交击",
+      "contact_sheet_cell": {
+        "row": 4,
+        "column": 3
+      },
+      "source_sha256": "5acf8f0d5401c8482799c364968c8537dcd2ae2960cc6493a77d3bcf6a83e061",
+      "dimensions": [
+        2944,
+        1648
+      ],
+      "job_id": "271da30b-5a2b-46ea-bb7c-cc74669623b1",
+      "positive_en": "A full-body action two-shot freezes exactly two fighters in a stone courtyard, their separate bodies occupying the left and right thirds. A white-robed swordswoman on the left advances with bent front knee, lifting her right-hand sword diagonally toward the center. A navy-robed swordsman on the right braces backward, bringing his right-hand sword down against hers. The two ordinary steel blades meet at one visible point below their unobstructed faces. Their focused gazes follow each other, hands clearly apart, both fighters grounded. Hair and broad sleeves trail their opposing movements. A weathered red wall and scattered white petals frame the action. Live-action Chinese wuxia cinematic still, warm sidelight, cool stone shadows, natural skin, tangible cotton and restrained grain.",
+      "actual_mj_prompt": "A full-body action two-shot freezes exactly two fighters in a stone courtyard, their separate bodies occupying the left and right thirds. A white-robed swordswoman on the left advances with bent front knee, lifting her right-hand sword diagonally toward the center. A navy-robed swordsman on the right braces backward, bringing his right-hand sword down against hers. The two ordinary steel blades meet at one visible point below their unobstructed faces. Their focused gazes follow each other, hands clearly apart, both fighters grounded. Hair and broad sleeves trail their opposing movements. A weathered red wall and scattered white petals frame the action. Live-action Chinese wuxia cinematic still, warm sidelight, cool stone shadows, natural skin, tangible cotton and restrained grain. --no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_parameters": "--no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_negative_en": "painting, illustration, plastic, text, watermark",
+      "recorded_negative_zh": "绘画效果、插画效果、塑料质感、文字、水印。",
+      "native_imagegen_zh": "横向16:9，双人全身打斗定格。左三分之一处白衣女侠前腿屈膝向右进身，右手长剑斜向中央抬起；右三分之一处藏蓝衣男侠后腿稳住重心，右手长剑向下迎挡。两把普通钢剑只在画面中央接触一次，交点低于双方的脸，双手分开，人物躯干不重叠。两人专注盯住对方，双脚有明确落地支撑，衣袖和长发分别滞后于各自的动作。后方为斑驳红墙，石地散落少量白花瓣。暖侧光与冷石影相对，真人老武侠剧照、自然肤质和轻颗粒；不要第三人、能量剑、夸张火花、油画笔触或文字水印。",
+      "original_composition": "双人全身动作定格，两剑只在中央交于一点；脸与手分开，保留双方的重心和攻守方向。",
+      "observed": "白衣女侠在左、蓝衣男侠在右，双方目光与进攻方向明确，红墙、白花瓣和逆光发丝统一了武侠气氛。",
+      "deviation": "实际为较近的双人景，腿脚未完整呈现；中央出现至少三条可辨金属长线，男方两处握持关系与原稿的两把剑、单一交点不符。",
+      "suggested_negative_zh": "额外刀剑、剑身分叉、握柄错位、兵器穿手、人物肢体粘连。",
+      "suggested_negative_en": "extra weapons, branching blades, misplaced grips, weapons intersecting hands, merged limbs"
+    },
+    {
+      "id": "13",
+      "original_prompt_id": "09",
+      "title": "红墙边抱刀而立",
+      "contact_sheet_cell": {
+        "row": 5,
+        "column": 1
+      },
+      "source_sha256": "c87cac9f7e4e496b3b449a3d4cf39042119a9de1527f678bd2fd430eaa81c1c4",
+      "dimensions": [
+        2944,
+        1648
+      ],
+      "job_id": "99a55768-5773-4b16-a875-a9653dc1067b",
+      "positive_en": "A full-body shot keeps a lone swordswoman large in the frame, her head and cloth boots visible, standing slightly left of center against a nearby weathered red wall. She leans one shoulder lightly against the plaster, one knee relaxed, cradling a sheathed broad saber vertically across her torso. Her calm face turns toward screen-right beneath loosely gathered dark hair. A faded navy robe, ivory crossed collar and dark cloth sash create a strong simple silhouette. A few dry leaves lie near her boots, with faint branch shadows on the wall. Live-action Chinese wuxia cinematic still, warm oblique daylight, tangible worn plaster and heavy cotton, natural skin, restrained grain and gently softened edges.",
+      "actual_mj_prompt": "A full-body shot keeps a lone swordswoman large in the frame, her head and cloth boots visible, standing slightly left of center against a nearby weathered red wall. She leans one shoulder lightly against the plaster, one knee relaxed, cradling a sheathed broad saber vertically across her torso. Her calm face turns toward screen-right beneath loosely gathered dark hair. A faded navy robe, ivory crossed collar and dark cloth sash create a strong simple silhouette. A few dry leaves lie near her boots, with faint branch shadows on the wall. Live-action Chinese wuxia cinematic still, warm oblique daylight, tangible worn plaster and heavy cotton, natural skin, restrained grain and gently softened edges. --no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_parameters": "--no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_negative_en": "painting, illustration, plastic, text, watermark",
+      "recorded_negative_zh": "绘画效果、插画效果、塑料质感、文字、水印。",
+      "native_imagegen_zh": "横向16:9，全身景，女侠从头到黑色布靴完整入画，人物占画面高度约85%，站在中央偏左。她一侧肩膀轻靠斑驳红墙，一条腿稍放松，双臂将入鞘长刀竖抱在身前，脸安静地转向右方。松束黑发、褪色藏蓝布袍、米白交领和深色布腰带形成简洁轮廓。红墙紧贴人物，脚边只有几片枯叶，墙上少量枝影增加层次。暖斜阳照出衣褶、墙灰和自然肤色，暗部有重量。真人老武侠剧照，克制颗粒和柔边；不要巨型兵器、华丽盔甲、空旷远景、油画笔触或文字水印。",
+      "original_composition": "全身人物占画面高度约85%，红墙提供紧贴身体的色彩背景。",
+      "observed": "藏蓝衣女子背靠红墙坐着，一腿抬起，黑鞘兵器竖在肩侧，暖光与枝影让面部和墙面有层次。",
+      "deviation": "原稿要求全身抱刀站立，成图变为坐姿近中景；兵器也没有被双臂竖抱在身前。",
+      "suggested_negative_zh": "兵器穿肩、重复刀柄、膝腿结构错误、衣料塑料化、油画笔触。",
+      "suggested_negative_en": "weapon intersecting shoulder, duplicate hilts, malformed knees or legs, plastic fabric, painterly strokes"
+    },
+    {
+      "id": "14",
+      "original_prompt_id": "21",
+      "title": "林间一掌截招",
+      "contact_sheet_cell": {
+        "row": 5,
+        "column": 2
+      },
+      "source_sha256": "194e3812995f079ba333dbc44543c0682eff9bc5d83b889977bc052e53b7a6ea",
+      "dimensions": [
+        2944,
+        1648
+      ],
+      "job_id": "6c5ca62a-22ad-40c6-b0b9-da563b0cf649",
+      "positive_en": "A knee-up two-shot freezes exactly two unarmed martial artists facing each other on a forest path. At screen-right, a white-robed woman with a muted teal sash steps forward and extends one right-handed punch toward screen-left. At screen-left, a dark-gray-robed man shifts his weight back and meets her fist with one open left palm at upper-chest height. Their single contact point sits between them, below their separate, focused faces; their free arms remain close to their own bodies. Her high-tied hair and sleeve trail the advance while his robe folds compress around the braced stance. Dark green trees recede behind. Live-action Chinese wuxia cinematic still, warm oblique sunlight, cool foliage shadows, matte cotton, natural skin and subtle grain.",
+      "actual_mj_prompt": "A knee-up two-shot freezes exactly two unarmed martial artists facing each other on a forest path. At screen-right, a white-robed woman with a muted teal sash steps forward and extends one right-handed punch toward screen-left. At screen-left, a dark-gray-robed man shifts his weight back and meets her fist with one open left palm at upper-chest height. Their single contact point sits between them, below their separate, focused faces; their free arms remain close to their own bodies. Her high-tied hair and sleeve trail the advance while his robe folds compress around the braced stance. Dark green trees recede behind. Live-action Chinese wuxia cinematic still, warm oblique sunlight, cool foliage shadows, matte cotton, natural skin and subtle grain. --no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_parameters": "--no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_negative_en": "painting, illustration, plastic, text, watermark",
+      "recorded_negative_zh": "绘画效果、插画效果、塑料质感、文字、水印。",
+      "native_imagegen_zh": "横向16:9，双人膝部以上中景，画面中只有两名徒手交战者。右侧白袍女子系灰青腰带，向左进身，以右拳直击；左侧深灰布袍男子将重心稍向后移，以左手张开的掌心迎住这一拳。拳掌只在两人之间、上胸高度形成一个接触点，低于清楚分开的两张脸，另一只手臂各自收在身体附近。双方目光集中在对手，高束长发与女方衣袖滞后于进身动作，男方衣褶随稳住重心而压缩。后方树林层叠深绿，暖斜阳照脸，林影偏冷。真人老武侠动作剧照、哑光布料与细颗粒；不要兵器、额外手臂、能量冲击、油画笔触或文字水印。",
+      "original_composition": "双人膝上中景，以一次掌拳接触为动作中心，靠手臂方向与身体重心呈现力量。",
+      "observed": "深灰衣男子在左前景，白衣女子在右出拳，两人脸部和衣袖方向清楚，暖光穿过深绿树林。",
+      "deviation": "拳与掌尚未接触，画面更接近交手前一瞬；女子头顶后方有剑柄状物，偏离原稿的完全徒手设定。",
+      "suggested_negative_zh": "额外手臂、拳掌粘连、多余兵器、头发中长出剑柄、能量特效。",
+      "suggested_negative_en": "extra arms, merged fist and palm, unwanted weapons, sword hilt emerging from hair, energy effects"
+    },
+    {
+      "id": "15",
+      "original_prompt_id": "12",
+      "title": "石阶上系靴带",
+      "contact_sheet_cell": {
+        "row": 5,
+        "column": 3
+      },
+      "source_sha256": "2705f7b90dbd59e3453565d0758cf41a087349714e373bdf494b0446f09a0e8c",
+      "dimensions": [
+        2944,
+        1648
+      ],
+      "job_id": "6e1818e7-c9f3-438b-9807-fd2bf8002213",
+      "positive_en": "A seated full-body shot keeps a swordswoman large in the frame on worn stone steps. One foot rests on a higher step, her torso leaning toward it as both hands tie the cloth fastening around a black ankle boot. She lifts her eyes toward someone outside the frame while her hands pause at the knot. A pale gray outer robe falls around bent legs, revealing dark trousers, an ivory crossed collar and a muted green waist sash. Her loosely tied hair follows the forward lean. Only close stonework and a dark wooden doorway surround her. Live-action Chinese wuxia cinematic still, soft warm side light, readable face and fingers, weighted fabric folds, natural textures and subtle grain.",
+      "actual_mj_prompt": "A seated full-body shot keeps a swordswoman large in the frame on worn stone steps. One foot rests on a higher step, her torso leaning toward it as both hands tie the cloth fastening around a black ankle boot. She lifts her eyes toward someone outside the frame while her hands pause at the knot. A pale gray outer robe falls around bent legs, revealing dark trousers, an ivory crossed collar and a muted green waist sash. Her loosely tied hair follows the forward lean. Only close stonework and a dark wooden doorway surround her. Live-action Chinese wuxia cinematic still, soft warm side light, readable face and fingers, weighted fabric folds, natural textures and subtle grain. --no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_parameters": "--no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_negative_en": "painting, illustration, plastic, text, watermark",
+      "recorded_negative_zh": "绘画效果、插画效果、塑料质感、文字、水印。",
+      "native_imagegen_zh": "横向16:9，坐姿全身景，女侠坐在风化石阶上，人物在画面中保持较大比例。一只脚放在更高的台阶，身体前倾，双手正在系黑色短布靴的绑带，手停在结处，眼睛稍稍抬起看向画外。浅灰长外衣顺弯曲双腿垂落，露出深色裤装，米白交领与灰绿腰带清楚；松束长发随俯身自然下垂。周围只保留近处石阶和暗木门。暖柔侧光照亮脸与手指，衣料有重量和真实褶皱。真人老武侠剧照，细颗粒克制；不要现代运动鞋、漂浮姿势、油画笔触或文字水印。",
+      "original_composition": "坐姿全身，抬腿、俯身与抬眼形成自然的人物姿态。",
+      "observed": "女子坐在石阶上，抬起一脚系靴带，同时抬眼看向镜头，浅灰衣与暗木门形成明暗分离。",
+      "deviation": "坐姿、双手和靴带关系基本吻合；实际眼神更直接、上身更直，脚边布带可再检查是否连续。",
+      "suggested_negative_zh": "靴带断裂、脚趾与鞋底畸变、手指增生、膝腿错位、油画笔触。",
+      "suggested_negative_en": "broken boot ties, deformed feet or soles, extra fingers, misaligned knees, painterly strokes"
+    },
+    {
+      "id": "16",
+      "original_prompt_id": "06",
+      "title": "客栈里按住剑柄",
+      "contact_sheet_cell": {
+        "row": 6,
+        "column": 1
+      },
+      "source_sha256": "dc8dd70e87d01a75b55e92ba39c6d0c2357c0178c32860db0ec5989485760c29",
+      "dimensions": [
+        2944,
+        1648
+      ],
+      "job_id": "ab0dc67a-f4a9-4321-ad23-ff7e5a5a5958",
+      "positive_en": "A seated waist-up medium shot places a lone swordsman slightly left of center beside a rough wooden inn table. His torso angles away while his eyes quietly follow something off frame. Tied-back dark hair, a few loose strands and a short mustache frame naturally modeled cheekbones. He wears a faded gray-brown wrap robe with a dark blue inner collar. One hand rests on the hilt of a sheathed sword beside his hip; the other touches a ceramic tea bowl on the tabletop. Dark beams and a small warm lamp remain softly behind him. Live-action Chinese wuxia cinematic still, warm directional facial light, deep cool shadows, weathered timber, matte fabric and restrained film grain.",
+      "actual_mj_prompt": "A seated waist-up medium shot places a lone swordsman slightly left of center beside a rough wooden inn table. His torso angles away while his eyes quietly follow something off frame. Tied-back dark hair, a few loose strands and a short mustache frame naturally modeled cheekbones. He wears a faded gray-brown wrap robe with a dark blue inner collar. One hand rests on the hilt of a sheathed sword beside his hip; the other touches a ceramic tea bowl on the tabletop. Dark beams and a small warm lamp remain softly behind him. Live-action Chinese wuxia cinematic still, warm directional facial light, deep cool shadows, weathered timber, matte fabric and restrained film grain. --no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_parameters": "--no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_negative_en": "painting, illustration, plastic, text, watermark",
+      "recorded_negative_zh": "绘画效果、插画效果、塑料质感、文字、水印。",
+      "native_imagegen_zh": "横向16:9，坐姿腰部中景。灰褐布衣男侠位于中央偏左，身体斜靠旧木桌，脸微侧，目光安静地追随画外动静。黑发束起，鬓边有碎发和短须，面部骨骼由自然明暗塑形。他穿褪色灰褐交领衣与深蓝内领，一手停在胯旁入鞘长剑的剑柄上，另一手搭着桌面陶碗。桌面只占下部，脸和双手都清楚，后方旧木梁与小暖灯柔化。暖侧光照脸，衣褶和背景暗部偏冷，呈真人老武侠剧照质感；不加华丽盔甲、塑料肤质、油画笔触或文字水印。",
+      "original_composition": "坐姿中景，脸与两只手都入画，桌面只占下部。",
+      "observed": "灰褐布衣男侠坐在旧木桌边，左侧手靠近剑柄，右侧手与陶碗相邻，暖面光和冷暗木结构层次清楚。",
+      "deviation": "人物更居中并靠坐展开双臂，桌面横贯下沿；核心人物、手势、茶碗和剑柄关系基本保留。",
+      "suggested_negative_zh": "手指与剑柄粘连、桌沿穿身、重复茶碗、现代配饰、油画笔触。",
+      "suggested_negative_en": "fingers merging with sword hilt, table intersecting body, duplicate tea bowls, modern accessories, painterly strokes"
+    },
+    {
+      "id": "17",
+      "original_prompt_id": "03",
+      "title": "斗笠饮茶",
+      "contact_sheet_cell": {
+        "row": 6,
+        "column": 2
+      },
+      "source_sha256": "4c943e42e10be911a16512dae3a5c143f48df4769400c30a006e3fb7fee9d9d2",
+      "dimensions": [
+        2944,
+        1648
+      ],
+      "job_id": "018c5355-6c68-4b09-be32-ebce5df6647f",
+      "positive_en": "A shoulder-up close-up shows a wandering swordswoman beneath a broad woven bamboo hat. Her face occupies the center-left, turned slightly toward screen-right, bright watchful eyes looking off frame and the faintest smile held at one corner of her closed lips. One hand raises a small pale ceramic tea bowl just below her mouth. Loose black hair falls against a slate-blue robe and white inner collar. The hat brim frames her forehead without hiding her eyes. A few dark timber shapes and one blurred amber lamp suggest a tea house behind her. Live-action Chinese wuxia cinematic still, warm reflected facial light, cool muted background, visible bamboo weave and natural skin, fine grain and gentle optical softness.",
+      "actual_mj_prompt": "A shoulder-up close-up shows a wandering swordswoman beneath a broad woven bamboo hat. Her face occupies the center-left, turned slightly toward screen-right, bright watchful eyes looking off frame and the faintest smile held at one corner of her closed lips. One hand raises a small pale ceramic tea bowl just below her mouth. Loose black hair falls against a slate-blue robe and white inner collar. The hat brim frames her forehead without hiding her eyes. A few dark timber shapes and one blurred amber lamp suggest a tea house behind her. Live-action Chinese wuxia cinematic still, warm reflected facial light, cool muted background, visible bamboo weave and natural skin, fine grain and gentle optical softness. --no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_parameters": "--no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_negative_en": "painting, illustration, plastic, text, watermark",
+      "recorded_negative_zh": "绘画效果、插画效果、塑料质感、文字、水印。",
+      "native_imagegen_zh": "横向16:9，肩部以上近景。戴宽竹斗笠的女侠居于中央偏左，脸略转右侧，眼神明亮而留意着画外，嘴角只有一点轻微笑意。一只手把浅色陶瓷茶碗举到唇下，斗笠边缘围住额头，眼睛保持明亮。松散黑发落在灰蓝布袍和白内领旁。背景只出现虚化旧木结构与一处暖灯，脸、茶碗和竹编纹理最清楚。暖反射光照脸，背景偏冷，皮肤明暗自然，高光柔和、细颗粒克制。保持真人老武侠电影近景，不添加金冠首饰、过度磨皮、油画笔触或文字水印。",
+      "original_composition": "肩部近景，斗笠框住眉眼，茶碗与视线构成表情重点。",
+      "observed": "宽竹斗笠从上沿斜切入，女子低头略笑并举起白瓷碗，暖灯在左后方，竹编与布衣材质鲜明。",
+      "deviation": "人物更贴近镜头并偏右，视线更接近直视，原稿中央偏左、朝右看画外的设定有所变化。",
+      "suggested_negative_zh": "斗笠压穿头部、茶碗与手粘连、畸形手指、磨皮过度、油画笔触。",
+      "suggested_negative_en": "hat intersecting head, bowl merging with hand, deformed fingers, excessive skin smoothing, painterly strokes"
+    },
+    {
+      "id": "18",
+      "original_prompt_id": "18",
+      "title": "竹桥两端",
+      "contact_sheet_cell": {
+        "row": 6,
+        "column": 3
+      },
+      "source_sha256": "25086c8fb201d2bc5f9924fe1c5a36e998e03533fa780aed847a3331e621c6af",
+      "dimensions": [
+        2944,
+        1648
+      ],
+      "job_id": "d31bd34a-f953-445d-85de-b9f5524bd18c",
+      "positive_en": "A wide side-on view shows exactly two sword fighters facing each other across an empty span of narrow wooden bridge. Each full figure occupies about one-third of the image height. The man at the left end wears muted green with an ivory collar, a cloth hat and a sheathed sword at his hip. The woman at the right end wears charcoal black with a rust-red sash, her long hair tied high and her sword lowered beside her leg. Both gaze along the bridge toward the other, feet planted on separate dry planks. Bamboo rises behind, and thin mist stays below the deck above a blue-green stream. Warm sidelight catches their profiles and railings. Live-action Chinese wuxia cinematic still, tactile wood, weighted cotton and restrained grain.",
+      "actual_mj_prompt": "A wide side-on view shows exactly two sword fighters facing each other across an empty span of narrow wooden bridge. Each full figure occupies about one-third of the image height. The man at the left end wears muted green with an ivory collar, a cloth hat and a sheathed sword at his hip. The woman at the right end wears charcoal black with a rust-red sash, her long hair tied high and her sword lowered beside her leg. Both gaze along the bridge toward the other, feet planted on separate dry planks. Bamboo rises behind, and thin mist stays below the deck above a blue-green stream. Warm sidelight catches their profiles and railings. Live-action Chinese wuxia cinematic still, tactile wood, weighted cotton and restrained grain. --no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_parameters": "--no painting, illustration, plastic, text, watermark --chaos 3 --ar 16:9 --raw --profile z4yrncu --hd --v 8.2",
+      "recorded_negative_en": "painting, illustration, plastic, text, watermark",
+      "recorded_negative_zh": "绘画效果、插画效果、塑料质感、文字、水印。",
+      "native_imagegen_zh": "横向16:9，侧向全景，一座窄木桥横贯画面，两名对手分别站在左右两端，人物各占画面高度约三分之一，桥心保持空白。左侧灰绿衣男侠戴布巾、配米白交领，长剑入鞘挂在腰侧；右侧黑衣女侠高束长发、系暗红腰带，长剑低垂在腿边。两人沿桥注视对方，双脚分别踏实木板。竹林在后，薄雾只贴着桥下蓝绿溪水，不能遮住人物。暖侧光照亮侧脸和木栏，衣料有重量。真人老武侠剧照，木材真实、颗粒轻；不要第三人、飞行姿态、仙宫、油画效果或文字水印。",
+      "original_composition": "侧向全景，窄桥横贯画面，两人各守一端；桥心留空，让距离成为画面的重点。",
+      "observed": "两人分列木桥左右，左青绿右黑红，彼此相望，中央留空，竹叶和桥下薄雾形成深度。",
+      "deviation": "人物明显大于原稿约三分之一画面高度的设定，近处木栏遮住部分身体；双方兵器更接近入鞘或低位持握。",
+      "suggested_negative_zh": "第三人、木栏穿身、重复兵器、桥面断裂、雾遮脸、油画笔触。",
+      "suggested_negative_en": "third person, railing intersecting bodies, duplicate weapons, broken bridge deck, mist hiding faces, painterly strokes"
+    }
+  ]
+}

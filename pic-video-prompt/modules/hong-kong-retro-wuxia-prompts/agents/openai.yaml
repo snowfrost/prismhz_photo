@@ -1,0 +1,6 @@
+interface:
+  display_name: "港风复古武侠 · 江湖风云"
+  short_description: "把一句场景想法写成重人物、冷暖光色与实物质感的港风武侠双语提示词"
+  default_prompt: "使用 $hong-kong-retro-wuxia-prompts，把我的场景想法写成港风复古武侠画面，分别给 MJ 英文和 ImageGen 中文提示词。"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,84 @@
+{
+  "status": "Newly authored transfer examples. Text reviewed; not generated images or recovered original prompts.",
+  "expected_count": 6,
+  "items": [
+    {
+      "id": "01-older-escort",
+      "request": "一位年长女镖师在客栈停杯听雨，人物近景",
+      "scene_type": "portrait",
+      "subject_count": 1,
+      "ratio": "16:9",
+      "profile_mode": "portable",
+      "composition_zh": "胸上近景，年长女镖师偏右，杯停在嘴下，左侧雨窗留出视线空间。",
+      "mj_prompt": "A chest-up three-quarter close-up places an older female escort on the right, listening toward a rain-streaked window at screen-left. Silver strands loosen from her low knot; fine lines remain around her alert eyes. A faded brown cotton robe overlaps an ivory inner collar. Her right hand holds one small earthenware cup below her mouth, leaving both eyes and her lips unobstructed; the other hand rests out of frame. Warm window-side lamplight shapes her cheek and the cup rim, while blue-gray rain and dark timber recede softly behind her. Live-action Hong Kong period wuxia film still, restrained grain, gentle highlights, natural skin texture and tactile worn cloth. --ar 16:9 --no painting, illustration, plastic, text, watermark --v 8.2",
+      "imagegen_prompt": "横向16:9，真人港风复古武侠电影剧照，胸上三分之四近景。一位年长女镖师位于右侧，转眼听向左边的雨窗，低髻中散着灰白发丝，眼角保留自然细纹。褪色棕布外袍叠着象牙白内领。右手托一只小陶杯，杯沿停在嘴唇下方，不遮眼睛或嘴，另一只手在画外休息。靠窗的一盏灯给面颊和杯沿暖光，窗雨与深处木梁呈蓝灰冷色并柔和虚化。布料哑光有重量，肤质自然，高光柔和，颗粒轻微。避免年轻化磨皮、插画、塑料皮肤和文字水印。",
+      "negative_zh": "年轻化磨皮、杯沿遮眼、塑料皮肤、油画笔触、文字、水印",
+      "negative_en": "youthful beauty retouching, cup covering the eyes, plastic skin, painterly strokes, text, watermark"
+    },
+    {
+      "id": "02-mounted-courier",
+      "request": "黑衣男信使策马穿过河滩，红围巾，保留近距离速度感",
+      "scene_type": "mounted",
+      "subject_count": 1,
+      "ratio": "16:9",
+      "profile_mode": "portable",
+      "composition_zh": "侧向中景，骑者向左前倾，双手高于马鬃，围巾与头发向右，河石横向拖影。",
+      "mj_prompt": "A tight side-tracking medium shot frames a male courier from head to hips as he rides toward screen-left across a river shoal. His intent profile and forward-braced shoulders stay readable. Both hands hold separate sections of the reins above the black horse's mane at lower-left, with visible space between fingers and hair. A matte black cotton coat hangs with weight; a narrow rust-red scarf and loose hair trail toward screen-right. His waist is plain and carries no weapon. Blue-gray stones streak horizontally behind him, with a few low splashes beneath the horse's neck. Warm side light models his face against the cool river. Live-action Hong Kong wuxia chase still, restrained grain, gentle highlights and directional background blur. --ar 16:9 --no painting, illustration, plastic, swords, text, watermark --v 8.2",
+      "imagegen_prompt": "横向16:9，真人港风复古武侠追逐剧照。侧向跟拍中景，一位男信使从头到胯部入画，骑马向左前倾，专注侧脸和肩背保持可辨。黑马鬃毛和颈部从左下进入，两手在马鬃上方分别握住缰绳，手指与鬃毛之间有清楚间隔。哑光黑棉布衣有重量，窄锈红围巾和散发一起向右后方拉长，腰间简洁，不佩兵器。蓝灰河石形成横向背景拖影，下沿少量低水花，暖侧光塑造面颊。轻颗粒、柔高光，脸比环境清楚，重布下垂而轻发受风。避免手绳粘连、马头畸变、额外刀剑、绘画和文字水印。",
+      "negative_zh": "手绳粘连、马头畸变、额外刀剑、逆向飘带、插画、文字、水印",
+      "negative_en": "fingers fused with reins, distorted horse anatomy, swords, inconsistent wind direction, illustration, text, watermark"
+    },
+    {
+      "id": "03-vertical-standoff",
+      "request": "两位男剑客在竹桥对峙，竖版3:4，绿衣和灰衣",
+      "scene_type": "standoff",
+      "subject_count": 2,
+      "ratio": "3:4",
+      "profile_mode": "portable",
+      "composition_zh": "竖幅沿桥向后延伸，绿衣在左前、灰衣在右后，两人全身与脚下桥板可见，中间留距离。",
+      "mj_prompt": "A vertical full-body two-shot looks along a narrow bamboo bridge. One green-robed male swordsman stands at lower-left in three-quarter rear view, turning his visible profile toward a gray-robed male opponent farther back at upper-right. Exactly two figures face each other across an empty span of bridge boards; both pairs of feet rest visibly on the boards, with rails confined to the outer edges. Each wears one plain sheathed sword at his outer hip, hands relaxed beside it. Pale inner collars and cloth belts break up the matte robes. Cold green bamboo and blue-gray river mist recede between the figures, while a thin warm sidelight touches their profiles and rough timber. Live-action Hong Kong period wuxia film still, tense stillness, fine grain and soft photographic highlights. --ar 3:4 --no painting, illustration, plastic, text, watermark --v 8.2",
+      "imagegen_prompt": "竖向3:4，真人港风复古武侠电影剧照，沿窄竹桥向后看，两位男剑客全身入画。绿衣男子站在左下近处，以三分之四背面回出清楚侧脸，看向右上较远处的灰衣男子；两人隔着一段空桥板相互对视，两人的脚都清楚踏在桥板上，栏杆位于桥面外缘，不遮挡脚。每人外侧腰间各有一把入鞘长剑，双手自然落在身侧。浅内领、布腰带与哑光外袍区分衣层。暗冷绿竹与蓝灰河雾沿纵深展开，细暖侧光落在侧脸和粗木边缘。紧张而静止，轻微颗粒，柔高光和真实景深。避免第三人、多余兵器、漂浮脚、插画和文字水印。",
+      "negative_zh": "第三人、多余兵器、漂浮脚、人物融合、油画、文字、水印",
+      "negative_en": "third person, additional weapons, floating feet, merged bodies, painting, text, watermark"
+    },
+    {
+      "id": "04-unarmed-contact",
+      "request": "林中一拳被一掌接住，明确拳掌接触，两人徒手",
+      "scene_type": "unarmed",
+      "subject_count": 2,
+      "ratio": "16:9",
+      "profile_mode": "portable",
+      "composition_zh": "双人腰上中景，左侧出右拳，右侧用左掌接住；中央只有这一处接触，两人另一只手向外分开。",
+      "mj_prompt": "A waist-up action two-shot places a dark-blue-robed fighter on the left and a white-robed fighter on the right in a shaded forest. The left fighter's right fist meets the open center of the right fighter's left palm at one clear contact point between them. Their wrists and bent elbows remain separate and readable; each unused hand stays outside the central action beside the outer shoulder. Exactly two unarmed adults look at the exchange, with empty belts and backs free of scabbards. Heavy cotton sleeves lag behind their arms. Warm broken sunlight touches cheeks and knuckles against cool dark-green foliage. Live-action Hong Kong wuxia fight still, physical weight, restrained grain, gentle highlights and softly blurred background leaves. --ar 16:9 --no swords, knives, scabbards, energy beams, painting, illustration, text, watermark --v 8.2",
+      "imagegen_prompt": "横向16:9，真人港风复古武侠打斗剧照，双人腰上中景。深蓝衣武者在左，白衣武者在右。左侧武者的右拳拳面抵住右侧武者张开的左掌掌心，中央只有这一处明确接触；两条手腕与弯曲手肘各自分开可辨。两人另一只手分别放在外侧肩旁，远离中央动作。画面恰好两位成年武者，视线落在交手处，腰带为空，背后没有剑鞘，完全徒手。厚棉布袖落后于手臂运动，斑驳暖阳落在面颊与指节，后方冷暗绿叶柔化。动作有重量，轻颗粒、柔高光。不要刀剑、剑鞘、能量光波、融合手掌、插画或文字水印。",
+      "negative_zh": "刀剑、剑鞘、能量光波、融合手掌、多余手臂、插画、文字、水印",
+      "negative_en": "swords, knives, scabbards, energy beams, fused palms, extra arms, illustration, text, watermark"
+    },
+    {
+      "id": "05-tiny-traveler",
+      "request": "雪关大远景，单个人物很小，不要人物特写",
+      "scene_type": "wide",
+      "subject_count": 1,
+      "ratio": "16:9",
+      "profile_mode": "portable",
+      "composition_zh": "环境主导大远景，雪道与石关占大部分画面，单人远在左侧，画高约十分之一，脚印指向右上石门。",
+      "mj_prompt": "An extreme wide landscape makes a snow-covered mountain pass and a weathered stone gate the main subjects. One distant traveler occupies roughly one tenth of the frame height on the left-hand path, seen fully from behind with both feet planted in the snow. A thin trail of footprints curves toward the gate at upper-right through broad unoccupied ground. The traveler's dark robe forms a simple weighted silhouette, with one pale scarf pulled sideways by wind; facial details are too distant to resolve. Blue-gray snow shadows and layered cold rock dominate, with a small patch of warm afternoon light on the gate stone. Live-action Hong Kong period wuxia location still, fine grain, gentle highlights and natural atmospheric depth. --ar 16:9 --no crowds, painting, illustration, plastic, text, watermark --v 8.2",
+      "imagegen_prompt": "横向16:9，真人港风复古武侠外景剧照，大远景由雪山关道和旧石门主导。只有一个很远的旅人，完整背影约占画面高度十分之一，位于左侧雪道，双脚落在雪地；脸远到看不清细节。脚印越过大片无人雪面，弯向右上石关。黑布袍形成有重量的小轮廓，一条浅围巾被风拉向侧面。蓝灰雪影和层叠冷山石覆盖大部分空间，午后暖光只照到石门一角。轻微颗粒，高光柔和，远近空气层次真实。避免增加旅伴、把小人推成人像近景、油画、插画和文字水印。",
+      "negative_zh": "人群、人物近景化、过度放大脸部、油画、插画、文字、水印",
+      "negative_en": "crowds, close-up framing, oversized face, painting, illustration, text, watermark"
+    },
+    {
+      "id": "06-empty-inn",
+      "request": "无人山道客栈，暮色，一扇暖窗，没有动物",
+      "scene_type": "empty",
+      "subject_count": 0,
+      "ratio": "16:9",
+      "profile_mode": "portable",
+      "composition_zh": "无人远景，旧客栈占左侧，空路向右侧蓝雾延伸，一扇暖窗是视觉中心。",
+      "mj_prompt": "A wide unoccupied mountain-road view places a small weathered inn on the left and a bare winding path on the right, disappearing into blue-gray dusk mist. One amber window glows beneath the dark tiled eaves; the closed doorway and road contain no figures or silhouettes. A loose canvas awning lifts slightly in the same wind that moves a few dry leaves across the ground. Cracked plaster, rough timber posts and damp stones retain tangible texture, while distant mountain layers fade into cool air. The warm window is the sole luminous focal point. Live-action Hong Kong period wuxia location still, restrained grain, soft highlight roll-off, quiet photographic depth. --ar 16:9 --no people, animals, painting, illustration, plastic, text, watermark --v 8.2",
+      "imagegen_prompt": "横向16:9，真人港风复古武侠电影空景。旧山道客栈位于左侧，右侧空土路弯向蓝灰暮雾和层层远山。暗瓦檐下只有一扇窗透出琥珀暖光，门口、道路和窗内都没有人物或剪影，也没有动物。松旧帆布檐篷微微掀起，几片枯叶沿同一风向穿过地面。灰墙裂纹、粗木柱和潮湿石面有实物触感，暖窗是唯一明亮焦点，冷雾保持远近层次。轻微颗粒、柔和高光、安静摄影感。不要添加侠客、动物、人体倒影、油画或文字水印。",
+      "negative_zh": "人物、动物、人体剪影或倒影、油画、插画、塑料质感、文字、水印",
+      "negative_en": "people, animals, human silhouettes or reflections, painting, illustration, plastic, text, watermark"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "中式园林影像美学"
+  short_description: "把模糊想法和参考素材写成可执行的中式东方美学视频提示词"
+  default_prompt: "使用 $chinese-aesthetic-video-director 把我的想法写成一套中式东方美学视频提示词。"
+policy:
+  allow_implicit_invocation: true

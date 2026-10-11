@@ -1,0 +1,6 @@
+interface:
+  display_name: "岩井俊二 · 青春情愫提示词"
+  short_description: "用一句场景写青春电影感提示词，MJ 自动附带已指定的风格配置"
+  default_prompt: "使用 $iwai-youth-film-prompts，把我的场景写成岩井俊二青春情愫风格的 MJ 提示词，自动附带默认 profile。"
+policy:
+  allow_implicit_invocation: true

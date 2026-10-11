@@ -1,0 +1,18 @@
+{
+  "algorithm": "SHA256",
+  "files": {
+    "agents/openai.yaml": "c8088eaa10f480b1704ed6153fcc874427abf9fffebcb3cc7c06d71ac75f2957",
+    "references/drift-repair.md": "a3435a5f9b1c219225b16dbfceb4ae094eada8288aa928cc2af847ae69953719",
+    "references/examples.md": "f974b335ced2ef9fdcd46bb50709b81ff252a9a31e6e2f69827873d21480cc2d",
+    "references/images/01-paper-star.png": "a286960dbae613c02db8578cd87c97772182ca7cca259f7e2bf7b6c81a35f749",
+    "references/images/06-stage-distance.png": "9fda54ab5b034d609bb5e9779598b0880f3aead52ee1675e21d3fc0ecb766f18",
+    "references/images/07-curtain-smile.png": "f2ba39868a848fe60d9415b0d9d484daed0fdf487ba6d887892af558a330eac8",
+    "references/profile-and-output.md": "25416ec5f31bdf914cd51fe0c9b502c66f7a3273125fa40a323e035e448d4c2d",
+    "references/shot-recipes.md": "49dcbebf45874352f2be6dddcb730a4fe89dc1932cc28724211c346fc0049815",
+    "references/source-evidence.json": "5fff05e1da0746e5f884534a2060788c89939a136fd6bc93b34241500fe44602",
+    "references/visual-dna.md": "9ea8816b9de0c2c91bb44ae55a27dccbedbca5ef2dc6d12ddf775e548b661903",
+    "scripts/finalize_mj.py": "31726b59f331b57ef6a18622daf286c35f817913764ac246e548f0491be9b89f",
+    "SKILL.md": "6824b1d3cb0f2e6de69ec26922cbef5ed6aeb1106a39eff45baa780c0fbd854c",
+    "安装与使用.md": "ccc59c0f863d35c2cd73608624edc1048090810278c73f063df22d176ef7d519"
+  }
+}

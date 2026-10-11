@@ -1,0 +1,13 @@
+interface:
+  display_name: "Story Director"
+  short_description: "选择人物、场景或道具资产，生成横向分镜并配置视频节点"
+  default_prompt: "使用 $story-director 开始剧情项目，选择人物、人物和场景、人物和道具中的一项建立资产；分镜确认后用2.5模型创建视频节点。"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+policy:
+  products:
+  - "chatgpt"
+  - "codex"
+  - "api"
+  - "atlas"
+  allow_implicit_invocation: true
