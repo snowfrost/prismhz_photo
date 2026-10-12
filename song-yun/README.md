@@ -53,27 +53,14 @@
 ```
 song-yun/
 ├── README.md                      ← 本文件
-├── SKILL.md                       ← Skill 入口：工作流、子模块路由、三套写法公式、行为规则
-├── references/
-│   ├── style-bible.md             ← 宋韵美学圣经：色板/构图/光影/妆造/纹样/形制词库
-│   ├── examples.md                ← 完整范例库（MJ、image-gpt-2、田园系列、负向词）
-│   ├── patterns.md                ← 用户确认过的成功模式胶囊
-│   ├── seedance-2.5-notes.md      ← Seedance 2.5 语法备忘（时间戳、@素材、延长）
-│   ├── lovart-pipeline.md         ← Lovart 批量出图流水线
-│   ├── learning-plan.md           ← 每日学习计划：书单、关键词库、主题轮换
-│   └── song-identity-matrix.md    ← 古风身份四件套矩阵（12类身份，自 pic-video-prompt 迁入）
-└── song-pastoral/                 ← 宋式田园子skill（2026-10-11 整体并入）
-    ├── SKILL.md                   ← 五路由：一行编译/指定构建/参考保真/系列扩展/漂移修复
-    ├── references/                ← 分级词库：48锚点 + 132验证词 + 288扩展词 + 场景预设
-    └── scripts/                   ← 提示词对审计脚本
+├── SKILL.md                       ← Skill 入口：工作流、三套写法公式、行为规则
+└── references/
+    ├── style-bible.md             ← 宋韵美学圣经：色板/构图/光影/妆造/纹样/形制词库
+    ├── examples.md                ← 完整范例库（MJ、image-gpt-2、田园系列、负向词）
+    ├── patterns.md                ← 用户确认过的成功模式胶囊
+    ├── seedance-2.5-notes.md      ← Seedance 2.5 语法备忘（时间戳、@素材、延长）
+    └── learning-plan.md           ← 每日学习计划：书单、关键词库、主题轮换
 ```
-
-## 子模块路由（2026-10-11 新增）
-
-- **宋式田园 / 乡居 / 农事 / 江南水乡** → 进入 `song-pastoral/` 子skill（ImageGen 中文 + Midjourney V8.2 双输出）
-- **泛古装人物（无名著角色锚点）** → 查 `references/song-identity-matrix.md` 身份四件套
-- **诗词意境 / 文人美学** → 本体流程（style-bible + 13段/六层公式）
-- 三者可组合：田园诗 = song-pastoral 场景 + 身份矩阵人物 + style-bible 色板
 
 ## 快速速查（开写前 5 秒）
 
@@ -86,13 +73,6 @@ song-yun/
 ## 持续进化
 
 本 Skill 内置**每日学习机制**（工作日自动执行）：按周主题轮换（服饰形制 → 纹样面料 → 色彩 → 宋画反推 → 整合）检索新素材，新词条以「中英对照提示词写法」形式追加进词库，每周归档推送至本仓库。
-
-## 更新日志
-
-- 2026-10-11 大融合：并入「宋式田园美学提示词Skill」为子模块 `song-pastoral/`；迁入 pic-video-prompt（原 rizafeng-mingzhu-portrait）的宋韵古风身份矩阵为 `references/song-identity-matrix.md`；SKILL.md 新增子模块路由节，修复 References 索引表结构。
-- 2026-10-04 MJ 1024 字符硬上限与中文优先铁律；实拍反推光线词库（style-bible 十七）。
-- 2026-09-28 形制四轮（抹胸防泳衣、右衽强制）；衣纹描法具名。
-- 2026-09-11 路线 C 图志海报；SHOT 表格式分镜。
 
 ---
 

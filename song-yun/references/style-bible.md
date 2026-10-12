@@ -352,6 +352,12 @@ prompttemplatehub 模板用"满饱和 crimson banner / vermillion accent"做情�
   `eye-level or slightly elevated viewpoint, gentle perspective, no wide-angle distortion, calm and stable framing`。
   西式广角透视是画意路线明令禁止项，写实路线也要收着用，"画面平稳舒缓"本身就是宋韵。
 
+- **双层框景/画中画**（2026-10-06 补，来源：今日头条"园林人像摄影范本！双层框景拍出中式氛围感大片"帖 2026-10-06 检索）：框式构图再进一档——**框里套框**：外层整座飞檐古亭做天然大画框，内层月洞门做视觉框，人物落在门洞中心黄金点位，视线被双层收拢：
+  `double nested framing — the upturned eaves of a lakeside pavilion forming the outer frame, a round moon gate as the inner frame, the figure centered within the gateway`;
+  配**三段纵向结构句**（上层流云 / 中层亭台树 / 下层水面倒影）：
+  `three vertical bands — drifting clouds above, pavilion and dark green trees at mid-level, the pavilion doubled in the water below`；
+  此构图里点睛撞色最见效（红裙+暖黄伞一点暖色，冷暖对比不艳俗，与三.七⑩点睛例外句同源）；对称+分层=稳定庄重档，比单层画框多一层纵深仪式感。
+
 ### 六.五.四、空间动线三段句（2026-09-28 周一形制专题顺带新增，来源：php.cn 小云雀AI古风实战帖）
 
 > **空间动线替代元素堆砌**：并列堆三个元素词（"远山、船、藤蔓"）AI 平权处理、构图散；
@@ -804,6 +810,19 @@ B 路线的另一种骨架（与四层构建法并用，四段式更适合"把�
 - 写实路线把对比句挂材质段，画意路线改写为工笔版 `plain uncarved wood surfaces versus delicately patterned silks`（平涂层级对比）；
 - 与十二双质感铁律不冲突：铁律管"写实/画意词汇分家"，本条管"同一路线内的材质层次"。
 
+### 九.九、雾切句与前景重墨锚（2026-10-06 周二图片主线第三课新增，来源：artstyles.com "How to Draw Song Dynasty Ink Painting" 技法指南 2026-10-06 检索）
+
+画意山水档两条防平防满的墨法句（与六.五.七三层景深、九.七帘纹句配合）：
+- **雾切句**（防雾成"一条平白带"）：AI 写 mist 常画成横贯画面的白色横条——正确写法是**雾从不同高度切入山体、只软化选定边缘**：
+  `mist enters between the forms at changing heights, softening only selected edges, the pale areas continuous with the surrounding paper`
+  要点是"at changing heights"（切口高低错落）+"continuous with the paper"（雾与留白连成一体，不是贴上去的白条）。
+- **前景重墨锚**：前中远三层都平均用力=糊成一片；把**最重最少的笔触留给前景锚点**（一块深墨礁石/一丛树/一角建筑），以最强的对比确立比例尺并把观者引入画面：
+  `a foreground anchor in the darkest ink — a weathered rock and pine cluster drawn with few marks but the strongest contrast, establishing scale`;
+  反向规则：树用**成组竖笔/分枝笔意**概括（grouped vertical strokes），不逐叶描画；中景远山逐层淡化（与三层景深句同构互验）。
+- 配套负向：`a flat white stripe of fog, uniformly dense ink, photorealistic depth of field`。
+- **印章红点睛句**（同源补充）：全画面水墨收束后，右下角一枚小型朱砂印做唯一满饱和暖点，且必须"与留白平衡"而非当装饰撒：
+  `one small vermilion seal accent in the lower right, balanced against the large empty silk rather than repeated as decoration`——画意档专属点睛例外（与三.七⑩同源，例外只许这一处）。
+
 ## 十、夜景与月夜范式（2026-08-31 新增，来源：今日头条宋代AI写真帖 / gemnana 宋韵月夜河景）
 
 - **夜景色板**：深蓝天幕 + 月白 + 藕粉 + 浅青；灯火朦胧处暖黄一点
@@ -936,6 +955,21 @@ desk 上只放"前图出现过的物件"（thread-bound books + white porcelain 
 **③ 环境人物占比句**：把"人物只占画面一半"量化成
 `composition: figure occupies 30%-40% of the frame, environment 60%-70%`——
 比"人物小"精确，批量模板里可直接当骨架槽位用。
+
+## 十三.八、动词链写法与"画论术语边界"（2026-10-06 周二图片主线第三课新增，来源：CSDN 技术社区"中国风提示词实战：三类句式"帖 / artstyles.com 宋画水墨指南 2026-10-06 检索）
+
+**① 动词链写法（场景叙事型）**：静态罗列（"一株梅花开在庭院"）出的是标本图；
+把空间纵深+时间流动压进**一串动词**，画面自己活起来：
+`plum branches slanting across the wall, a few red buds just opening, a breeze passing, fallen petals swirling down onto the blue-brick steps`
+（横斜→初绽→拂过→轻旋四动词，枝→花→风→阶的空间动线+初绽→飘落的时间线）。
+与六.五.四空间动线三段句同源：那段管"元素分层"，本条管"元素在各层里做什么动作"。一句词里动词 3-4 个封顶，多了变动画。
+
+**② 画论术语边界（对十.禁抽象词规则的重要补充）**：实测"留白三分 / 计白当黑 / 疏可走马 / 密不透风 / 宋人笔意"这类**画论术语是有效构图指令**——
+模型训练语料里它们与特定画面结构强关联，写出"留白三分"AI 真的会在右下留白、左上淡墨晕山影；
+而"高级感 / 氛围感 / 绝美"这类**营销抽象词依旧无效**。
+边界判据一句话：**画论术语=带构图语义的技术词（可用），营销词=只有评价没有画面（禁用）**。
+意境词库实测可用（写意/画意路线开头档）：`留白三分、虚实相生、计白当黑、疏可走马、雪后初霁、烟雨迷蒙、竹影婆娑、宋人笔意`；
+风格强化后缀句尾挂 `——中国画 / 水墨丹青风格`（in the manner of Chinese ink painting, not Western realism）可进一步压西方写实倾向。
 
 ## 十四、图志海报子风格（路线 C）（2026-09-11 周五整合日新增，来源：LiblibAI"又见美舍 Qwen-imager 灵兽图志海报"帖 10 组案例）
 

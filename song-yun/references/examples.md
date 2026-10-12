@@ -728,3 +728,59 @@ shallow depth of field, subtle film grain, Chinese period drama film still
 >
 > **候选模式（P4）**：三联拼接结构 + "表情可以静，手必须在做一件事"的手部叙事——待王老师出图确认后固化进 patterns.md。
 
+
+## 三十、图片主线第三课：园林构图与调色转译（2026-10-06 周二，来源：今日头条"园林双层框景范本"帖 / 搜狐问津园教程帖 / 太平洋电脑网调色问答帖 / CSDN 三类句式帖 / artstyles 宋画水墨指南）
+
+### 例32 双层框景·月洞门宋制绿衣（A 路线 MJ，双层画中画 + 三段纵向 + 白平衡度数化 + 调色转译句落地，词数约 120）
+
+> 反推自"临水古亭+月洞门"教科书级范本：外檐内门双层嵌套，把视线锁进门洞中心——框式构图的进阶版。
+
+```
+wide environmental portrait, double nested framing — the upturned eaves of a lakeside
+pavilion forming the outer frame, a round moon gate as the inner frame, a young woman
+in a pale celadon Song-dynasty beizi and hundred-pleat skirt standing centered within
+the gateway, holding an orange oil-paper umbrella as the single warm accent, three
+vertical bands — drifting clouds above, dark green pines and the pavilion at mid-level,
+the whole gate doubled in the still water below, a slightly low angle clearing the
+cluttered flagstones, warm 5200K golden-hour light from the left with a cool shadow
+side, greens shifted toward cyan-blue, overall low contrast with lifted shadows, edges
+softly rendered like a gongbi painting, realistic photography, Canon EOS R5 RF85mm
+f/1.4, shallow depth of field, subtle film grain, Chinese period drama film still
+--ar 2:3 --raw --s 100 --no blown highlights, crushed blacks, harsh overhead noon sunlight, modern elements, plastic skin, CGI, oversaturated colors, watermark
+```
+
+**要点拆解**（对照 style-bible 六.五.三补）：
+① **双层框景句**打头（构图词最前的词序铁律）——outer frame（檐）+inner frame（月洞门）+人物落门洞中心黄金点位；
+② **三段纵向结构句**：上流云/中亭树/下水倒影，对称+分层=稳定庄重档；
+③ 点睛例外只给橙伞一处满饱和暖色（三.七⑩），红裙换绿衣时橙伞正是原帖点睛撞色配方；
+④ 仰拍写**功能理由**（clearing the cluttered flagstones 规避地面杂物），不只写角度；
+⑤ **白平衡度数化**：warm 5200K 比"暖光"精确（与十三.六机位度数化同逻辑）；
+⑥ **后期调色转译句**挂质感段：greens toward cyan-blue + low contrast + lifted shadows + 工笔感边缘；
+⑦ 负向新增 blown highlights / crushed blacks（RAW 思维转译），挡高光溢出与死黑死角。
+
+### 例33 水墨小品·梅阶动词链（B 路线 MJ，动词链 + 雾切句 + 重墨锚 + 印章红 + 画论术语落地，词数约 105）
+
+> CSDN"场景叙事型"句式 + artstyles 墨法两条的合并示范：让静态梅枝自己动起来，雾不成白条。
+
+```
+in the manner of Song dynasty ink painting, not Western realism — 留白三分，计白当黑：
+plum branches slanting across the upper left, a few red buds just opening, a breeze
+passing, two petals swirling down onto the blue-brick steps, mist enters between the
+forms at changing heights, softening only selected edges and continuous with the
+unpainted silk, a foreground anchor in the darkest ink — a weathered rock with a
+sparrow drawn in few marks but the strongest contrast, midground pavilion roofline
+fading, distant hills dissolving into pale washes, the palette limited to ivory silk,
+carbon ink and touches of mineral green, thin ink linework with varying brush pressure,
+aged silk with visible warp threads and faint age crazing, one small vermilion seal
+accent in the lower right balanced against the empty space
+--ar 16:9 --raw --s 100 --no flat white stripe of fog, uniformly dense ink, smooth clean vector lines, photorealistic depth of field, vibrant colors, watermark
+```
+
+**要点拆解**（对照 style-bible 十三.八 / 九.九）：
+① **动词链四动词**（slanting→opening→passing→swirling）：枝→花→风→阶的空间动线+初绽→飘落的时间线，一句词里动词 3-4 个封顶；
+② **画论术语当构图指令**：开头挂"留白三分，计白当黑"+风格后缀 in the manner of…not Western realism——画论术语有效、营销抽象词无效（十三.八边界判据）；
+③ **雾切句**：at changing heights + continuous with the unpainted silk，防"一条平白带"；
+④ **前景重墨锚**：few marks but the strongest contrast，麻雀做比例尺兼画眼；
+⑤ 色调局限句（九.七）+ 帘纹句可按需续挂；
+⑥ **印章红点睛**：一枚朱砂印做唯一满饱和点，balanced against the empty space 防装饰化；
+⑦ 负向新增 flat white stripe of fog（雾平带专属）。
