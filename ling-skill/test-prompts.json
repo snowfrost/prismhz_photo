@@ -1,8 +1,8 @@
 {
   "skill": "ling-skill",
-  "version": "2.2.0",
+  "version": "2.4.0",
   "generated": "2026-10-07",
-  "updated": "2026-10-11",
+  "updated": "2026-10-15",
   "format": "darwin-skill compatible",
   "source": "246 条唯一视频（174 combat）+ 棂 674 条发言；2026-10-11 吸收叩叩哥系参考包（v2.1→v2.2）",
   "prompts": [
@@ -90,25 +90,25 @@
       "id": "D1",
       "prompt": "这段男女主在雨里对望的文戏，帮我写情绪提示词，要有微表情",
       "expect": "should_not_trigger",
-      "note": "诱饵：纯文戏情绪戏应交给 seedance25-prompt"
+      "note": "诱饵：纯文戏情绪戏，不属本 skill（超范围需求一律不接管）"
     },
     {
       "id": "D2",
       "prompt": "Seedance 2.5 的 seed 和 motion 参数填多少合适？",
       "expect": "should_not_trigger",
-      "note": "诱饵：参数速查属 seedance25-prompt"
+      "note": "诱饵：纯平台参数速查不属本 skill（本 skill 仅自带打斗相关基础参数，见 SKILL.md §十二）"
     },
     {
       "id": "D3",
       "prompt": "帮我把这个 60 秒的生成视频延长到 90 秒，用接力延长的写法",
       "expect": "should_not_trigger",
-      "note": "诱饵：视频延长属 seedance25-prompt"
+      "note": "诱饵：视频延长不属本 skill"
     },
     {
       "id": "D4",
       "prompt": "帮我检查这段提示词会不会踩平台红线，有没有违规内容",
       "expect": "should_not_trigger",
-      "note": "诱饵：**平台合规**红线属 seedance25-prompt（区别于 T9 的打斗技法红线）"
+      "note": "诱饵：**平台合规**红线终审不属本 skill（区别于 T9 的打斗技法红线，后者属本 skill）"
     },
     {
       "id": "D5",
@@ -126,7 +126,7 @@
       "id": "D7",
       "prompt": "帮我给这个动漫角色的三视图做转面，要 2D 赛璐璐风格",
       "expect": "should_not_trigger",
-      "note": "新增诱饵：2D 角色资产出图 → 属 seedance25-prompt 资产层 / image-prompt-director，非打斗"
+      "note": "新增诱饵：2D 角色资产出图 → 属纯资产出图，非打斗导演层"
     },
 
     {
@@ -139,7 +139,7 @@
       "id": "A2",
       "prompt": "帮我把这场打斗接到前面的文戏后面，做整体分镜",
       "expect": "ambiguous",
-      "note": "混合戏：本 skill 负责打斗段，文戏段与结构由 seedance25-prompt / story-director 负责，需协同"
+      "note": "混合戏：本 skill 只接管打斗段；文戏段与叙事结构不属本 skill（可由通用视频/编剧类 skill 承接，需协同）"
     },
     {
       "id": "A3",

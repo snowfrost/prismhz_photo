@@ -1,7 +1,7 @@
 # ling-skill 压力测试结果
 
 测试时间：2026-10-06
-测试方式：主流程对照 test-prompts.json 逐条走查（对每条 prompt 判定"是否应由 ling-skill 接管"并与预期比对），诱饵条目同时核查 seedance25-prompt 是否具备承接能力（其 SKILL.md 已含文戏/参数/延长/红线四个模块，可承接）。
+测试方式：主流程对照 test-prompts.json 逐条走查（对每条 prompt 判定「是否应由 ling-skill 接管」并与预期比对），诱饵条目核查本 skill 是否误触发——超范围需求一律不接管（如环境另有通用视频 skill 可承接）。
 
 ## 结果
 
@@ -12,7 +12,7 @@
 | 应触发 | T3 招式与战斗偏好设计 | trigger | trigger | ✅ |
 | 应触发 | T4 棂式生图 | trigger | trigger | ✅ |
 | 应触发 | T5 群战分镜 | trigger | trigger | ✅ |
-| 不应触发 | D1 纯文戏情绪 | no | no（交 seedance25-prompt） | ✅ |
+| 不应触发 | D1 纯文戏情绪 | no | no（超范围，不接管） | ✅ |
 | 不应触发 | D2 参数速查 | no | no | ✅ |
 | 不应触发 | D3 视频延长 | no | no | ✅ |
 | 不应触发 | D4 红线审核 | no | no | ✅ |
@@ -21,7 +21,7 @@
 | 边界 | A2 只问大招节奏 | trigger | trigger | ✅ |
 | 边界 | A3 文戏+打斗混合分镜 | ambiguous | 协同（本 skill 管打斗段） | ✅ |
 
-**通过率：13/13 = 100%**，其中诱饵 5 条全部未误触发，跨 skill 混淆测试（D1–D4 指向 seedance25-prompt）通过。
+**通过率：13/13 = 100%**，其中诱饵 5 条全部未误触发，超范围需求混淆测试（D1–D4）通过。
 
 ## 已知薄弱点（下一轮迭代）
 
